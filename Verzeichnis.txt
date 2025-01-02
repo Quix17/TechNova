@@ -1,0 +1,37 @@
+myapp/
+├── .venv/ (library root)
+├── instance/
+├── migrations/
+├── static/
+│   ├── js/
+│   │   ├── B-dash.js
+│   │   ├── L-p-g.js
+│   │   ├── p-a-v.js
+│   │   ├── password_checker.js
+│   │   └── su-p-a-v.js
+│   ├── txt/
+│   │   └── common_passwords.txt
+│   ├── ai-projekt.css
+│   ├── dashboard.css
+│   ├── r-p-12-64.css
+│   ├── script.js
+│   └── style.css
+└── templates/
+    ├── Bilder/
+    ├── ai-projekt.html
+    ├── dashboard.html
+    ├── edit_profile.html
+    ├── forgot_password.html
+    ├── login.html
+    ├── reset_password.html
+    ├── signup.html
+    ├── verify_code.html
+    └── Test.py
+├── app.py
+├── Aurora.py
+├── com-p-check.py
+├── Idee.txt
+├── password_generator.py
+├── requirements.txt
+├── signup Konto.txt
+└── Verzeichnis.txt

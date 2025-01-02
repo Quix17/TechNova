@@ -1,0 +1,9 @@
+Flask
+Flask-Dance
+Flask-SQLAlchemy
+Flask-Login
+python-dotenv
+Flask_migrate
+Werkzeug
+authlib
+gunicorn

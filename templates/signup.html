@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='r-p-12-64.css') }}">
+    <script src="{{ url_for('static', filename='js/L-p-g.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/password_checker.js') }}" defer></script>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card">
+            <form class="form" method="POST" action="{{ url_for('signup') }}">
+                <p id="heading">Sign Up</p>
+
+                <!-- Email Feld -->
+                <div class="field">
+                    <span class="input-icon">@</span>
+                    <input type="email" class="input-field" name="email" placeholder="Email" required>
+                </div>
+
+                <!-- Passwort Feld -->
+                <div class="field">
+                    <span class="input-icon">🔒</span>
+                    <input type="password" class="input-field" name="password" id="password" placeholder="Password" required oninput="checkPasswordStrength()">
+                    <!-- Auge-Icon zum Umschalten der Sichtbarkeit -->
+                    <span class="input-icon" id="toggle-password" onclick="togglePassword()">
+                        <i class="fas fa-eye"></i> <!-- Auge-Icon -->
+                    </span>
+                </div>
+
+                <!-- Passwort Bestätigung -->
+                <div class="field">
+                    <span class="input-icon">🔒</span>
+                    <input type="password" class="input-field" name="confirm_password" id="confirm-password" placeholder="Confirm Password" required oninput="checkPasswordMatch()">
+                    <!-- Auge-Icon zum Umschalten der Sichtbarkeit -->
+                    <span class="input-icon" id="toggle-confirm-password" onclick="toggleConfirmPassword()">
+                        <i class="fas fa-eye"></i> <!-- Auge-Icon -->
+                    </span>
+                </div>
+
+                <div class="btn">
+                    <button class="button1" type="submit">Sign Up</button>
+                    <a href="{{ url_for('login') }}" class="button2">Login</a>
+                </div>
+                <a class="google-btn" href="{{ url_for('auth0_login') }}">Sign Up with Google</a>
+            </form>
+        </div>
+
+        <!-- Passwort Anforderungen und Generator -->
+        <div class="card requirements-card">
+            <h3>Passwort Anforderungen</h3>
+            <ul id="password-requirements">
+                <li id="length-check" class="invalid">Mindestens 12 Zeichen</li>
+                <li id="uppercase-check" class="invalid">Mindestens 3 Großbuchstaben</li>
+                <li id="number-check" class="invalid">Mindestens 2 Zahlen</li>
+                <li id="special-check" class="invalid">Mindestens 2 Sonderzeichen</li>
+                <li id="no-repeat-check" class="invalid">Keine Wiederholung von Zeichen (z.B. aaa)</li>
+                <li id="no-common-words-check" class="invalid">Kein Gebrauch von gängigen Passwörtern (z.B. "password")</li>
+            </ul>
+
+            <div id="password-strength-container">
+                <div id="password-strength-bar"></div>
+                <p id="strength-status">Schwach</p>
+            </div>
+
+            <div>
+                <input type="text" id="generated-password" class="generated-password-text" readonly placeholder="Generiertes Passwort wird hier angezeigt">
+            </div>
+
+            <div>
+                <input type="range" id="password-length" min="12" max="64" value="20" oninput="updatePasswordLength()">
+            </div>
+
+            <div>
+                <span>Passwortlänge: <span id="password-length-display">20</span> Zeichen</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

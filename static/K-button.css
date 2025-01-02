@@ -1,0 +1,70 @@
+/* Styling für den Dropdown-Button */
+.dropdown {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    margin: 10px;
+    display: inline-block;
+    font-family: Arial, sans-serif;
+}
+
+/* Der Button selbst - grau mit Hover-Effekt */
+.dropdown button {
+    background-color: #808080;  /* Grauer Hintergrund */
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease; /* Sanfter Übergang */
+}
+
+.dropdown button:hover {
+    border-color: white; /* Weißer Rand bei Hover */
+    box-shadow: 0 0 15px 3px rgba(255, 255, 255, 0.7); /* Weißer Glow mit mehr Weichheit */
+    background-color: black; /* Hintergrund wird schwarz bei Hover */
+}
+
+/* Dropdown Menü */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    opacity: 0; /* Start mit unsichtbarer Anzeige */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Sanfte Übergänge für Opazität und Position */
+    transform: translateY(-10px); /* Dropdown erscheint etwas höher und gleitet dann nach unten */
+}
+
+/* Styling der Links im Dropdown-Menü */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+    border-bottom: 1px solid #ddd; /* Schöner unterer Rand zwischen den Links */
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none; /* Entfernt den Rand vom letzten Link */
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1; /* Das Dropdown wird sichtbar */
+    transform: translateY(0); /* Gleitet nach unten */
+}
+
+.dropdown:hover button {
+    background-color: black; /* Button wird bei Hover schwarz */
+}

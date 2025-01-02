@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Einbindung von Font Awesome über CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="card">
+        <form class="form" method="POST" action="{{ url_for('login') }}">
+            <p id="heading">Login</p>
+
+            <!-- Email Feld -->
+            <div class="field">
+                <span class="input-icon">@</span>
+                <input type="email" class="input-field" name="email" placeholder="Email" required>
+            </div>
+
+            <!-- Passwort Feld -->
+            <div class="field">
+                <!-- Schloss Symbol links -->
+                <span class="input-icon">
+                    🔒 <!-- Schloss-Icon (links) -->
+                </span>
+                <input type="password" class="input-field" name="password" id="password" placeholder="Password" required oninput="checkPasswordStrength()">
+                <!-- Auge Symbol rechts -->
+                <span class="input-icon" id="toggle-password" onclick="togglePassword()">
+                    <i class="fas fa-eye"></i> <!-- Auge-Icon -->
+                </span>
+            </div>
+
+            <!-- Buttons -->
+            <div class="btn">
+                <button class="button1" type="submit">Login</button>
+                <a href="{{ url_for('signup') }}" class="button2">Sign Up</a>
+            </div>
+
+            <!-- Auth0 Google Login Button -->
+            <a class="google-btn" href="{{ url_for('auth0_login') }}">Login mit Google</a>
+
+            <!-- Passwort vergessen mit Hover-Effekt -->
+            <a href="{{ url_for('forgot_password') }}" class="button3">Passwort vergessen?</a>
+        </form>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/p-a-v.js') }}"></script> <!-- Verlinkung der JS-Datei -->
+</body>
+</html>

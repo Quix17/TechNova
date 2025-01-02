@@ -1,0 +1,36 @@
+/* Styling für den Slider */
+#password-length {
+    width: 100%;
+    margin: 20px 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 10px;
+    background: #3f0071; /* Lila Hintergrund */
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+#password-length::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #000000; /* Schwarzer Thumb */
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#password-length::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #000000; /* Schwarzer Thumb */
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Styling für die Anzeige der Passwortlänge */
+#password-length-display {
+    font-weight: bold;
+    color: #3f0071; /* Lila Textfarbe */
+}

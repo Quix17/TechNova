@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekt Dashboard</title>
+    <!-- Dashboard Styles -->
+    <link rel="stylesheet" href="/static/dashboard.css">
+    <!-- Verlinkung der externen Stylesheet-Datei für den Button -->
+    <link rel="stylesheet" href="/static/K-button.css">
+</head>
+<body>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-wrapper">
+        <div class="dashboard">
+            <!-- Dropdown Menü für Konto -->
+            <div class="dropdown">
+                <button>Kontoverwaltung</button>
+                <div class="dropdown-content">
+                    <a href="#" id="settings">Einstellungen</a>
+                    <a href="#" id="logout">Logout</a>
+                </div>
+            </div>
+
+            <!-- AI Projekt Karte -->
+            <div class="card" id="card-1">
+                <div class="card-content">
+                    <!-- Überschrift als klickbarer Link zur ai-projekt Seite -->
+                    <a href="{{ url_for('ai_projekt') }}">
+                        <h2>Aurora</h2>
+                    </a>
+                    <p>Entdecke, was wir mit Aurora schaffen können! Unsere neueste Technologie bietet spannende Möglichkeiten.</p>
+                </div>
+            </div>
+
+            <!-- In Progress Karte 1 -->
+            <div class="card" id="card-2">
+                <div class="card-content">
+                    <h2>In Progress</h2>
+                    <p>Projekt in Bearbeitung, wird bald abgeschlossen.</p>
+                </div>
+            </div>
+
+            <!-- In Progress Karte 2 -->
+            <div class="card" id="card-3">
+                <div class="card-content">
+                    <h2>In Progress</h2>
+                    <p>Projekt in Bearbeitung, bitte noch einen Moment warten.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Verlinkung der externen JavaScript-Datei -->
+    <script src="/static/js/K-button.js"></script>
+    <script src="/static/js/Karten.js"></script>
+</body>
+</html>
