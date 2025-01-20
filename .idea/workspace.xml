@@ -4,79 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5f11a96-78c7-40af-8c63-28df240b4f7d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Editprofile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aurora-chat/server.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blogposts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/Bug/Bugs.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/Contact/contact.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/DSGVO/Datenschutz.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/FAQ/Hilfe.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/Impressum/impressum.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/Loader/Footer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/Loader/loader_candle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/Nutzungsbedingung/NB.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/Updates/updates.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/Anmeldung/loader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/Bug/Bugs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/DSGVO/Datenschutz.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/FAQ/Hilfe.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/Impressum/impressum.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/Nutzungsbedinung/NB.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/Updates/updates.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Contact/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/DSGVO/Datenschutz.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/FAQ/Hilfe.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Impressum/impressum.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Nutzungsbedingung/NB.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Test/Bug/Bugs.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Test/Test/Spaß_Projekt.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Test/Updates/updates.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/myapp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/myapp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aurora.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Idee.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Verzeichnis.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com-p-check.py" beforeDir="false" afterPath="$PROJECT_DIR$/com-p-check.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instance/users.db" beforeDir="false" afterPath="$PROJECT_DIR$/instance/users.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/password_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/password_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signup Konto.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/K-button.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/ai-projekt.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/dashboard.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/edit_profile.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/B-dash.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/K-button.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/Karten.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/Konto.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/L-p-g.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/k-menu-a.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/p-a-v.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/password_checker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/su-p-a-v.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/k-menu.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/r-p-12-64.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/txt/common_passwords.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/txt/common_passwords.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Bilder/F-Ki/ki lernen.jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Bilder/F-Ki/ki malen.jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Bilder/F-Ki/sprachen lernen.jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ai-projekt.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/edit_profile.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forgot_password.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reset_password.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/signup.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/verify_code.html" beforeDir="false" />
-    </list>
+    <list default="true" id="a5f11a96-78c7-40af-8c63-28df240b4f7d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,6 +35,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Quix17"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Quix17/TechNova",
+    "accountId": "c48d8aaa-e3b7-4edb-9446-ecbcf7990ee3"
+  }
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Editprofile.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app.py" root0="FORCE_HIGHLIGHTING" />
@@ -221,7 +161,7 @@
       <workItem from="1737314898154" duration="7421000" />
       <workItem from="1737376229226" duration="8866000" />
       <workItem from="1737397598336" duration="4572000" />
-      <workItem from="1737405907954" duration="507000" />
+      <workItem from="1737405907954" duration="1091000" />
     </task>
     <servers />
   </component>
