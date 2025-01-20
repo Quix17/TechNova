@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aurora Chatbot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+     <!-- Standard Favicon -->
+     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <!-- Favicon in verschiedenen Größen für den Browser -->
+<link rel="icon" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="icon" sizes="32x32" href="/images/favicon-32x32.png">
+    <!-- Favicon für Android-Geräte -->
+<link rel="icon" sizes="192x192" href="/images/android-chrome-192x192.png">
+<link rel="icon" sizes="512x512" href="/images/android-chrome-512x512.png">
+    <!-- Favicon für Apple-Geräte (Home Screen) -->
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Anmeldung/style.css') }}">
+</head>
+<body>
+  <div class="chat-container">
+    <header>
+      <h1>Aurora Chatbot</h1>
+      <p>Sprich mit Aurora, deiner fortschrittlichen KI!</p>
+    </header>
+
+    <div id="chatBox" class="chat-box"></div>
+
+    <div class="input-section">
+      <textarea id="userInput" placeholder="Schreibe etwas..." autofocus></textarea>
+      <button id="sendButton">Absenden</button>
+    </div>
+
+    <footer>
+      <p>© 2025 – Entwickelt mit Liebe</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

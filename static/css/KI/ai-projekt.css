@@ -1,0 +1,1042 @@
+/* Allgemeine Reset-Stile */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #f1f1f1;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #2e1a47;
+    padding: 20px 0;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #9b59b6;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, #2e1a47, #9b59b6);
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+
+/* Features Section */
+.features {
+    background-color: #222;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.feature-item {
+    display: inline-block;
+    margin: 0 20px;
+    width: 300px;
+    text-align: center;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.feature-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.feature-item h3 {
+    margin: 20px 0;
+    font-size: 24px;
+    color: #fff;
+}
+
+.feature-item p {
+    font-size: 16px;
+    color: #bbb;
+}
+
+.feature-item:hover {
+    transform: scale(1.1);
+}
+/* Über die KI – Anschaulich und wichtige Textstellen hervorheben */
+.highlight-text {
+    background-color: #a03cfc;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.highlight-text:hover {
+    background-color: #8e2cca;
+    transform: scale(1.05);
+}
+
+
+
+/* Blog Section */
+.blog {
+    padding: 60px 0;
+    background-color: #333;
+    text-align: center;
+}
+
+.blog h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.blog-item {
+    background-color: #444;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.blog-item h3 {
+    font-size: 24px;
+    color: #fff;
+}
+
+.blog-item p {
+    font-size: 16px;
+    color: #bbb;
+}
+
+
+/* FAQ Section – Animiert und strukturiert */
+.faq {
+    padding: 80px 0;
+    background-color: #222;
+    text-align: center;
+    animation: fadeInUp 1s ease-out;
+}
+
+.faq h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.faq-item {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.faq-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.faq-item h3 {
+    font-size: 24px;
+    color: #fff;
+}
+
+.faq-item p {
+    font-size: 16px;
+    color: #bbb;
+}
+
+/* FAQ Animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.hero, .features, .about, .testimonials, .blog, .team, .faq, .contact-form {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Parallax effect for images */
+.feature-item img {
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #222;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #9b59b6;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #8e44ad;
+}
+
+
+/* Anpassung der Textgrößen für kleinere Bildschirme */
+@media (max-width: 1200px) {
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .cta-button {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+
+    .feature-item {
+        width: 270px;
+    }
+
+    .team-member {
+        width: 180px;
+    }
+
+    .blog-item {
+        width: 45%;
+    }
+
+    .testimonials h2 {
+        font-size: 32px;
+    }
+
+    .faq-item {
+        width: 70%;
+    }
+}
+
+
+/* Große Schriftgrößen für den Hero-Bereich */
+.hero h1 {
+    font-size: 70px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.hero p {
+    font-size: 22px;
+    color: #f1f1f1;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/* Styles für den Hero-Bereich */
+.hero {
+    background: linear-gradient(45deg, #9b59b6, #2e1a47);
+    color: #fff;
+    padding: 100px 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.hero h1 {
+    font-size: 72px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.hero p {
+    font-size: 22px;
+    margin-bottom: 40px;
+    color: #ddd;
+}
+
+
+/* Stil für Features */
+.features {
+    background-color: #1a1a1a;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.feature-item {
+    display: inline-block;
+    width: 300px;
+    margin: 20px;
+    background-color: #333;
+    padding: 30px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.feature-item img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.feature-item h3 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.feature-item p {
+    color: #bbb;
+    font-size: 16px;
+}
+
+.feature-item:hover {
+    background-color: #444;
+    transform: scale(1.05);
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.hero, .features, .testimonials, .team, .contact-form {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Styles für den Blog */
+.blog {
+    background-color: #333;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.blog h2 {
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.blog-item {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.blog-item h3 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.blog-item p {
+    font-size: 16px;
+    color: #bbb;
+}
+
+.blog-item:hover {
+    background-color: #555;
+}
+
+/* FAQ Styling */
+.faq {
+    padding: 60px 20px;
+    background-color: #222;
+    text-align: center;
+}
+
+.faq h2 {
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.faq-item {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.faq-item h3 {
+    font-size: 24px;
+    color: #fff;
+}
+
+.faq-item p {
+    font-size: 16px;
+    color: #bbb;
+}
+
+
+/* Header Styling */
+header {
+    background-color: #2e2e2e;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #e0e0e0;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to bottom right, #3e3e3e, #1d1d1d);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+
+/* Feature, Use Cases, and Integration Sections */
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #a03cfc;
+}
+
+/* Shapes & Animation for Sections */
+.shape-box {
+    position: relative;
+    background-color: #333;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shape-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(160, 60, 252, 0.3);
+}
+
+.shape-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.shape-box p {
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+.shape-box .shape-text {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(160, 60, 252, 0.2);
+}
+
+.shape-box .shape-text:hover {
+    background-color: #333;
+    box-shadow: 0 0 20px rgba(160, 60, 252, 0.5);
+}
+
+/* Glow Hover Effects */
+.shape-box h3,
+.shape-box p {
+    transition: color 0.3s ease;
+}
+
+.shape-box:hover h3,
+.shape-box:hover p {
+    color: #a03cfc;
+}
+
+/* Animation Effects */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.shape-box {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Integration Section */
+.integration .shape-box {
+    background-color: #282828;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.integration .shape-box:hover {
+    box-shadow: 0 12px 25px rgba(160, 60, 252, 0.4);
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    text-align: center;
+    padding: 20px 0;
+    color: #777;
+}
+
+footer p {
+    font-size: 1rem;
+}
+/* Zukunftsperspektiven der KI – Kasten + Animation */
+.future-perspective {
+    background-color: #282828;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    animation: bounceInUp 1s ease-out;
+    margin-bottom: 40px;
+}
+
+.future-perspective h3 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.future-perspective p {
+    font-size: 16px;
+    color: #bbb;
+}
+
+/* Zukunftsperspektiven Animation */
+@keyframes bounceInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/*Bilder Sektion
+
+
+/* Allgemeine Styles für Feature Items */
+.feature-item {
+    position: relative;
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Bilder in den Feature-Elementen gezielt ansprechen */
+.feature-item img[alt="Feature 1"],
+.feature-item img[alt="Feature 2"],
+.feature-item img[alt="Feature 3"] {
+    width: 300px; /* Breite auf 300px setzen */
+    height: 300px; /* Höhe auf 300px setzen */
+    object-fit: cover; /* Damit das Bild in das Container-Element passt und das Seitenverhältnis beibehalten wird */
+    border-radius: 10px; /* Optional: abgerundete Ecken für die Bilder */
+    margin-bottom: 20px; /* Abstand unter dem Bild */
+}
+
+/* Hover-Effekt für die Feature Items */
+.feature-item:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+    background-color: #444;
+}
+
+.feature-item:hover h3 {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 0, 255, 0.6);
+}
+
+/* Aurora BUTTON */
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.outer-cont {
+  padding: 12px 20px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  background: linear-gradient(90deg, #5bfcc4, #f593e4, #71a4f0);
+  border-radius: 12px;
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow:
+    inset 0px 0px 5px #ffffffa9,
+    inset 0px 35px 30px #000,
+    0px 5px 10px #000000cc;
+  text-shadow: 1px 1px 1px #000;
+  min-width: 150px;  /* Minimal Breite des Buttons */
+  max-width: 250px;  /* Maximale Breite des Buttons */
+  text-align: center; /* Text zentrieren */
+  margin: 0 auto; /* Button horizontal zentrieren */
+  display: block; /* Sicherstellen, dass der Button als Blockelement angezeigt wird */
+}
+.outer-cont::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  border-radius: 12px;
+  filter: blur(0);
+  z-index: -1;
+  box-shadow: none;
+  background: conic-gradient(
+    #00000000 80deg,
+    #40baf7,
+    #f34ad7,
+    #5bfcc4,
+    #00000000 280deg
+  );
+  transition: all 0.3s ease;
+}
+.outer-cont:hover::before {
+  filter: blur(15px);
+}
+.outer-cont:active::before {
+  filter: blur(5px);
+  transform: translateY(1px);
+}
+.outer-cont:active {
+  box-shadow:
+    inset 0px 0px 5px #ffffffa9,
+    inset 0px 35px 30px #000;
+  margin-top: 3px;
+}
+
+
+
+
+/* Kontaktfragen - Container und Textzentrierung */
+.contact-questions {
+    text-align: center;  /* Textzentrierung */
+    margin-top: 40px;     /* Abstand nach oben */
+    padding: 40px;        /* Innenabstand */
+    background-color: #2b2b2b; /* Dunkler Hintergrund passend zum schwarz-lila Style */
+    border-radius: 12px;  /* Abgerundete Ecken */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Weicher Schatten */
+}
+
+/* Titel der Kontaktfragen */
+.contact-questions h2 {
+    font-size: 28px;      /* Größere Schriftgröße */
+    font-weight: bold;    /* Fettgedruckt */
+    margin-bottom: 30px;  /* Abstand nach unten */
+    color: #f3f3f3;       /* Helle Schriftfarbe für den Titel */
+    line-height: 1.4;
+}
+
+/* Flexbox-Layout für die Fragen */
+.contact-questions ul {
+    list-style: none;     /* Entfernt Standardpunkte */
+    padding: 0;
+    margin: 0;
+    display: grid;        /* Grid-Layout */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Flexible Spalten */
+    gap: 20px;            /* Abstand zwischen den Fragen */
+}
+
+
+/* Stil der einzelnen Fragen */
+.contact-questions li {
+    background-color: #3c3c3c; /* Dunkelgrau für den Hintergrund der Fragen */
+    border: 1px solid #444; /* Dunkler Rand */
+    border-radius: 8px;        /* Abgerundete Ecken */
+    padding: 20px;             /* Innenabstand */
+    font-size: 16px;           /* Gute Lesbarkeit */
+    color: #e0e0e0;            /* Helle Schriftfarbe */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animation für Hover-Effekt */
+}
+
+.contact-questions li:hover {
+    transform: translateY(-5px); /* Leichtes Anheben bei Hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stärkerer Schatten bei Hover */
+}
+
+
+/* Optional: Icons vor den Fragen */
+.contact-questions li::before {
+    content: '✓'; /* Häkchen als Icon */
+    font-size: 22px; /* Größeres Häkchen */
+    color: #552da8;  /* Lila Farbe für das Symbol */
+    margin-right: 15px; /* Abstand zum Text */
+    font-weight: bold;
+}
+
+
+/* Kontakt Button */
+.cta {
+  position: relative;
+  margin-top: 40px; /* Positioniert den Button etwas weiter unten, unter den Fragen */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 11.5px 18px;
+  transition: all 0.2s ease;
+  border: 3px solid #552da8;
+  border-radius: 50px;
+  background: #552da8;
+  cursor: pointer;
+  display: inline-flex; /* Ensures content inside the button is horizontally aligned */
+  align-items: center;  /* Centers the text and icon vertically */
+  justify-content: center; /* Centers the text and icon horizontally */
+}
+
+
+
+/* Pseudoelement für den Button */
+.cta:before {
+  content: "";
+  position: absolute;
+  top: 50%; /* Vertikale Mitte */
+  right: 0;
+  transform: translateY(-50%); /* Vertikale Zentrierung des Pseudoelements */
+  display: block;
+  border-radius: 50px;
+  background: white;
+  width: 45px;
+  height: 45px;
+  transition: all 0.8s ease;
+}
+
+/* Button Text */
+.cta span {
+  position: relative;
+  font-family: Montserrat;
+  font-size: 18px;
+  color: white;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+/* SVG-Icon im Button */
+.cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: white;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.5s ease;
+}
+
+/* Hover-Effekt für den Button */
+.cta:hover:before {
+  width: 100%;
+  background: #1c1c1c;
+}
+
+/* Hover-Effekt für das SVG-Icon */
+.cta:hover svg {
+  transform: translateX(0);
+  transition: all 2s ease;
+}
+
+/* Button-Effekt bei Aktivierung (Klick) */
+.cta:active {
+  transform: scale(0.95);
+  transition: all 2s ease;
+}
+
+
+
+
+/* Gesamt-Sektion zentrieren */
+#Inhalt-Ki {
+  display: flex;
+  justify-content: center;    /* Horizontal zentrieren */
+  align-items: center;        /* Vertikal zentrieren */
+  flex-direction: column;     /* Inhalte untereinander anordnen */
+  height: 55vh;              /* Volle Höhe des Viewports */
+  margin: 0;                  /* Entfernt den Standard-Margin */
+  text-align: center;         /* Text mittig ausrichten */
+  color: white;               /* Weiße Schriftfarbe */
+  padding: 2rem 0;            /* Wenig Abstand oben und unten */
+  background-color: #2b2b2b;
+}
+
+/* Die Karte mit dem Inhalt */
+.card-inhalt {
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(240, 15%, 9%);
+  --paragraph: hsl(0, 0%, 83%);
+  --line: hsl(240, 9%, 17%);
+  --primary: hsl(300, 92%, 58%);
+  --secondary: hsl(250, 92%, 58%);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  width: 22rem;               /* Etwas breiter */
+  background-color: hsla(300, 35%, 20%, 1);
+  background-image: radial-gradient(
+      at 88% 40%,
+      hsla(300, 35%, 20%, 1) 0px,
+      transparent 85%
+    ),
+    radial-gradient(at 49% 30%, hsla(300, 35%, 20%, 1) 0px, transparent 85%),
+    radial-gradient(at 14% 26%, hsla(300, 35%, 20%, 1) 0px, transparent 85%),
+    radial-gradient(at 0% 64%, hsl(250, 80%, 26%) 0px, transparent 85%),
+    radial-gradient(at 41% 94%, hsl(250, 80%, 36%) 0px, transparent 85%),
+    radial-gradient(at 100% 99%, hsl(260, 80%, 13%) 0px, transparent 85%);
+
+  border-radius: 1rem;
+  box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25) inset;
+  align-items: center;  /* Zentriert die Inhalte innerhalb der Karte */
+}
+
+/* Die Border für die Karte */
+.card-inhalt .card__border {
+  overflow: hidden;
+  pointer-events: none;
+
+  position: absolute;
+  z-index: -10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  background-image: linear-gradient(
+    0deg,
+    hsl(0, 0%, 100%) -50%,
+    hsl(250, 100%, 60%) 100%
+  );
+
+  border-radius: 1rem;
+}
+
+/* Stil für den Titel der Karte */
+.card-inhalt .card_title__container .card_title {
+  font-size: 1.25rem;          /* Moderat große Schrift */
+  color: var(--white);
+  font-weight: 600;           /* Fett, aber nicht zu stark */
+  margin-bottom: 1rem;        /* Abstand unter dem Titel */
+}
+
+/* Stil für den Text unter dem Titel */
+.card-inhalt .card_title__container .card_paragraph {
+  margin-top: 0.5rem;
+  width: 100%;                 /* Etwas breiterer Textbereich */
+  font-size: 1rem;            /* Normal große Schrift */
+  height: 1.7rem;
+  color: var(--paragraph);
+}
+
+/* Stil für die horizontale Linie */
+.card-inhalt .line {
+  width: 100%;
+  height: 0.1rem;
+  background-color: var(--line);
+  border: none;
+  margin: 1rem 0;             /* Weniger Abstand um die Linie */
+}
+
+/* Liste mit den Items */
+.card-inhalt .card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;               /* Etwas größerer Abstand */
+  align-items: flex-start;    /* Text linksbündig */
+  margin-top: 1.0rem;         /* Etwas mehr Abstand oben */
+  text-align: left;           /* Text links ausrichten */
+}
+
+/* Liste der einzelnen Elemente */
+.card-inhalt .card__list .card__list_item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;               /* Etwas größerer Abstand zwischen Checkmark und Text */
+}
+
+/* Stil für die Checkmarks */
+.card-inhalt .card__list .card__list_item .check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.2rem;              /* Etwas größere Checkmarks */
+  height: 1.2rem;
+  background-color: var(--primary);
+  border-radius: 50%;
+}
+
+.card-inhalt .card__list .card__list_item .check .check_svg {
+  width: 0.85rem;             /* Etwas größere Icons */
+  height: 0.85rem;
+  fill: var(--white);
+}
+
+/* Text der Liste */
+.card-inhalt .card__list .card__list_item .list_text {
+  font-size: 1rem;            /* Normal große Schrift */
+  color: var(--white);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.subtitle {
+    position: absolute;
+    width: 1px; /* Minimale Breite */
+    height: 1px; /* Minimale Höhe */
+    padding: 0; /* Kein Innenabstand */
+    margin: -1px; /* Verschiebt es außerhalb des sichtbaren Bereichs */
+    border: none; /* Kein Rand */
+    opacity: 0; /* Unsichtbar für Benutzer */
+    z-index: -1; /* Stellt sicher, dass es hinter dem Bild bleibt */
+}
+
+.feature-item {
+    position: relative;
+}
+
+img {
+    width: 100%; /* Bild passt sich dem Container an */
+    height: auto;
+}

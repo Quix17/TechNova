@@ -1,0 +1,127 @@
+/* Basis-Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;  /* Dunkler Hintergrund */
+    color: #f4f4f4;  /* Helle Schriftfarbe für Kontrast */
+    line-height: 1.6;
+}
+
+h1, h2 {
+    font-family: 'Arial', sans-serif;
+    color: #00bcd4;  /* Blaue Schriftfarbe für Überschriften */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+header {
+    background-color: #000;  /* Dunkler Header */
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    gap: 40px;
+}
+
+.company-info, .legal-info {
+    width: 48%;
+    background-color: #222;  /* Dunkler Hintergrund für die Abschnitte */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.info-item {
+    margin-bottom: 15px;
+}
+
+.info-item strong {
+    color: #00bcd4;  /* Blaue Schrift für die Labels */
+    font-weight: bold;
+}
+
+.info-item a {
+    color: #00bcd4;
+}
+
+.info-item a:hover {
+    text-decoration: underline;
+    color: #0097a7;  /* Hover-Farbe */
+}
+
+/* Rechts oben die Daten positionieren */
+.company-info {
+    position: relative;
+    top: 0;
+}
+
+.legal-info {
+    position: relative;
+    top: 0;
+}
+
+/* Footer */
+footer {
+    background-color: #1a1a1a;
+    color: #f1f1f1;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+}
+
+footer p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Link-Stile */
+footer a {
+    color: #00bcd4; /* Türkis */
+    text-decoration: none; /* Entfernt die Unterstreichung */
+}
+
+footer a:hover {
+    color: #38b8a3; /* Etwas dunkleres Türkis beim Hover-Effekt */
+}
+
+
+/* Hover- und Animationseffekte */
+a:hover {
+    color: #0097a7;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+/* Responsive Design für kleinere Bildschirme */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .company-info, .legal-info {
+        width: 100%;
+    }
+}

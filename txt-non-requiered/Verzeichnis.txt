@@ -1,0 +1,120 @@
+myapp/
+├── .venv/ (library root)
+├── aurora-chat/
+│   ├── node_modules/ (library root)
+│   ├── public/
+│   │   ├── images/
+│   │   │   ├── favicon.ico
+│   │   │   ├── favicon-16x16.png
+│   │   │   ├── favicon-32x32.png
+│   │   │   ├── android-chrome-192x192.png
+│   │   │   ├── android-chrome-512x512.png
+│   │   │   └── apple-touch-icon.png
+│   │   ├── index.html
+│   │   ├── script.js
+│   │   └── style.css
+├── instance/
+│   └── users.db
+├── migrations/
+├── static/
+│   ├── Bilder/
+│   │   ├── F-Ki/
+│   │   │   ├── lernen.jfif
+│   │   │   ├── malen.jfif
+│   │   │   └── sprachen.jfif
+│   │   └── TechNova/
+│   │       ├── favicon.ico
+│   │       ├── favicon-16x16.png
+│   │       ├── favicon-32x32.png
+│   │       ├── android-chrome-192x192.png
+│   │       ├── android-chrome-512x512.png
+│   │       └── apple-touch-icon.png
+│   ├── css/
+│   │   ├── Anmeldung/
+│   │   │   ├── r-p-12-64.css (P-Generator slider)
+│   │   │   └── style.css (Login u. singup)
+│   │   ├── Contact/
+│   │   │   └── contact.css
+│   │   ├── Bug/
+│   │   │   └── Bugs.css
+│   │   ├── Dashboard/
+│   │   │   ├── dashboard.css
+│   │   │   ├── edit_profile.css
+│   │   │   └── K-button.css (Dashboard-Menü)
+│   │   ├── DSGVO/
+│   │   │   └── Datenschutz.css
+│   │   ├── Impressum/
+│   │   │   └── impressum.css
+│   │   ├── KI/
+│   │   │   ├── ai-projekt.css
+│   │   │   ├── Aurora-W-Animations.css
+│   │   │   ├── blogpost1.css
+│   │   │   ├── blogpost2.css
+│   │   │   └── blogpost3.css
+│   │   └── Loader/
+│   │       ├── loader_camp.css
+│   │       └── loader_candle.css
+│   ├── js/
+│   │   ├── Anmeldung/
+│   │   │   ├── L-p-g.js
+│   │   │   ├── loader.js (/)
+│   │   │   ├── p-a-v.js
+│   │   │   ├── password_checker.js
+│   │   │   └── su-p-a-v.js
+│   │   ├── Bug/
+│   │   │   └── Bugs.js
+│   │   ├── Dashboard/
+│   │   │   ├── K-R-PC.js (Konto-Reiter-PasswortChecker)
+│   │   │   ├── Karten.js (Dashboard)
+│   │   │   └── Konto.js
+│   │   ├── DSGVO/
+│   │   │   └── Datenschutz.js
+│   │   ├── Impressum/
+│   │   │   └── impressum.js
+│   │   ├── KI/
+│   │   │   ├── blogpost1.js
+│   │   │   ├── blogpost2.js
+│   │   │   ├── blogpost3.js
+│   │   │   └── script.js
+│   ├── txt/
+│   │   └── common_passwords.txt
+├── templates/
+│   ├── Anmeldung/
+│   │   ├── forgot_password.html
+│   │   ├── login.html
+│   │   ├── reset_password.html
+│   │   ├── signup.html
+│   │   └── verify_code.html
+│   ├── Contact/
+│   │   └── contact.html
+│   ├── Dashboard/
+│   │   ├── dashboard.html
+│   │   └── edit_profile.html
+│   ├── DSGVO/
+│   │   └── Datenschutz.html
+│   ├── Impressum/
+│   │   └── impressum.html
+│   ├── KI/
+│   │   ├── ai-projekt.html
+│   │   ├── blogpost1.html
+│   │   ├── blogpost2.html
+│   │   └── blogpost3.html
+│   ├── Test/
+│   │   ├── Bug/
+│   │   │  └── Bugs.html
+│   │   └── Test/
+│   │       └── Spaß_Projekt.html
+├── txt-non-required/
+│   ├── Idee.txt
+│   ├── signup Konto.txt
+│   └── Verzeichnis.txt
+├── A_P_und_cp.py
+├── app.py
+├── Aurora.py
+├── blogposts.py
+├── com-p-check.py
+├── Editprofile.py
+├── models.py
+├── password_generator.py
+├── Procfile.txt
+└── requirements.txt

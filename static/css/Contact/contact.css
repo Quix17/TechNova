@@ -1,0 +1,114 @@
+/* From Uiverse.io by DavidTM96 */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  font-family: inherit;
+  gap: 15px; /* Etwas mehr Abstand zwischen den Feldern */
+  padding-inline: 3em; /* Etwas mehr Padding auf der linken und rechten Seite */
+  padding-bottom: 1.5em; /* Mehr Padding am unteren Ende */
+  background-color: #171717;
+  border-radius: 25px; /* Leicht größere abgerundete Ecken */
+}
+
+.form-heading {
+  text-align: center;
+  margin: 2em;
+  color: #64ffda;
+  font-size: 1.6em; /* Größere Schrift für die Überschrift */
+  background-color: transparent;
+  align-self: center;
+}
+
+.form-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em; /* Größerer Abstand zwischen Label und Input */
+  border-radius: 10px;
+  padding: 1em; /* Mehr Padding für größere Eingabefelder */
+  border: none;
+  outline: none;
+  color: white;
+  background-color: #171717;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+}
+
+.input-field {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: #ccd6f6;
+  padding-inline: 1.5em; /* Mehr Padding für Eingabefelder */
+}
+
+.sendMessage-btn {
+  cursor: pointer;
+  margin-bottom: 4em; /* Mehr Abstand unten */
+  padding: 1.5em; /* Größerer Button */
+  border-radius: 12px; /* Etwas größere Ecken */
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #64ffda;
+  font-weight: bold;
+  outline: 1px solid #64ffda;
+  transition: all ease-in-out 0.3s;
+}
+
+.sendMessage-btn:hover {
+  transition: all ease-in-out 0.3s;
+  background-color: #64ffda;
+  color: #000;
+  cursor: pointer;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+}
+
+.form-card1 {
+  width: 100vw; /* Die volle Breite des Viewports */
+  height: 100vh; /* Die volle Höhe des Viewports */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(163deg, #000000 0%, #64ffda 100%); /* Hintergrund-Gradient von Schwarz zu Türkis */
+  border-radius: 0; /* Keine abgerundeten Ecken */
+  margin: 0;
+  padding: 0;
+}
+
+.form-card1:hover {
+  box-shadow: 0px 0px 30px 1px rgba(100, 255, 218, 0.3);
+}
+
+.form-card2 {
+  border-radius: 0;
+  transition: all 0.2s;
+}
+
+.form-card2:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+}
+
+/* Hintergrund von Schwarz zu Türkis */
+body {
+  margin: 0;
+  height: 100vh; /* Vollbildhöhe */
+  background: linear-gradient(163deg, #000000 0%, #64ffda 100%); /* Übergang von Schwarz zu Türkis */
+}
+
+/* Position und Stil für den türkisen Pfeil nach links */
+.turquoise-arrow {
+  position: fixed;  /* Pfeil bleibt an der gleichen Stelle beim Scrollen */
+  top: 20px;  /* Abstand vom oberen Rand */
+  left: 20px; /* Abstand vom linken Rand */
+  font-size: 36px;  /* Pfeilgröße */
+  color: #40E0D0;  /* Türkise Farbe */
+  text-decoration: none;  /* Entfernt die Unterstreichung */
+  transition: color 0.3s ease;  /* Sanfter Übergang bei Hover */
+}
+
+.turquoise-arrow:hover {
+  color: #36C1B7; /* Etwas dunklerer Türkis bei Hover */
+}

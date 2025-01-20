@@ -13,12 +13,12 @@ def load_common_passwords(file_path):
         return set()
 
 # Der Pfad zu der Datei mit den häufigen Passwörtern
-common_password_file = './static/txt/common_passwords.txt'
+common_password_file = '/static/txt/common_passwords.txt'
 common_passwords = load_common_passwords(common_password_file)
 
 @app.route('/')
 def index():
-    return render_template('signup.html')
+    return render_template('Anmeldung/signup.html')
 
 @app.route('/password_checker', methods=['POST'])
 def check_password():

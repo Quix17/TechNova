@@ -1,0 +1,133 @@
+/* Allgemeine Stile für den Body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1f1f1f;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 30px;
+    background-color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid #00bcd4;  /* Türkis für den Akzent */
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #00bcd4;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #aaa;
+}
+
+/* Container für die Liste */
+.container {
+    width: 80%;
+    margin: 30px auto;
+    padding: 10px;
+}
+
+/* Styling für die Bug-Liste */
+.bug-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bug-item {
+    background-color: #333;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0; /* Anfangszustand unsichtbar */
+    transform: translateY(20px); /* Start etwas nach unten verschoben */
+}
+
+.bug-item:nth-child(even) {
+    background-color: #444;
+}
+
+.bug-text {
+    font-size: 1.2rem;
+    color: #fff;
+    max-width: 80%;
+}
+
+/* Hover-Effekt */
+.bug-item:hover {
+    background-color: #555;
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .bug-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .bug-text {
+        font-size: 1rem;
+    }
+}
+
+/* Stellt sicher, dass der Body den gesamten verfügbaren Raum einnimmt */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Der Hauptcontainer der Seite nutzt Flexbox, um den Inhalt zu verteilen */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Der Inhaltsbereich (Main Content) sollte den verfügbaren Raum einnehmen */
+.container {
+    flex-grow: 1;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #000; /* Schwarzer Hintergrund */
+    color: #575757; /* Weißer Text */
+    padding: 15px 0; /* Wenig Abstand oben und unten */
+    text-align: center; /* Zentrierter Text */
+}
+
+footer .container {
+    width: 100%;
+    max-width: 1200px; /* Maximale Breite des Containers */
+    margin: 0 auto; /* Zentriert den Container */
+    padding: 0 20px; /* Etwas Abstand an den Seiten */
+}
+
+footer p {
+    margin: 5px 0; /* Kleiner Abstand zwischen den Absätzen */
+}
+
+footer .footer-link {
+    color: #00bcd4; /* Türkis für die Links */
+    text-decoration: none; /* Entfernt die Unterstreichung */
+}
+
+footer .footer-link:hover {
+    text-decoration: underline; /* Unterstreichung bei Hover */
+}

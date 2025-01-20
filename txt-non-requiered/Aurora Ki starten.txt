@@ -1,0 +1,4 @@
+starten des Ki bot
+
+cd C:\Users\sven9\Downloads\myapp\aurora-chat
+node server.js

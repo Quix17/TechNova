@@ -1,0 +1,181 @@
+/* Allgemeine Stile */
+body {
+    background-color: #1b1b1b;
+    color: #f5f5f5;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: #2d2d2d;
+    padding: 20px 10px;
+    text-align: center;
+    border-bottom: 5px solid #7c4dff;
+}
+
+h1 {
+    font-size: 2em;
+    color: #fff;
+}
+
+.navbar a {
+    color: #b3b3b3;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #7c4dff;
+    text-decoration: underline;
+}
+
+/* Sektionen */
+.section {
+    padding: 40px 20px;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    transform: translateY(20px);
+    text-align: left;
+}
+
+.section.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Abschnittsüberschriften */
+.section-header h2 {
+    color: #fff;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Abschnittsinhalt */
+.section-body ul {
+    font-size: 1em;
+    line-height: 1.4;
+    color: #ddd;
+    max-width: 750px;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.section-body ul li {
+    margin: 8px 0;
+    text-align: left;
+}
+
+/* Background Farben */
+.background-1 { background: linear-gradient(to right, #7c4dff, #2d2d2d); }
+.background-2 { background: linear-gradient(to right, #333, #7c4dff); }
+.background-3 { background: linear-gradient(to right, #ff00ff, #2d2d2d); }
+.background-4 { background: linear-gradient(to right, #1e1e1e, #7c4dff); }
+.background-5 { background: linear-gradient(to right, #333333, #8e44ad); }
+.background-6 { background: linear-gradient(to right, #5c6bc0, #7c4dff); }
+.background-7 { background: linear-gradient(to right, #8e44ad, #333); }
+.background-8 { background: linear-gradient(to right, #7c4dff, #ff00ff); }
+.background-9 { background: linear-gradient(to right, #8e44ad, #b39ddb); }
+.background-10 { background: linear-gradient(to right, #333333, #444444); }
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: #b3b3b3;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #7c4dff;
+}
+
+/* Effekte */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Parallax Effekt */
+.section:nth-child(odd) {
+    background-attachment: fixed;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #000; /* Schwarzer Hintergrund */
+    color: #575757; /* Weißer Text */
+    padding: 15px 0; /* Wenig Abstand oben und unten */
+    text-align: center; /* Zentrierter Text */
+}
+
+footer .container {
+    width: 100%;
+    max-width: 1200px; /* Maximale Breite des Containers */
+    margin: 0 auto; /* Zentriert den Container */
+    padding: 0 20px; /* Etwas Abstand an den Seiten */
+}
+
+footer p {
+    margin: 5px 0; /* Kleiner Abstand zwischen den Absätzen */
+}
+
+footer .footer-link {
+    color: #00bcd4; /* Türkis für die Links */
+    text-decoration: none; /* Entfernt die Unterstreichung */
+}
+
+footer .footer-link:hover {
+    text-decoration: underline; /* Unterstreichung bei Hover */
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 12px; /* Breite der Scrollbar */
+    height: 12px; /* Höhe der Scrollbar für horizontale Scrollbalken */
+}
+
+::-webkit-scrollbar-track {
+    background: #2d2d2d; /* Hintergrund der Scrollbar */
+    border-radius: 10px; /* Abgerundete Ecken */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #7c4dff; /* Farbe des Scrollbalkens */
+    border-radius: 10px; /* Abgerundete Ecken */
+    transition: background 0.3s ease; /* Sanfte Übergänge */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff00ff; /* Farbe des Scrollbalkens bei Hover */
+}
+
+::-webkit-scrollbar-button {
+    background-color: transparent; /* Transparente Buttons */
+}
+
+/* Für Firefox */
+scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+scrollbar-track {
+    background: #2d2d2d;
+}
+
+scrollbar-thumb {
+    background: #7c4dff;
+    border-radius: 10px;
+}

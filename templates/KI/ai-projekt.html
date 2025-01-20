@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora Ki - TechNova</title>
+
+    <!-- Standard Favicon -->
+<link rel="icon" href="/static/Bilder/TechNova/favicon.ico" type="image/x-icon">
+
+<!-- Favicon in verschiedenen Größen für den Browser -->
+<link rel="icon" sizes="16x16" href="/static/Bilder/TechNova/favicon-16x16.png">
+<link rel="icon" sizes="32x32" href="/static/Bilder/TechNova/favicon-32x32.png">
+
+<!-- Favicon für Android-Geräte -->
+<link rel="icon" sizes="192x192" href="/static/Bilder/TechNova/android-chrome-192x192.png">
+<link rel="icon" sizes="512x512" href="/static/Bilder/TechNova/android-chrome-512x512.png">
+
+<!-- Favicon für Apple-Geräte (Home Screen) -->
+<link rel="apple-touch-icon" href="/static/Bilder/TechNova/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="/static/css/KI/ai-projekt.css">
+    <link rel="stylesheet" href="/static/css/KI/Aurora-W-Animations.css">
+
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#Inhalt-Ki">Inhalte der Ki</a></li>
+                <li><a href="#use-cases">Anwendungsfälle</a></li>
+                <li><a href="#technology">Technologie</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#integration">Integration</a></li>
+                <li><a href="#future">Zukunftsperspektiven</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact-questions">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+       <!-- Hero Section -->
+<section id="home" class="hero fade-in">
+    <div class="container">
+        <h1>Willkommen auf der Website der <span style="color:#f0f;">Aurora</span> KI</h1>
+        <p>Erkunde die grenzenlosen Möglichkeiten der künstlichen Intelligenz und ihre vielseitigen Anwendungen.</p>
+        <div class="outer-cont flex">
+            <svg
+                viewBox="0 0 24 24"
+                height="24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <g fill="none">
+                    <path
+                        d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"
+                    ></path>
+                    <path
+                        d="M9.107 5.448c.598-1.75 3.016-1.803 3.725-.159l.06.16l.807 2.36a4 4 0 0 0 2.276 2.411l.217.081l2.36.806c1.75.598 1.803 3.016.16 3.725l-.16.06l-2.36.807a4 4 0 0 0-2.412 2.276l-.081.216l-.806 2.361c-.598 1.75-3.016 1.803-3.724.16l-.062-.16l-.806-2.36a4 4 0 0 0-2.276-2.412l-.216-.081l-2.36-.806c-1.751-.598-1.804-3.016-.16-3.724l.16-.062l2.36-.806A4 4 0 0 0 8.22 8.025l.081-.216zM11 6.094l-.806 2.36a6 6 0 0 1-3.49 3.649l-.25.091l-2.36.806l2.36.806a6 6 0 0 1 3.649 3.49l.091.25l.806 2.36l.806-2.36a6 6 0 0 1 3.49-3.649l.25-.09l2.36-.807l-2.36-.806a6 6 0 0 1-3.649-3.49l-.09-.25zM19 2a1 1 0 0 1 .898.56l.048.117l.35 1.026l1.027.35a1 1 0 0 1 .118 1.845l-.118.048l-1.026.35l-.35 1.027a1 1 0 0 1-1.845.117l-.048-.117l-.35-1.026l-1.027-.35a1 1 0 0 1-.118-1.845l.118-.048l1.026-.35l.35-1.027A1 1 0 0 1 19 2"
+                        fill="currentColor"
+                    ></path>
+                </g>
+            </svg>
+
+<!-- Hier den Link innerhalb des Buttons ohne Unterstreichung hinzufügen -->
+            <style>.container a {
+                text-decoration: none;
+            }
+            </style>
+            <a href="/Aurora-Ki"> Aurora KI</a>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="features">
+    <div class="container">
+        <h2>Funktionen der KI</h2>
+        <div class="feature-item fade-in">
+            <div class="image-container">
+                <img src="{{ url_for('static', filename='Bilder/F-Ki/sprachen.jfif') }}" alt="Sprachen Bild">
+                <div class="subtitle">Untertitel für Sprachen Bild</div>
+            </div>
+            <h3>Sprachverarbeitung</h3>
+            <p>Die KI versteht, interpretiert und verarbeitet gesprochene Sprache auf einem hohen Niveau, um präzise Antworten zu liefern.</p>
+        </div>
+        <div class="feature-item fade-in">
+            <div class="image-container">
+                <img src="{{ url_for('static', filename='Bilder/F-Ki/lernen.jfif') }}" alt="Lernen Bild">
+                <div class="subtitle">Untertitel für Lernen Bild</div>
+            </div>
+            <h3>Bild- und Objekterkennung</h3>
+            <p>Ermöglicht die Identifikation und Analyse von Bildern und Objekten in Echtzeit durch fortschrittliche Algorithmen.</p>
+        </div>
+        <div class="feature-item fade-in">
+            <div class="image-container">
+                <img src="{{ url_for('static', filename='Bilder/F-Ki/malen.jfif') }}" alt="Malen Bild">
+                <div class="subtitle">Untertitel für Malen Bild</div>
+            </div>
+            <h3>Maschinelles Lernen</h3>
+            <p>Die KI lernt kontinuierlich aus neuen Daten und passt sich dynamisch an, um immer bessere Ergebnisse zu erzielen.</p>
+        </div>
+    </div>
+</section>
+
+        <!-- Inhalte der Ki -->
+    <section id="Inhalt-Ki" class="Inhalt-Ki">
+         <h2>Inhalte von Aurora</h2>
+    <div class="card-inhalt">
+  <div class="card__border"></div>
+  <div class="card_title__container">
+    <span class="card_title">Inhalte der Ki</span>
+    <p class="card_paragraph">Inhalt und Vorteile der Aurora Ki basierend auf Gpt-3.5-turbo</p>
+  </div>
+  <hr class="line" />
+  <ul class="card__list">
+    <li class="card__list_item">
+      <span class="check">
+        <svg class="check_svg" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+          <path clip-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" fill-rule="evenodd"></path>
+        </svg>
+      </span>
+      <span class="list_text">Schnelle und präzise Antworten</span>
+    </li>
+    <li class="card__list_item">
+      <span class="check">
+        <svg class="check_svg" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+          <path clip-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" fill-rule="evenodd"></path>
+        </svg>
+      </span>
+      <span class="list_text">Geringe Latenzzeiten</span>
+    </li>
+    <li class="card__list_item">
+      <span class="check">
+        <svg class="check_svg" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+          <path clip-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" fill-rule="evenodd"></path>
+        </svg>
+      </span>
+      <span class="list_text">Die Textverständlichkeit ist hoch und klar</span>
+    </li>
+    <li class="card__list_item">
+      <span class="check">
+        <svg class="check_svg" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+          <path clip-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" fill-rule="evenodd"></path>
+        </svg>
+      </span>
+      <span class="list_text">Hohe Textverständlichkeit</span>
+    </li>
+    <li class="card__list_item">
+      <span class="check">
+        <svg class="check_svg" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+          <path clip-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" fill-rule="evenodd"></path>
+        </svg>
+      </span>
+      <span class="list_text">Verbesserungen durch dauerhafte Updates</span>
+    </li>
+  </ul>
+</div>
+</section>
+
+    <!-- Use Cases Section -->
+    <section id="use-cases" class="use-cases">
+        <div class="container">
+            <h2>Anwendungsfälle der KI</h2>
+            <div class="use-case-item fade-in">
+                <h3>Gesundheitswesen</h3>
+                <p>Durch die Analyse von Patientendaten und medizinischen Bildern kann die KI Diagnoseprozesse unterstützen und personalisierte Therapiepläne empfehlen.</p>
+            </div>
+            <div class="use-case-item fade-in">
+                <h3>Finanzen</h3>
+                <p>Die KI hilft bei der Analyse von Marktdaten, der Vorhersage von Börsentendenzen und der Automatisierung von Finanzprozessen.</p>
+            </div>
+            <div class="use-case-item fade-in">
+                <h3>Automobilindustrie</h3>
+                <p>Die KI optimiert Produktionsprozesse, unterstützt autonomes Fahren und verbessert die Sicherheitsstandards von Fahrzeugen.</p>
+            </div>
+            <div class="use-case-item fade-in">
+                <h3>Bildung</h3>
+                <p>Die KI passt sich dem Lernverhalten von Schülern an und hilft, personalisierte Lernwege zu schaffen, die den individuellen Bedürfnissen entsprechen.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="technology" class="technology">
+        <div class="container">
+            <h2>Technologie hinter der KI</h2>
+            <div class="tech-item fade-in">
+                <h3>Deep Learning</h3>
+                <p>Die KI verwendet tiefes Lernen, um komplexe Muster in großen Datenmengen zu erkennen und präzise Vorhersagen zu treffen.</p>
+            </div>
+            <div class="tech-item fade-in">
+                <h3>Natural Language Processing (NLP)</h3>
+                <p>Durch NLP kann die KI menschliche Sprache in Text- und Sprachform verstehen, um sinnvolle Interaktionen zu ermöglichen.</p>
+            </div>
+            <div class="tech-item fade-in">
+                <h3>Computer Vision</h3>
+                <p>Computer Vision ermöglicht der KI das Verstehen von Bildern und Videos, was in Bereichen wie Überwachung, Gesundheit und Automobiltechnik von Nutzen ist.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Blog Section -->
+   <section id="blog" class="blog">
+    <div class="container">
+        <h2>Blogbeiträge über KI</h2>
+        <div class="blog-item">
+            <h3><a href="{{ url_for('blogpost1') }}">Entwicklung der KI und ihre wichtigsten Meilensteine</a></h3>
+            <p>Ein umfassender Überblick über die Entwicklung der KI und ihre wichtigsten Meilensteine.</p>
+        </div>
+        <div class="blog-item">
+            <h3><a href="{{ url_for('blogpost2') }}">Einsatz von KI in verschiedenen Branchen</a></h3>
+            <p>Wie künstliche Intelligenz in verschiedenen Branchen eingesetzt wird und welche bahnbrechenden Veränderungen sie mit sich bringt.</p>
+        </div>
+        <div class="blog-item">
+            <h3><a href="{{ url_for('blogpost3') }}">Ethische Herausforderungen der KI</a></h3>
+            <p>Die ethischen Herausforderungen bei der Entwicklung und dem Einsatz von KI und die Zukunft der Technologie.</p>
+        </div>
+    </div>
+</section>
+
+    <!-- Integration Section -->
+    <section id="integration" class="integration">
+        <div class="container">
+            <h2>Integration der KI</h2>
+            <div class="integration-item fade-in">
+                <p>Die KI kann problemlos in bestehende Systeme integriert werden. Ob durch APIs, Software-Schnittstellen oder maßgeschneiderte Lösungen – die Integration erfolgt effizient und nahtlos.</p>
+                <p>Dank ihrer Flexibilität kann sie in einer Vielzahl von Branchen eingesetzt werden, von Gesundheitswesen bis Finanzen, und bietet Lösungen, die sowohl skalierbar als auch anpassbar sind.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zukunftsperspektiven der KI Section -->
+    <section id="future" class="future">
+        <div class="container">
+            <h2>Zukunftsperspektiven der KI</h2>
+            <div class="future-item fade-in">
+                <p>Die Zukunft der künstlichen Intelligenz ist spannend und vielfältig. Sie wird nicht nur bestehende Prozesse verbessern, sondern auch völlig neue Möglichkeiten für Automatisierung und Innovation schaffen.</p>
+                <p>Von der Weiterentwicklung in den Bereichen Robotik, autonomen Fahrzeugen und personalisierter Medizin bis hin zu völlig neuen Arbeitsweisen – die KI wird eine entscheidende Rolle dabei spielen, die Welt von morgen zu gestalten.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2>Häufige Fragen zur KI</h2>
+            <div class="faq-item">
+                <h3>Was ist KI?</h3>
+                <p>Künstliche Intelligenz ist ein Bereich der Informatik, der darauf abzielt, Maschinen das Lernen, Verstehen und Handeln zu ermöglichen.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Wie funktioniert maschinelles Lernen?</h3>
+                <p>Maschinelles Lernen basiert auf Algorithmen, die es Maschinen ermöglichen, aus Daten zu lernen und sich basierend auf den Mustern in diesen Daten weiterzuentwickeln.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Wie sicher ist KI?</h3>
+                <p>Die Sicherheit der KI hängt von ihrer Programmierung und den Sicherheitsmaßnahmen ab. Durch regelmäßige Updates und Audits können potenzielle Risiken minimiert werden.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!--Contact Sektion -->
+<section id="contact-questions" class="contact-questions">
+    <div class="container">
+        <h2>Warum möchten Sie uns kontaktieren?</h2>
+        <ul>
+            <li>Haben Sie Schwierigkeiten beim Anmelden auf unserem Portal?</li>
+            <li>Treten Probleme bei der Nutzung Ihres Kontos auf?</li>
+            <li>Funktioniert die Website auf Ihrem Gerät nicht wie erwartet?</li>
+            <li>Erhalten Sie Fehlermeldungen bei der Verwendung unserer Dienste?</li>
+            <li>Haben Sie technische Schwierigkeiten mit einem unserer Produkte?</li>
+            <li>Möchten Sie Feedback zu einem bestimmten Feature oder unserer Plattform geben?</li>
+            <li>Benötigen Sie Unterstützung bei der Navigation durch unsere Website?</li>
+            <li>Gibt es ein anderes Anliegen, bei dem wir Ihnen weiterhelfen können?</li>
+        </ul>
+    </div>
+    <!-- Kontakt Button -->
+    <a href="{{ url_for('contact') }}">
+        <button class="cta">
+            <span>Contact Us &nbsp;</span>
+            <svg viewBox="0 0 13 10" height="10px" width="15px">
+                <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+            </svg>
+        </button>
+    </a>
+</section>
+
+
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <p>&copy; 2025 TechNova. Alle Rechte vorbehalten.</p>
+        <p style="display: inline; margin-right: 10px;"><a href="/impressum" style="color: #00bcd4; text-decoration: none;">Impressum</a></p> | <p style="display: inline; margin-left: 10px;"><a href="/Datenschutz" style="color: #00bcd4; text-decoration: none;">Datenschutz</a></p> | <p style="display: inline; margin-left: 10px;"><a href="/dashboard" style="color: #00bcd4; text-decoration: none;">Dashboard</a></p>
+    </div>
+</footer>
+
+    <script src="/static/js/KI/script.js"></script>
+</body>
+</html>

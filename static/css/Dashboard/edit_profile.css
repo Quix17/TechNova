@@ -1,0 +1,338 @@
+/* Grundlegende Stile */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #212121;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container für das Layout */
+.container {
+    max-width: 1000px;
+    margin: 50px auto;
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Header für die Seite */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+}
+
+.header p {
+    font-size: 1.1rem;
+    color: #b0b0b0;
+    margin-top: 10px;
+}
+
+
+/* Formular-Style */
+.profile-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #fff;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 15px;
+    font-size: 1.1rem;
+    border: 2px solid #444;
+    border-radius: 6px;
+    background-color: #333;
+    color: #fff;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #6c1a89;
+    outline: none;
+}
+
+.checkbox-group label {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.checkbox-group input {
+    margin-right: 10px;
+}
+
+.form-actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-submit {
+    background-color: rgba(199, 0, 106, 0.7);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: rgba(199, 0, 106, 0.7);
+}
+
+.btn-submit:hover {
+    background-color: #9a2a99;
+}
+
+.btn-action {
+    background-color: rgba(199, 0, 106, 0.7);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-action:hover {
+    background-color: #9a2a99;
+}
+
+.separator {
+    margin: 20px 0;
+    border-top: 2px solid #444;
+}
+
+/* Löschen des Kontos */
+.btn-delete {
+    background-color: #f44336;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.btn-delete:hover {
+    background-color: #d32f2f;
+}
+
+/* Responsives Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+
+    .tab {
+        margin: 5px 0;
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 12px;
+    }
+
+    .btn-submit, .btn-action, .btn-delete {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+/* Password requirements */
+.password-requirements {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: gray;
+}
+
+.requirement {
+    margin: 5px 0;
+    color: red; /* Default to red */
+}
+
+.valid {
+    color: green;
+}
+
+.invalid {
+    color: red;
+}
+
+.partially-valid {
+    color: orange;
+}
+
+/* Error and success messages */
+.error-message, .success-message {
+    font-size: 1em;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+
+
+
+/* Tab Navigation */
+.tab-nav {
+    display: flex;
+    justify-content: center;  /* Zentriert die Tab-Buttons */
+    background-color: #3b3b3b;  /* Dunkelgrauer Hintergrund für die Tab-Leiste */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sanfter Schatten um die Tabs */
+}
+
+.tab-btn {
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-color: #444;  /* Dunkelgrauer Hintergrund für die Tab-Buttons */
+    color: #bbb;  /* Helle Schriftfarbe */
+    border-radius: 6px;
+    transition: background-color 0.3s;  /* Sanfter Übergang */
+    margin: 0 10px;  /* Etwas Abstand zwischen den Tabs */
+    border: 2px solid #333; /* Schwarzer Rand um die Tabs */
+}
+
+.tab-btn:hover {
+    background-color: #5e5e5e;  /* Hellgrau beim Hover */
+}
+
+.tab-btn.active {
+    background-color: #6c1a89;  /* Lila Hintergrund für den aktiven Tab */
+    color: white;  /* Weiße Schriftfarbe für aktiven Tab */
+    border: 2px solid #6c1a89;  /* Lila Rand beim aktiven Tab */
+}
+
+.tab-btn:focus {
+    outline: none;  /* Entfernt den Fokus-Rand */
+}
+
+/* Tab Content */
+.tab-content {
+    margin-top: 30px;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+/* Custom Scrollbar mit lila-pinkem Farbverlauf */
+::-webkit-scrollbar {
+  width: 12px;  /* Breite der Scrollbar */
+  height: 12px; /* Höhe der horizontalen Scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #9b59b6, rgb(216, 27, 96)); /* Lila nach Pink Farbverlauf */
+  border-radius: 10px; /* Abgerundete Ecken */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #8e44ad, #d81b60); /* Dunkleres lila nach pink beim Hover */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #000000; /* Heller Hintergrund für die Scrollbar Track */
+  border-radius: 10px; /* Abgerundete Ecken */
+}
+
+::-webkit-scrollbar-track:hover {
+  background-color: #000000; /* Hellerer Hover-Effekt für den Track */
+}
+
+/* Zurück zum Dashboard button */
+.animated-back {
+    display: inline-block;
+    background-color: #9b59b6;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease, background-color 0.3s ease;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.animated-back::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: #e91e63;
+    transition: width 0.3s ease, height 0.3s ease, top 0.3s ease, left 0.3s ease;
+    border-radius: 50%;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+}
+
+.animated-back:hover {
+    transform: scale(1.1);
+    background-color: #8e44ad;
+}
+
+.animated-back:hover::before {
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+}
+
+.animated-back span {
+    position: relative;
+    z-index: 1;
+}

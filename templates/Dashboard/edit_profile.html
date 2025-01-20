@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konto - TechNova</title>
+    <!-- Standard Favicon -->
+<link rel="icon" href="/static/Bilder/TechNova/favicon.ico" type="image/x-icon">
+
+<!-- Favicon in verschiedenen Größen für den Browser -->
+<link rel="icon" sizes="16x16" href="/static/Bilder/TechNova/favicon-16x16.png">
+<link rel="icon" sizes="32x32" href="/static/Bilder/TechNova/favicon-32x32.png">
+
+<!-- Favicon für Android-Geräte -->
+<link rel="icon" sizes="192x192" href="/static/Bilder/TechNova/android-chrome-192x192.png">
+<link rel="icon" sizes="512x512" href="/static/Bilder/TechNova/android-chrome-512x512.png">
+
+<!-- Favicon für Apple-Geräte (Home Screen) -->
+<link rel="apple-touch-icon" href="/static/Bilder/TechNova/apple-touch-icon.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/Dashboard/edit_profile.css">
+</head>
+
+<a href="{{ url_for('dashboard') }}" class="animated-back">
+    <span>← Zurück zum Dashboard</span>
+</a>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Kontoverwaltung</h1>
+            <p>Verwalte alle deine persönlichen Einstellungen und Sicherheitsoptionen hier.</p>
+        </div>
+        <!-- Flash-Meldungen anzeigen -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="messages">
+                    {% for category, message in messages %}
+                        <div class="message {% if category == 'danger' %}error-message{% elif category == 'success' %}success-message{% endif %}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        <!-- Tab Navigation -->
+        <div class="tab-nav">
+            <button id="tab-info" class="tab-btn active">Persönliche Infos</button>
+            <button id="tab-security" class="tab-btn">Kontoschutz</button>
+            <button id="tab-account" class="tab-btn">Konto löschen</button>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+            <!-- Persönliche Infos Tab -->
+            <div class="tab-pane active" id="info">
+                <form method="POST" class="profile-form">
+                    <!-- E-Mail Änderung -->
+                    <div class="form-group">
+                        <label for="old_email">Alte E-Mail-Adresse:</label>
+                        <input type="email" id="old_email" name="old_email" value="{{ current_user.email }}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="new_email">Neue E-Mail-Adresse:</label>
+                        <input type="email" id="new_email" name="new_email" required>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit">E-Mail ändern</button>
+                    </div>
+                </form>
+
+                <div class="separator"></div>
+
+                <!-- Passwort Änderung -->
+                <form method="POST">
+                    <h3>Passwort ändern</h3>
+
+                    <div class="form-group">
+                        <label for="new_password">Neues Passwort:</label>
+                        <input type="password" id="new_password" name="new_password" required oninput="checkPassword()">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm_password">Passwort bestätigen:</label>
+                        <input type="password" id="confirm_password" name="confirm_password" required oninput="checkPassword()">
+                    </div>
+
+                    <!-- Passwortanforderungen direkt neben den Feldern -->
+                    <div class="password-requirements">
+                        <ul>
+                            <li id="length" class="requirement">Mindestens 12 Zeichen</li>
+                            <li id="uppercase" class="requirement">Mindestens 1 Großbuchstabe</li>
+                            <li id="lowercase" class="requirement">Mindestens 1 Kleinbuchstabe</li>
+                            <li id="number" class="requirement">Mindestens 1 Zahl</li>
+                            <li id="special" class="requirement">Mindestens 1 Sonderzeichen</li>
+                        </ul>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit">Passwort ändern</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Kontoschutz Tab -->
+            <div class="tab-pane" id="security">
+                <h2>Kontoschutz</h2>
+                <p>Schütze dein Konto mit zusätzlichen Sicherheitsmaßnahmen.</p>
+
+                <!-- Backup-Codes generieren -->
+                <h2>Backup-Codes / Kein Zweck!</h2>
+                <p>Generiere einmalige Backup-Codes für den Fall, dass du den Zugang zu deinem Konto verlierst.</p>
+                <button class="btn-action" onclick="generateBackupCodes()">Backup-Codes generieren</button>
+
+                <div id="backup-codes"></div>
+            </div>
+
+            <!-- Konto löschen Tab -->
+            <div class="tab-pane" id="account">
+                <h2>Konto löschen</h2>
+                <p>Wenn du dein Konto endgültig löschen möchtest, klicke auf den Button unten. Alle deine Daten gehen verloren!</p>
+                <form method="POST" action="{{ url_for('edit_profile.editprofile') }}" onsubmit="return confirm('Möchten Sie Ihr Konto wirklich löschen?');">
+                    <button type="submit" class="btn-delete" name="delete_account" value="1">Konto löschen</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript-Datei einbinden -->
+    <script src="/static/js/Dashboard/K-R-PC.js"></script>
+
+</body>
+</html>

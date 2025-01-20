@@ -1,16 +1,17 @@
 import os
-from flask import Flask, render_template, redirect, url_for, request, flash, jsonify
-from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
-from authlib.integrations.flask_client import OAuth
 import secrets
-from werkzeug.security import generate_password_hash, check_password_hash
+from flask import Flask, render_template, redirect, url_for, request, flash, jsonify
+from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from flask_migrate import Migrate
 from flask_mail import Mail, Message
-import re
-
-# Passwortgenerierung importieren
+from authlib.integrations.flask_client import OAuth
+from werkzeug.security import generate_password_hash, check_password_hash
+from datetime import datetime
+from blogposts import register_blogposts
+from A_P_und_cp import check_password_requirements, load_common_passwords, is_common_password
 from password_generator import generate_password
+from models import db, User
+from Editprofile import edit_profile
 
 app = Flask(__name__)
 app.secret_key = os.getenv("SECRET_KEY", "your_secret_key")
@@ -18,7 +19,10 @@ app.secret_key = os.getenv("SECRET_KEY", "your_secret_key")
 # SQLite-Datenbank konfigurieren
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
+
+# Initialisiere db mit Flask-App
+db.init_app(app)
+
 login_manager = LoginManager(app)
 
 # Migration mit Flask-Migrate einrichten
@@ -45,67 +49,16 @@ app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
 app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
 mail = Mail(app)
 
-# User Model für Login/Registrierung
-class User(db.Model, UserMixin):
-    id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(150), unique=True, nullable=False)
-    password = db.Column(db.String(150), nullable=True)  # Passwort für reguläre Anmeldung
-    key = db.Column(db.String(100), nullable=False)
-    reset_token = db.Column(db.String(100), nullable=True)
-
 @login_manager.user_loader
 def load_user(user_id):
-    return User.query.get(int(user_id))
+    # Verwende db.session.get(), um den Benutzer anhand der ID zu laden
+    return db.session.get(User, int(user_id))
 
-# Passwortanforderungen
-def check_password_requirements(password):
-    # Mindestens 26 Zeichen
-    length_check = len(password) >= 26
-    # Mindestens 5 Großbuchstaben
-    uppercase_check = len(re.findall(r'[A-Z]', password)) >= 5
-    # Mindestens 2 Zahlen
-    number_check = len(re.findall(r'\d', password)) >= 2
-    # Mindestens 2 Sonderzeichen
-    special_check = len(re.findall(r'[!@#$%^&*(),.?":{}|<>]', password)) >= 2
-
-    # Rückgabe der Ergebnisse der Passwortanforderungen
-    return length_check, uppercase_check, number_check, special_check
-
-# Route zum Generieren eines Passworts mit der gewünschten Länge
-@app.route('/password_generator/<int:length>', methods=['GET'])
-def password_generator(length):
-    # Überprüfen, ob die Länge zwischen 12 und 64 liegt
-    if length < 12 or length > 64:
-        return jsonify({'error': 'Password length must be between 12 and 64 characters'}), 400
-
-    # Passwort mit der angegebenen Länge generieren
-    password = generate_password(length)
-
-    # Rückgabe des generierten Passworts als JSON
-    return jsonify({'password': password})
-
-# Funktion zum Laden häufiger Passwörter
-def load_common_passwords(file_path):
-    try:
-        with open(file_path, 'r') as f:
-            common_passwords = set(line.strip().lower() for line in f)
-        return common_passwords
-    except FileNotFoundError:
-        print("Die Datei mit den häufigen Passwörtern wurde nicht gefunden.")
-        return set()
-
-# Der Pfad zur Datei mit den häufigen Passwörtern
-common_password_file = './static/txt/common_passwords.txt'
-common_passwords = load_common_passwords(common_password_file)
-
-# Funktion zum Überprüfen von häufigen Passwörtern
-def is_common_password(password):
-    return password.lower() in common_passwords
 
 # **Startseite**
 @app.route('/')
 def home():
-    return render_template('login.html')
+    return render_template('Anmeldung/login.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -126,7 +79,7 @@ def login():
             print("Invalid email or password.")
             flash('Invalid email or password. Please try again.', 'danger')
 
-    return render_template('login.html')
+    return render_template('Anmeldung/login.html')
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -134,6 +87,7 @@ def signup():
         email = request.form.get('email')
         password = request.form.get('password')
         confirm_password = request.form.get('confirm_password')
+        birthdate = request.form.get('birthdate')  # Geburtsdatum als String vom Formular
 
         if password != confirm_password:
             flash('Passwords do not match', 'danger')
@@ -159,16 +113,24 @@ def signup():
             flash('Password is too common. Please choose a stronger password.', 'danger')
             return redirect(url_for('signup'))
 
+        # Geburtsdatum umwandeln, wenn es im richtigen Format vorliegt
+        try:
+            geburtsdatum = datetime.strptime(birthdate, '%Y-%m-%d').date()  # Umwandlung in ein Date-Objekt
+        except ValueError:
+            flash('Invalid date format. Please use YYYY-MM-DD.', 'danger')
+            return redirect(url_for('signup'))
+
         # Neues Benutzerobjekt erstellen und in der DB speichern
         hashed_password = generate_password_hash(password)
-        new_user = User(email=email, password=hashed_password, key=secrets.token_hex(16))
+        new_user = User(email=email, password=hashed_password, key=secrets.token_hex(16), geburtsdatum=geburtsdatum)
         db.session.add(new_user)
         db.session.commit()
 
         flash('Account created successfully! Please log in.', 'success')
         return redirect(url_for('login'))
 
-    return render_template('signup.html')
+    return render_template('Anmeldung/signup.html')
+
 
 @app.route('/auth0_login')
 def auth0_login():
@@ -214,18 +176,39 @@ def dashboard():
         else:
             flash("Invalid Key!", "danger")
 
-    return render_template('dashboard.html')
+    return render_template('Dashboard/dashboard.html')
 
 @app.route('/ai-projekt')
 @login_required
 def ai_projekt():
-    return render_template('ai-projekt.html')
+    return render_template('KI/ai-projekt.html')
+
+@app.route('/Contact/')
+def contact():
+    return render_template('Contact/contact.html')
 
 @app.route('/logout')
 @login_required
 def logout():
     logout_user()
     return redirect(url_for('home'))
+
+@app.route('/bugs')
+@login_required
+def bugs_page():
+    return render_template('Test/Bug/Bugs.html')
+
+@app.route('/impressum')
+def impressum():
+    return render_template('Impressum/impressum.html')
+
+@app.route('/Datenschutz')
+def datenschutz():
+    return render_template('DSGVO/Datenschutz.html')
+
+@app.route('/Aurora-Ki')
+def redirect_to_aurora():
+    return redirect("http://localhost:3000", code=302)
 
 @app.route('/forgot_password', methods=['GET', 'POST'])
 def forgot_password():
@@ -240,60 +223,92 @@ def forgot_password():
             user.reset_token = reset_token
             db.session.commit()
 
-            # E-Mail mit Reset-Token versenden
+            # Sende E-Mail mit Reset-Link
             send_reset_email(user.email, reset_token)
-            flash('Password reset email sent. Please check your inbox.', 'info')
+            flash('An email has been sent with the password reset token.', 'info')
         else:
-            flash('Email not found.', 'danger')
+            flash('Email address not found.', 'danger')
 
-    return render_template('forgot_password.html')
+    return render_template('Anmeldung/forgot_password.html')
 
 def send_reset_email(to_email, token):
-    msg = Message('Password Reset Request', recipients=[to_email])
-    msg.body = f'Here is your password reset token: {token}'
-    mail.send(msg)
+    reset_url = url_for('reset_password', token=token, _external=True)  # Generiere den Reset-Link
 
-#Bearbeiten des Profils
-@app.route('/edit_profile', methods=['GET', 'POST'])
-@login_required
-def edit_profile():
+    msg = Message('Password Reset Request', recipients=[to_email], sender=os.getenv('MAIL_USERNAME'))  # Sender hinzufügen
+    msg.body = f"""
+    Hello,
+
+    You requested a password reset. Please click the following link to reset your password:
+
+    {reset_url}
+
+    If you did not request a password reset, please ignore this email.
+
+    Regards,
+    Your Team
+    """
+    try:
+        mail.send(msg)
+    except Exception as e:
+        print(f"Error sending email: {e}")
+        flash('An error occurred while sending the reset email. Please try again later.', 'danger')
+
+@app.route('/reset_password/<token>', methods=['GET', 'POST'])
+def reset_password(token):
+    user = User.query.filter_by(reset_token=token).first()
+
+    if not user:
+        flash('Invalid or expired token', 'danger')
+        return redirect(url_for('home'))
+
     if request.method == 'POST':
-        new_email = request.form.get('email')
-        new_password = request.form.get('password')
+        new_password = request.form.get('new_password')
         confirm_password = request.form.get('confirm_password')
 
         if new_password != confirm_password:
-            flash('Die Passwörter stimmen nicht überein!', 'danger')
-            return redirect(url_for('edit_profile'))
+            flash('Passwords do not match.', 'danger')
+            return redirect(url_for('reset_password', token=token))
 
-        if new_password:
-            hashed_password = generate_password_hash(new_password)
-            current_user.password = hashed_password
-
-        if new_email:
-            current_user.email = new_email
-
+        hashed_password = generate_password_hash(new_password)
+        user.password = hashed_password
+        user.reset_token = None  # Token zurücksetzen, nachdem das Passwort geändert wurde
         db.session.commit()
-        flash('Profil erfolgreich aktualisiert!', 'success')
-        return redirect(url_for('dashboard'))
 
-    return render_template('edit_profile.html')
+        flash('Your password has been reset successfully!', 'success')
+        return redirect(url_for('login'))
 
-#Löschen des Profils
-@app.route('/delete_account', methods=['POST'])
-@login_required
-def delete_account():
-    user = current_user
-    db.session.delete(user)
-    db.session.commit()
-    logout_user()
-    flash('Konto erfolgreich gelöscht.', 'success')
-    return redirect(url_for('home'))
+    return render_template('Anmeldung/reset_password.html', token=token)
 
+@app.route('/password_generator/<int:length>')
+def password_generator(length):
+    # Beispiel: Passwort mit gegebener Länge generieren
+    password = generate_password(length)
+    return jsonify({'password': password})
+
+
+# In Progress Datei verlinken
+@app.route('/Spaß_Projekt')
+def spaß_projekt():
+    return render_template('Test/Test/Spaß_Projekt.html')
+
+@app.route('/updates')
+def update():
+    return render_template('Test/Updates/updates.html')
+
+@app.route('/Hilfe')
+def hilfe():
+    return render_template('FAQ/Hilfe.html')
+
+@app.route('/NB')
+def nutzungsbedingungen():
+    return render_template('Nutzungsbedingung/NB.html')
+
+# Blueprint registrieren
+app.register_blueprint(edit_profile, url_prefix='/edit_profile')
+
+register_blogposts(app)
 
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()  # Tabellen erstellen
-    # Automatisch das Passwort beim Starten generieren
-    print(generate_password(32))  # Beispiel für die Passwortgenerierung
     app.run(debug=True)

@@ -1,0 +1,72 @@
+/* Hinzufügen von allgemeinen Animationen und Hover-Effekten */
+
+.feature-item, .use-case-item, .tech-item, .about-item, .integration-item, .future-item {
+    position: relative;
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.feature-item:hover, .use-case-item:hover, .tech-item:hover, .about-item:hover, .integration-item:hover, .future-item:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+    background-color: #444;
+}
+
+/* Glow Hover Effekt */
+.feature-item h3, .use-case-item h3, .tech-item h3, .about-item h3, .integration-item h3, .future-item h3 {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    transition: text-shadow 0.3s ease;
+}
+
+.feature-item:hover h3, .use-case-item:hover h3, .tech-item:hover h3, .about-item:hover h3, .integration-item:hover h3, .future-item:hover h3 {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 0, 255, 0.6);
+}
+
+/* Hero Section Text */
+.hero h1 {
+    font-size: 3rem;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.hero:hover h1 {
+    color: #f0f;
+}
+
+/* Globale Box-Stile für Formulare */
+input, textarea, button {
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #555;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus, button:hover {
+    border-color: #f0f;
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 0, 255, 0.5);
+}
+
+/* Animationen hinzufügen */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Hervorheben von Text */
+.highlight {
+    color: #f0f;  /* Beispiel für eine auffällige Farbe */
+    font-weight: bold;
+}
