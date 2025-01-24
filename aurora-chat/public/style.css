@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Grundlegende Stile */
@@ -15,28 +16,55 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  transition: background-color 0.3s ease;
 }
 
+/* Chat Container */
 .chat-container {
   width: 100%;
   max-width: 800px;
   background-color: #1c1c1c;
   border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   padding: 20px;
   display: flex;
   flex-direction: column;
   height: 80vh;
+  animation: slideIn 0.5s ease-out;
 }
 
+/* Animation für das Auftauchen des Containers */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header */
 header {
   text-align: center;
   margin-bottom: 20px;
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 header h1 {
   font-size: 2.5rem;
   color: #9c27b0;  /* Lila Farbe */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 header p {
@@ -44,6 +72,7 @@ header p {
   color: #bbb;
 }
 
+/* Chatbox Bereich */
 .chat-box {
   flex-grow: 1;
   margin-bottom: 20px;
@@ -52,28 +81,56 @@ header p {
   border-radius: 10px;
   overflow-y: auto;
   max-height: 60%;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s;
+}
+
+.chat-box:hover {
+  background-color: #2a2a2a;
 }
 
 .chat-box .du, .chat-box .aurora {
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 12px;
+  margin-bottom: 15px;
   border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .chat-box .du {
   background-color: #3b3b3b;
   text-align: left;
+  animation: slideInMessage 0.4s ease-out;
 }
 
 .chat-box .aurora {
   background-color: #6a1b9a;  /* Lila Hintergrund für Aurora */
   text-align: right;
+  animation: slideInMessage 0.4s ease-out;
 }
 
+@keyframes slideInMessage {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.chat-box .du:hover,
+.chat-box .aurora:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Eingabebereich */
 .input-section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 15px;
 }
 
 textarea {
@@ -83,36 +140,70 @@ textarea {
   border: 1px solid #444;
   border-radius: 10px;
   color: #fff;
-  padding: 10px;
+  padding: 12px;
   resize: none;
   font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
 textarea:focus {
   outline: none;
   border-color: #9c27b0;
+  background-color: #444;
 }
 
+textarea:hover {
+  background-color: #444;
+  border-color: #9c27b0;
+}
+
+/* Button */
 button {
   width: 100px;
   margin-top: 10px;
-  padding: 10px;
+  padding: 12px;
   background-color: #9c27b0;
   color: white;
   border: none;
   border-radius: 30px;
   cursor: pointer;
   font-weight: 500;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s ease;
 }
 
 button:hover {
   background-color: #7b1fa2;
+  transform: translateY(-3px);
 }
 
+button:active {
+  background-color: #6a1b9a;
+  transform: translateY(2px);
+}
+
+/* Footer */
 footer {
   text-align: center;
   font-size: 0.9rem;
   margin-top: 20px;
   color: #bbb;
+}
+
+/* Responsives Design */
+@media (max-width: 768px) {
+  .chat-container {
+    height: 90vh;
+  }
+
+  .chat-box {
+    max-height: 50%;
+  }
+
+  textarea {
+    width: 90%;
+  }
+
+  button {
+    width: 120px;
+  }
 }
