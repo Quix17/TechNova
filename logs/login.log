@@ -1,25 +1,2 @@
-<<<<<<< HEAD
-2025-01-24 22:36:06,924 - INFO - Login attempt with email: Admin@server.cz
-2025-01-24 22:36:14,172 - INFO - Login attempt with email: Admin@server.ru
-2025-01-24 22:36:14,243 - INFO - User Admin@server.ru authenticated successfully!
-2025-01-24 23:03:26,500 - INFO - Login attempt with email: Admin@server.cz
-2025-01-24 23:03:26,572 - INFO - User Admin@server.cz authenticated successfully!
-2025-01-24 23:12:13,579 - INFO - Login attempt with email: Admin@server.cz
-2025-01-24 23:12:13,649 - INFO - User Admin@server.cz authenticated successfully!
-=======
-2025-01-24 15:59:53,991 - INFO - Login attempt with email: Admin@server.com
-2025-01-24 15:59:54,063 - INFO - User Admin@server.com authenticated successfully!
-2025-01-24 16:01:34,919 - INFO - Login attempt with email: Admin@server.com
-2025-01-24 16:01:34,989 - INFO - User Admin@server.com authenticated successfully!
-2025-01-24 16:07:09,568 - INFO - Login attempt with email: sdfsf@magg.com
-2025-01-24 16:08:17,608 - INFO - Login attempt with email: Admin@server.com
-2025-01-24 16:08:17,680 - INFO - User Admin@server.com authenticated successfully!
-2025-01-24 16:12:32,195 - INFO - Login attempt with email: Admin@server.com
-2025-01-24 16:12:32,267 - INFO - User Admin@server.com authenticated successfully!
-2025-01-24 16:28:23,534 - INFO - Login attempt with email: Admin@server.com
-2025-01-24 16:28:23,607 - INFO - User Admin@server.com authenticated successfully!
-2025-01-24 16:41:07,494 - INFO - Login attempt with email: Admin@server.cz
-2025-01-24 16:41:07,565 - INFO - User Admin@server.cz authenticated successfully!
-2025-01-24 16:52:54,770 - INFO - Login attempt with email: Admin@server.cz
-2025-01-24 16:52:54,841 - INFO - User Admin@server.cz authenticated successfully!
->>>>>>> a3824f23b73a99fe4fe6a2135bca180d7f543559
+2025-01-24 23:37:21,053 - INFO - Login attempt with email: Admin@server.cz
+2025-01-24 23:37:21,124 - INFO - User Admin@server.cz authenticated successfully!
