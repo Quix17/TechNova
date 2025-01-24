@@ -6,3 +6,4 @@ Authlib==1.0.0
 Werkzeug==2.1.1
 Flask-SQLAlchemy==2.5.1
 Flask-WTF==1.0.1
+geoip2
