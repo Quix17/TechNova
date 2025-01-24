@@ -2,7 +2,11 @@ import os
 import secrets
 import logging
 from logging.handlers import RotatingFileHandler
+<<<<<<< HEAD
 from flask import Flask, render_template, redirect, url_for, request, flash, jsonify, session, send_from_directory
+=======
+from flask import Flask, render_template, redirect, url_for, request, flash, jsonify, session
+>>>>>>> a3824f23b73a99fe4fe6a2135bca180d7f543559
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from flask_migrate import Migrate
 from flask_mail import Mail, Message
@@ -55,7 +59,10 @@ def create_logger(log_name, log_file, level=logging.INFO):
     return logger
 
 # Erstelle verschiedene Logger
+<<<<<<< HEAD
 email_change_logger = create_logger('email_change_logger', 'email_change_log.log')
+=======
+>>>>>>> a3824f23b73a99fe4fe6a2135bca180d7f543559
 login_logger = create_logger('login_logger', 'login.log')
 error_logger = create_logger('error_logger', 'error.log', logging.ERROR)
 access_logger = create_logger('access_logger', 'access.log')
@@ -63,6 +70,10 @@ activity_logger = create_logger('activity_logger', 'activity.log')
 signup_logger = create_logger('signup_logger', 'signup.log')
 logout_logger = create_logger('logout_logger', 'logout.log', logging.INFO)
 password_change_logger = create_logger('password_change_logger', 'password_change.txt', logging.INFO)
+<<<<<<< HEAD
+=======
+email_change_logger = create_logger('email_change_logger', 'email_change.log', logging.INFO)
+>>>>>>> a3824f23b73a99fe4fe6a2135bca180d7f543559
 password_reset_logger = create_logger('password_reset_logger', 'password_reset.log')
 failed_login_logger = create_logger('failed_login_logger', 'failed_login.log')
 account_deletion_logger = create_logger('account_deletion_logger', 'account_deletion.txt', logging.INFO)
@@ -147,8 +158,13 @@ login_logger.setLevel(logging.INFO)
 error_logger.setLevel(logging.INFO)
 access_logger.setLevel(logging.INFO)
 activity_logger.setLevel(logging.INFO)
+<<<<<<< HEAD
 failed_login_logger.setLevel(logging.INFO)
 email_change_logger.setLevel(logging.INFO)
+=======
+email_change_logger.setLevel(logging.INFO)
+failed_login_logger.setLevel(logging.INFO)
+>>>>>>> a3824f23b73a99fe4fe6a2135bca180d7f543559
 logout_logger.setLevel(logging.INFO)
 password_change_logger.setLevel(logging.INFO)
 password_reset_logger.setLevel(logging.INFO)
@@ -432,6 +448,7 @@ def hilfe():
 def bugs_page():
     return render_template('Test/Bug/Bugs.html')
 
+<<<<<<< HEAD
 @app.route('/impressum')
 def impressum():
     return render_template('Impressum/impressum.html')
@@ -444,6 +461,8 @@ def datenschutz():
 def auroraKi():
     return send_from_directory('aurora-chat/public', 'index.html')
 
+=======
+>>>>>>> a3824f23b73a99fe4fe6a2135bca180d7f543559
 @app.route('/NB')
 def nutzungsbedingungen():
     return render_template('Nutzungsbedingung/NB.html')
