@@ -170,30 +170,6 @@ body {
     }
 }
 
-/* Password requirements */
-.password-requirements {
-    margin-top: 10px;
-    font-size: 0.9em;
-    color: gray;
-}
-
-.requirement {
-    margin: 5px 0;
-    color: red; /* Default to red */
-}
-
-.valid {
-    color: green;
-}
-
-.invalid {
-    color: red;
-}
-
-.partially-valid {
-    color: orange;
-}
-
 /* Error and success messages */
 .error-message, .success-message {
     font-size: 1em;
@@ -211,8 +187,6 @@ body {
     background-color: #d4edda;
     color: #155724;
 }
-
-
 
 
 /* Tab Navigation */

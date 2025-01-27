@@ -1,5 +1,6 @@
 from flask_login import UserMixin
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime, timedelta
 
 db = SQLAlchemy()
 
@@ -10,6 +11,8 @@ class User(db.Model, UserMixin):
     key = db.Column(db.String(100), nullable=False)
     reset_token = db.Column(db.String(100), nullable=True)
     geburtsdatum = db.Column(db.Date, nullable=True)
+    failed_login_attempts = db.Column(db.Integer, default=0)
+    lock_time = db.Column(db.DateTime, nullable=True)
 
     def __repr__(self):
         return f'<User {self.email}>'

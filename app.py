@@ -3,15 +3,14 @@ import secrets
 import logging
 from logging.handlers import RotatingFileHandler
 from flask import Flask, render_template, redirect, url_for, request, flash, jsonify, session, send_from_directory
-from flask import Flask, render_template, redirect, url_for, request, flash, jsonify, session
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from flask_migrate import Migrate
 from flask_mail import Mail, Message
 from authlib.integrations.flask_client import OAuth
 from werkzeug.security import generate_password_hash, check_password_hash
-from datetime import datetime
+from datetime import datetime, timedelta
 from blogposts import register_blogposts
-from A_P_und_cp import check_password_requirements, is_common_password
+from A_P_und_cp import check_password_requirements, is_common_password, common_passwords
 from password_generator import generate_password
 from models import db, User
 from Editprofile import edit_profile
@@ -64,7 +63,6 @@ activity_logger = create_logger('activity_logger', 'activity.log')
 signup_logger = create_logger('signup_logger', 'signup.log')
 logout_logger = create_logger('logout_logger', 'logout.log', logging.INFO)
 password_change_logger = create_logger('password_change_logger', 'password_change.txt', logging.INFO)
-email_change_logger = create_logger('email_change_logger', 'email_change.log', logging.INFO)
 password_reset_logger = create_logger('password_reset_logger', 'password_reset.log')
 failed_login_logger = create_logger('failed_login_logger', 'failed_login.log')
 account_deletion_logger = create_logger('account_deletion_logger', 'account_deletion.txt', logging.INFO)
@@ -151,8 +149,6 @@ access_logger.setLevel(logging.INFO)
 activity_logger.setLevel(logging.INFO)
 failed_login_logger.setLevel(logging.INFO)
 email_change_logger.setLevel(logging.INFO)
-email_change_logger.setLevel(logging.INFO)
-failed_login_logger.setLevel(logging.INFO)
 logout_logger.setLevel(logging.INFO)
 password_change_logger.setLevel(logging.INFO)
 password_reset_logger.setLevel(logging.INFO)
@@ -207,27 +203,58 @@ def home():
     access_logger.info(f"Page accessed: {request.path}")
     return render_template('Anmeldung/login.html')
 
+MAX_FAILED_ATTEMPTS = 5
+LOCK_TIME = timedelta(minutes=15)
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         email = request.form.get('email')
         password = request.form.get('password')
 
-        # Debugging: Überprüfen, ob die Formulardaten korrekt sind
         login_logger.info(f"Login attempt with email: {email}")
 
-        # Überprüfen, ob der Benutzer existiert
         user = User.query.filter_by(email=email).first()
-        if user and check_password_hash(user.password, password):
-            login_logger.info(f"User {email} authenticated successfully!")
-            login_user(user)
-            activity_logger.info(f"User {email} logged in successfully.")
-            return redirect(url_for('dashboard'))
+
+        if user:
+            # Prüfen, ob der Account gesperrt ist
+            if user.lock_time and datetime.utcnow() < user.lock_time:
+                # Benutzer ist gesperrt, Zeit abwarten
+                remaining_lock_time = user.lock_time - datetime.utcnow()
+                flash(f"Your account is locked. Please try again in {remaining_lock_time}.", 'danger')
+                failed_login_logger.warning(f"Account locked for {email}, still within lock time.")
+                return render_template('Anmeldung/login.html')
+
+            # Überprüfen des Passworts
+            if check_password_hash(user.password, password):
+                login_logger.info(f"User {email} authenticated successfully!")
+                login_user(user)
+                user.failed_login_attempts = 0
+                user.lock_time = None  # Sperre zurücksetzen
+                db.session.commit()
+                activity_logger.info(f"User {email} logged in successfully.")
+                return redirect(url_for('dashboard'))
+            else:
+                # Passwort ist falsch, fehlerhaften Login-Zähler erhöhen
+                user.failed_login_attempts += 1
+                remaining_attempts = MAX_FAILED_ATTEMPTS - user.failed_login_attempts
+
+                if user.failed_login_attempts >= MAX_FAILED_ATTEMPTS:
+                    # Account sperren
+                    user.lock_time = datetime.utcnow() + LOCK_TIME
+                    db.session.commit()
+                    failed_login_logger.warning(f"Account locked for {email} due to too many failed login attempts.")
+                    flash(f"Too many failed login attempts. Your account is locked for {LOCK_TIME}.", 'danger')
+                else:
+                    db.session.commit()
+                    failed_login_logger.warning(f"Failed login attempt with email: {email}")
+                    flash(f'Invalid email or password. You have {remaining_attempts} attempt(s) left.', 'danger')
+
         else:
-            failed_login_logger.warning(f"Failed login attempt with email: {email}")
             flash('Invalid email or password. Please try again.', 'danger')
 
     return render_template('Anmeldung/login.html')
+
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -456,6 +483,23 @@ def nutzungsbedingungen():
 app.register_blueprint(edit_profile, url_prefix='/edit_profile')
 
 register_blogposts(app)
+
+@app.route('/password_checker', methods=['POST'])
+def check_password():
+    try:
+        data = request.get_json()
+        password = data.get('password')
+    except Exception as e:
+        return jsonify({"message": "Ungültige Anfrage, JSON erwartet!"}), 400
+
+    if not password:
+        return jsonify({"message": "Passwort darf nicht leer sein!"}), 400
+
+    # Überprüfe, ob das Passwort in der Liste häufiger Passwörter ist
+    if password.lower() in common_passwords:
+        return jsonify({"is_common": True, "message": "Das Passwort ist zu gängig und sollte vermieden werden!"}), 200  # OK-Antwort, aber mit einer Warnung
+
+    return jsonify({"is_common": False, "message": "Das Passwort ist sicher."}), 200  # OK-Antwort bei sicherem Passwort
 
 if __name__ == '__main__':
     with app.app_context():

@@ -69,10 +69,9 @@ function updateRequirement(id, isValid) {
     }
 }
 
-// Überprüfe, ob das Passwort ein gängiges Passwort ist
+// Überprüfe, ob das Passwort zu gängig ist
 function checkIfCommonPassword(password, commonPasswordMessage) {
-    // Verwende vollständige URL für den Fetch-Aufruf
-    fetch('/password_checker', {  // Endpunkt korrigiert zu '/password_checker'
+    fetch('/password_checker', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -81,11 +80,12 @@ function checkIfCommonPassword(password, commonPasswordMessage) {
     })
     .then(response => response.json())
     .then(data => {
-        if (data.message) {
-            commonPasswordMessage.innerHTML = data.message;
+        if (data.is_common) {
+            commonPasswordMessage.innerHTML = "Das Passwort ist zu gängig und sollte vermieden werden!";
             commonPasswordMessage.style.color = "red";
         } else {
-            commonPasswordMessage.innerHTML = "";
+            commonPasswordMessage.innerHTML = "Das Passwort ist sicher.";
+            commonPasswordMessage.style.color = "green";
         }
     })
     .catch(error => {
@@ -107,5 +107,47 @@ function checkPasswordMatch() {
     } else {
         matchMessage.innerHTML = "Passwörter stimmen überein!";
         matchMessage.style.color = "green";
+    }
+}
+
+async function checkIfCommonPassword(password) {
+    const commonPasswordMessage = document.getElementById("common-password-message");
+
+    if (!commonPasswordMessage) {
+        console.error("Element mit der ID 'common-password-message' nicht gefunden.");
+        return;
+    }
+
+    try {
+        console.log("Sende Passwort zur Überprüfung:", password);  // Debugging: Ausgabe des Passworts
+
+        const response = await fetch('/password_checker', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ password: password })
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        console.log(data);  // Debugging: Antwort von der API ausgeben
+
+        // Überprüfe die Antwort, um zu sehen, ob das Passwort gängig ist
+        if (data.is_common) {
+            commonPasswordMessage.innerHTML = "Das Passwort ist zu gängig und sollte vermieden werden!";
+            commonPasswordMessage.style.color = "red";
+        } else {
+            commonPasswordMessage.innerHTML = "Das Passwort ist sicher.";
+            commonPasswordMessage.style.color = "green";
+        }
+    } catch (error) {
+        console.error("Fehler beim Überprüfen des Passworts:", error);
+        commonPasswordMessage.innerHTML = "Fehler bei der Anfrage!";
+        commonPasswordMessage.style.color = "red";
     }
 }

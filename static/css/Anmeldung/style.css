@@ -1,3 +1,26 @@
+/* Flash-Nachrichten Stil */
+.flash-messages {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f8d7da;
+    border-radius: 5px;
+}
+
+.flash-message {
+    color: #721c24;
+    font-size: 14px;
+}
+
+.flash-messages ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.flash-messages ul li {
+    margin: 5px 0;
+}
+
 /* Setzen des Hintergrunds für den gesamten Körper */
 body {
     margin: 0;

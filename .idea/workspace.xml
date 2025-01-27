@@ -4,22 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4883ad3a-236d-4824-b103-f9141577a4d0" name="Changes" comment="">
+    <list default="true" id="43636563-7f12-4f86-8dd6-68330751f6a5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/myapp.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/access.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/account_deletion.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/activity.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/app_log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/com-p-check.py" beforeDir="false" afterPath="$PROJECT_DIR$/com-p-check.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instance/users.db" beforeDir="false" afterPath="$PROJECT_DIR$/instance/users.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/access.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/access.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/activity.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/activity.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/email_change.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/email_change.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/email_change_log.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/error.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/failed_login.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/login.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/logout.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/password_change.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/password_reset.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/signup.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/email_change.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/email_change.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/email_change_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/email_change_log.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/failed_login.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/failed_login.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/login.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/login.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/password_change.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/password_change.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/signup.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/signup.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/Anmeldung/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/Anmeldung/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/Dashboard/edit_profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/Dashboard/edit_profile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/Anmeldung/password_checker.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/Anmeldung/password_checker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/txt/common_passwords.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/txt/common_passwords.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Anmeldung/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Anmeldung/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Anmeldung/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Anmeldung/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/DSGVO/Datenschutz.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/DSGVO/Datenschutz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Dashboard/edit_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Dashboard/edit_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/FAQ/Hilfe.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/FAQ/Hilfe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/KI/ai-projekt.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/KI/ai-projekt.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Test/Bug/Bugs.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Test/Bug/Bugs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Test/Updates/updates.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Test/Updates/updates.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,47 +47,42 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Quix17"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Quix17&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Quix17/TechNova",
-    "accountId": "c48d8aaa-e3b7-4edb-9446-ecbcf7990ee3"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Quix17/TechNova&quot;,
+    &quot;accountId&quot;: &quot;c48d8aaa-e3b7-4edb-9446-ecbcf7990ee3&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 2
-}]]></component>
-  <component name="ProjectId" id="2s5sHB5UwbvE8mHGLQFjaOYmjgt" />
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2sDftQCwsRfkeu4ijnM7XPAZc2Y" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Node.js.server.js.executor": "Run",
-    "Python.myapp.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/sven9/Downloads/myapp/aurora-chat/server.js",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.myapp.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Python.myapp">
-    <configuration name="server.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/aurora-chat/server.js" working-dir="$PROJECT_DIR$/aurora-chat/node_modules">
-      <method v="2" />
-    </configuration>
+}</component>
+  <component name="RunManager">
     <configuration name="myapp" type="PythonConfigurationType" factoryName="Python">
       <module name="myapp" />
       <option name="ENV_FILES" value="" />
@@ -79,7 +92,6 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.13 virtualenv at C:\Users\sven9\Downloads\myapp\.venv" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -94,10 +106,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="Node.js.server.js" />
-      <item itemvalue="Python.myapp" />
-    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -110,12 +118,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4883ad3a-236d-4824-b103-f9141577a4d0" name="Changes" comment="" />
-      <created>1737756680368</created>
+      <changelist id="43636563-7f12-4f86-8dd6-68330751f6a5" name="Changes" comment="" />
+      <created>1737995279859</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1737756680368</updated>
-      <workItem from="1737756681998" duration="1544000" />
+      <updated>1737995279859</updated>
+      <workItem from="1737995281530" duration="3212000" />
     </task>
     <servers />
   </component>
@@ -123,6 +131,6 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/myapp$myapp.coverage" NAME="myapp Coverage Results" MODIFIED="1737758228033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/myapp$myapp.coverage" NAME="myapp Coverage Results" MODIFIED="1737998446150" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
