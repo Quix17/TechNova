@@ -17,11 +17,12 @@
 
     <!-- Favicon für Apple-Geräte (Home Screen) -->
     <link rel="apple-touch-icon" href="/static/Bilder/TechNova/apple-touch-icon.png">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/Anmeldung/style.css') }}">
     <!-- Einbindung von Font Awesome über CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
-<body>
+<body style="background-image: url('{{ url_for('static', filename='Bilder/Anmeldung/Login.jpeg') }}'); background-size: cover; background-position: center;">
     <div class="card">
         <form class="form" method="POST" action="{{ url_for('login') }}">
             <p id="heading">Login</p>
@@ -47,12 +48,10 @@
 
             <!-- Passwort Feld -->
             <div class="field">
-                <!-- Schloss Symbol links -->
                 <span class="input-icon">
-                    🔒 <!-- Schloss-Icon (links) -->
+                    🔒 <!-- Schloss-Icon -->
                 </span>
                 <input type="password" class="input-field" name="password" id="password" placeholder="Password" required oninput="checkPasswordStrength()">
-                <!-- Auge Symbol rechts -->
                 <span class="input-icon" id="toggle-password" onclick="togglePassword()">
                     <i class="fas fa-eye"></i> <!-- Auge-Icon -->
                 </span>

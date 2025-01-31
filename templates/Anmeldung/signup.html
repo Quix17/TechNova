@@ -30,11 +30,24 @@
     <script src="{{ url_for('static', filename='js/Anmeldung/L-p-g.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/Anmeldung/password_checker.js') }}" defer></script>
 </head>
-<body>
+<body style="background-image: url('{{ url_for('static', filename='Bilder/Anmeldung/Login.jpeg') }}'); background-size: cover; background-position: center;">
     <div class="card-container">
         <div class="card">
             <form class="form" method="POST" action="{{ url_for('signup') }}">
                 <p id="heading">Sign Up</p>
+
+<!-- Flash-Nachrichten anzeigen -->
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="flash-messages">
+                        <ul>
+                            {% for message in messages %}
+                                <li class="flash-message">{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+            {% endwith %}
 
                 <!-- Email Feld -->
                 <div class="field">
@@ -71,7 +84,6 @@
                         <i class="fas fa-eye"></i>
                     </span>
                 </div>
-
                 <div class="btn">
                     <button class="button1" type="submit">Sign Up</button>
                     <a href="{{ url_for('login') }}" class="button2">Login</a>

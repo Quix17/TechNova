@@ -25,52 +25,51 @@
 </head>
 <body>
 
-    <!-- Dashboard Container -->
-    <div class="dashboard-wrapper">
-        <div class="dashboard">
-            <!-- Dropdown Menü für Konto -->
-            <div class="dropdown">
-                <button>Kontoverwaltung</button>
-                <div class="dropdown-content">
-                    <!-- Der Link für die Einstellungen, der den Benutzer zur Profilbearbeitung führt -->
-<a href="{{ url_for('edit_profile.editprofile') }}" id="settings">Einstellungen</a>
-                    <a href="{{ url_for('logout') }}" id="logout">Logout</a>
-                </div>
+<!-- Dashboard Container -->
+<div class="dashboard-wrapper" style="background-image: url('{{ url_for('static', filename='Bilder/Dashboard/Dashboard.jpeg') }}'); background-size: cover; background-position: center center; background-repeat: no-repeat; background-attachment: fixed;">
+    <div class="dashboard">
+        <!-- Dropdown Menü für Konto -->
+        <div class="dropdown">
+            <button>Kontoverwaltung</button>
+            <div class="dropdown-content">
+                <!-- Der Link für die Einstellungen, der den Benutzer zur Profilbearbeitung führt -->
+                <a href="{{ url_for('edit_profile.editprofile') }}" id="settings">Einstellungen</a>
+                <a href="{{ url_for('logout') }}" id="logout">Logout</a>
             </div>
+        </div>
 
-            <!-- AI Projekt Karte -->
-            <div class="card" id="card-1">
-                <div class="card-content">
-                    <!-- Überschrift als klickbarer Link zur ai-projekt Seite -->
-                    <a href="{{ url_for('ai_projekt') }}">
-                        <h2>Aurora</h2>
-                    </a>
-                    <p>Entdecke, was wir mit Aurora schaffen können! Unsere Technologie basierend auf Gpt-3.5-Turbo.</p>
-                </div>
+        <!-- AI Projekt Karte -->
+        <div class="card" id="card-1">
+            <div class="card-content">
+                <!-- Überschrift als klickbarer Link zur ai-projekt Seite -->
+                <a href="{{ url_for('ai_projekt') }}">
+                    <h2>Aurora</h2>
+                </a>
+                <p>Entdecke, was wir mit Aurora schaffen können! Unsere Technologie basierend auf Gpt-3.5-Turbo.</p>
             </div>
+        </div>
 
-            <!-- Test Karte 1 -->
-            <div class="card" id="card-2">
-                <div class="card-content">
-                    <a href="{{ url_for('spaß_projekt') }}">
-                        <h2>Loader/Tests</h2>
-                    </a>
-                    <p>Das Projekt befindet sich in Bearbeitung und wird voraussichtlich nicht vor nächstem Jahr abgeschlossen.</p>
-                </div>
+        <!-- Test Karte 1 -->
+        <div class="card" id="card-2">
+            <div class="card-content">
+                    <h2>/</h2>
+                </a>
+                <p>Das Projekt befindet sich in Bearbeitung und wird voraussichtlich nicht vor nächstem Jahr abgeschlossen.</p>
             </div>
+        </div>
 
-            <!-- In Progress Karte 1 -->
-            <div class="card" id="card-3">
-                <div class="card-content">
-                    <!-- Verlinkung zur Bugs.html -->
-                        <a href="{{ url_for('bugs_page') }}">
-                        <h2>Bugs</h2>
-                    </a>
-                    <p>Dies hier ist momentan noch für Bugs zuständig, wird aber noch geändert.</p>
-                </div>
+        <!-- In Progress Karte 1 -->
+        <div class="card" id="card-3">
+            <div class="card-content">
+                <!-- Verlinkung zur Bugs.html -->
+                <a href="{{ url_for('bugs_page') }}">
+                    <h2>Bugs</h2>
+                </a>
+                <p>Dies hier ist momentan noch für Bugs zuständig, wird aber noch geändert.</p>
             </div>
         </div>
     </div>
+</div>
     <!-- Verlinkung der externe JavaScript-Datei -->
     <script src="/static/js/Dashboard/Karten.js"></script>
 </body>

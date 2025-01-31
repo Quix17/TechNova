@@ -13,13 +13,17 @@ class User(db.Model, UserMixin):
     geburtsdatum = db.Column(db.Date, nullable=True)
     failed_login_attempts = db.Column(db.Integer, default=0)
     lock_time = db.Column(db.DateTime, nullable=True)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)  # Zeit der Kontoerstellung
+    last_login = db.Column(db.DateTime, nullable=True)  # Letztes Login
+    ip_address = db.Column(db.String(45), nullable=True)  # IP-Adresse
+    user_agent = db.Column(db.String(255), nullable=True)  # User-Agent
+    captcha_verified = db.Column(db.Boolean, default=False)  # CAPTCHA verifiziert (für Botschutz)
+    login_attempts_today = db.Column(db.Integer, default=0)  # Anzahl der Login-Versuche an diesem Tag
+    account_locked = db.Column(db.Boolean, default=False)  # Flag, ob der Account gesperrt wurde
 
     def __repr__(self):
         return f'<User {self.email}>'
 
-    # Diese Methode hinzufügen
     @property
     def is_active(self):
-        # Rückgabewert für aktiven Benutzer. Wenn du auch eine Logik für inaktive Benutzer hast,
-        # kannst du hier entsprechende Bedingungen einfügen.
-        return True
+        return not self.account_locked  # Aktiv nur, wenn nicht gesperrt

@@ -15,7 +15,6 @@ from password_generator import generate_password
 from models import db, User
 from Editprofile import edit_profile
 from geoip2.webservice import Client
-
 # Verzeichnis für Logs erstellen
 log_folder = 'logs'
 if not os.path.exists(log_folder):
@@ -444,11 +443,6 @@ def password_generator(length):
     # Beispiel: Passwort mit gegebener Länge generieren
     password = generate_password(length)
     return jsonify({'password': password})
-
-# In Progress Datei verlinken
-@app.route('/Spaß_Projekt')
-def spaß_projekt():
-    return render_template('Test/Test/Spaß_Projekt.html')
 
 @app.route('/updates')
 def update():

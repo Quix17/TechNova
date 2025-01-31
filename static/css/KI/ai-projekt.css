@@ -867,19 +867,23 @@ footer p {
 
 
 
-
 /* Gesamt-Sektion zentrieren */
 #Inhalt-Ki {
-  display: flex;
-  justify-content: center;    /* Horizontal zentrieren */
-  align-items: center;        /* Vertikal zentrieren */
-  flex-direction: column;     /* Inhalte untereinander anordnen */
-  height: 55vh;              /* Volle Höhe des Viewports */
-  margin: 0;                  /* Entfernt den Standard-Margin */
-  text-align: center;         /* Text mittig ausrichten */
-  color: white;               /* Weiße Schriftfarbe */
-  padding: 2rem 0;            /* Wenig Abstand oben und unten */
-  background-color: #2b2b2b;
+    display: flex;
+    justify-content: center; /* Horizontal zentrieren */
+    align-items: center; /* Vertikal zentrieren */
+    flex-direction: column; /* Inhalte untereinander anordnen */
+    height: 55vh; /* Volle Höhe des Viewports */
+    margin: 0; /* Entfernt den Standard-Margin */
+    text-align: center; /* Text mittig ausrichten */
+    color: white; /* Weiße Schriftfarbe */
+    padding: 2rem 0; /* Wenig Abstand oben und unten */
+    background-size: cover; /* Bild wird so skaliert, dass es den gesamten Container abdeckt */
+    background-position: center center; /* Bild wird zentriert */
+    background-repeat: no-repeat; /* Bild wird nicht wiederholt */
+    background-attachment: fixed; /* Das Bild bleibt beim Scrollen fixiert */
+    color: white; /* Textfarbe anpassen, wenn nötig */
+    height: 100vh; /* Stellt sicher, dass die Section die volle Höhe des Viewports hat */
 }
 
 /* Die Karte mit dem Inhalt */
@@ -935,6 +939,7 @@ footer p {
 
   border-radius: 1rem;
 }
+
 
 /* Stil für den Titel der Karte */
 .card-inhalt .card_title__container .card_title {
@@ -1001,22 +1006,6 @@ footer p {
   font-size: 1rem;            /* Normal große Schrift */
   color: var(--white);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

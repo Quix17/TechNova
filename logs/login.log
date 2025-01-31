@@ -1,46 +1,21 @@
-2025-01-24 22:36:06,924 - INFO - Login attempt with email: Admin@server.cz
-2025-01-24 22:36:14,172 - INFO - Login attempt with email: Admin@server.ru
-2025-01-24 22:36:14,243 - INFO - User Admin@server.ru authenticated successfully!
-2025-01-24 23:03:26,500 - INFO - Login attempt with email: Admin@server.cz
-2025-01-24 23:03:26,572 - INFO - User Admin@server.cz authenticated successfully!
-2025-01-24 23:12:13,579 - INFO - Login attempt with email: Admin@server.cz
-2025-01-24 23:12:13,649 - INFO - User Admin@server.cz authenticated successfully!
-2025-01-25 12:34:44,519 - INFO - Login attempt with email: Admin@server.cz
-2025-01-25 12:34:44,592 - INFO - User Admin@server.cz authenticated successfully!
-2025-01-26 22:36:55,639 - INFO - Login attempt with email: Admin@server.cz
-2025-01-26 22:36:55,712 - INFO - User Admin@server.cz authenticated successfully!
-2025-01-26 22:46:08,944 - INFO - Login attempt with email: Admin@server.cz
-2025-01-26 22:46:09,018 - INFO - User Admin@server.cz authenticated successfully!
-2025-01-26 23:20:48,051 - INFO - Login attempt with email: Admin@server.cz
-2025-01-26 23:20:52,914 - INFO - Login attempt with email: Admin@server.cz
-2025-01-26 23:20:55,315 - INFO - Login attempt with email: Admin@server.cz
-2025-01-26 23:20:59,130 - INFO - Login attempt with email: Admin@server.cz
-2025-01-26 23:21:20,333 - INFO - Login attempt with email: Admin@server.cz
-2025-01-26 23:23:01,216 - INFO - Login attempt with email: Admin@server.de
-2025-01-26 23:23:03,548 - INFO - Login attempt with email: Admin@server.de
-2025-01-26 23:23:05,316 - INFO - Login attempt with email: Admin@server.de
-2025-01-26 23:23:08,097 - INFO - Login attempt with email: Admin@server.de
-2025-01-26 23:23:09,958 - INFO - Login attempt with email: Admin@server.de
-2025-01-26 23:24:34,909 - INFO - Login attempt with email: Admin@server.de
-2025-01-26 23:24:39,771 - INFO - Login attempt with email: Admin@server.de
-2025-01-26 23:24:43,434 - INFO - Login attempt with email: Admin@server.de
-2025-01-26 23:24:55,828 - INFO - Login attempt with email: Admin@server.de
-2025-01-26 23:25:59,236 - INFO - Login attempt with email: Admin@server.de
-2025-01-26 23:27:12,650 - INFO - Login attempt with email: Admin@server.cz
-2025-01-26 23:27:22,774 - INFO - Login attempt with email: Leck@eier.com
-2025-01-26 23:27:22,842 - INFO - User Leck@eier.com authenticated successfully!
-2025-01-26 23:27:29,785 - INFO - Login attempt with email: Leck@eier.com
-2025-01-26 23:27:41,400 - INFO - Login attempt with email: Leck@eier.com
-2025-01-26 23:27:41,470 - INFO - User Leck@eier.com authenticated successfully!
-2025-01-26 23:27:46,377 - INFO - Login attempt with email: Leck@eier.com
-2025-01-26 23:27:52,996 - INFO - Login attempt with email: Leck@eier.com
-2025-01-26 23:27:54,642 - INFO - Login attempt with email: Leck@eier.com
-2025-01-26 23:27:56,189 - INFO - Login attempt with email: Leck@eier.com
-2025-01-26 23:27:58,401 - INFO - Login attempt with email: Leck@eier.com
-2025-01-26 23:28:32,648 - INFO - Login attempt with email: Leck@eier.com
-2025-01-27 14:08:51,478 - INFO - Login attempt with email: 1@gmail.com
-2025-01-27 14:09:32,173 - INFO - Login attempt with email: Asi@hs.com
-2025-01-27 14:10:02,615 - INFO - Login attempt with email: Asi@hs.com
-2025-01-27 14:10:02,700 - INFO - User Asi@hs.com authenticated successfully!
-2025-01-27 18:20:59,612 - INFO - Login attempt with email: common@password.com
-2025-01-27 18:20:59,682 - INFO - User common@password.com authenticated successfully!
+2025-01-28 13:17:20,160 - INFO - Login attempt with email: Admin@TechNova.com
+2025-01-28 13:17:20,230 - INFO - User Admin@TechNova.com authenticated successfully!
+2025-01-29 16:35:51,123 - INFO - Login attempt with email: Admin@TechNova.com
+2025-01-29 16:36:09,810 - INFO - Login attempt with email: Admin@TechNova.com
+2025-01-29 16:36:09,886 - INFO - User Admin@TechNova.com authenticated successfully!
+2025-01-29 17:34:51,371 - INFO - Login attempt with email: Admin@TechNova.com
+2025-01-29 17:34:51,442 - INFO - User Admin@TechNova.com authenticated successfully!
+2025-01-29 17:51:31,276 - INFO - Login attempt with email: Admin@TechNova.com
+2025-01-29 17:51:31,349 - INFO - User Admin@TechNova.com authenticated successfully!
+2025-01-29 17:54:01,391 - INFO - Login attempt with email: Admin@TechNova.com
+2025-01-29 17:54:01,462 - INFO - User Admin@TechNova.com authenticated successfully!
+2025-01-29 21:27:16,002 - INFO - Login attempt with email: Admin@TechNova.com
+2025-01-29 21:27:16,075 - INFO - User Admin@TechNova.com authenticated successfully!
+2025-01-30 22:07:26,873 - INFO - Login attempt with email: Admin@TechNova.com
+2025-01-30 22:07:26,948 - INFO - User Admin@TechNova.com authenticated successfully!
+2025-01-31 21:35:03,316 - INFO - Login attempt with email: Admin@TechNova.com
+2025-01-31 21:35:03,392 - INFO - User Admin@TechNova.com authenticated successfully!
+2025-01-31 22:24:37,549 - INFO - Login attempt with email: Admin@TechNova.com
+2025-01-31 22:24:37,621 - INFO - User Admin@TechNova.com authenticated successfully!
+2025-01-31 22:28:33,927 - INFO - Login attempt with email: Admin@TechNova.com
+2025-01-31 22:28:34,001 - INFO - User Admin@TechNova.com authenticated successfully!
