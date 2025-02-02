@@ -1,5 +1,4 @@
 /* Hinzufügen von allgemeinen Animationen und Hover-Effekten */
-
 .feature-item, .use-case-item, .tech-item, .about-item, .integration-item, .future-item {
     position: relative;
     padding: 20px;

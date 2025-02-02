@@ -1,20 +1,21 @@
+import logging
 import os
 import secrets
-import logging
+from datetime import datetime, timedelta
 from logging.handlers import RotatingFileHandler
+from authlib.integrations.flask_client import OAuth
 from flask import Flask, render_template, redirect, url_for, request, flash, jsonify, session, send_from_directory
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
-from flask_migrate import Migrate
 from flask_mail import Mail, Message
-from authlib.integrations.flask_client import OAuth
-from werkzeug.security import generate_password_hash, check_password_hash
-from datetime import datetime, timedelta
-from blogposts import register_blogposts
-from A_P_und_cp import check_password_requirements, is_common_password, common_passwords
-from password_generator import generate_password
-from models import db, User
-from Editprofile import edit_profile
+from flask_migrate import Migrate
 from geoip2.webservice import Client
+from werkzeug.security import generate_password_hash, check_password_hash
+from A_P_und_cp import check_password_requirements, is_common_password, common_passwords
+from Editprofile import edit_profile
+from blogposts import register_blogposts
+from models import db, User
+from password_generator import generate_password
+
 # Verzeichnis für Logs erstellen
 log_folder = 'logs'
 if not os.path.exists(log_folder):
@@ -350,11 +351,6 @@ def dashboard():
 def ai_projekt():
     return render_template('KI/ai-projekt.html')
 
-@app.route('/Contact/')
-def contact():
-    return render_template('Contact/contact.html')
-
-
 @app.route('/logout')
 def logout():
     if current_user.is_authenticated:
@@ -494,6 +490,43 @@ def check_password():
         return jsonify({"is_common": True, "message": "Das Passwort ist zu gängig und sollte vermieden werden!"}), 200  # OK-Antwort, aber mit einer Warnung
 
     return jsonify({"is_common": False, "message": "Das Passwort ist sicher."}), 200  # OK-Antwort bei sicherem Passwort
+
+@app.route('/Contact/')
+def contact():
+    return render_template('Contact/contact.html')
+
+@app.route('/submit_contact_form', methods=['POST'])
+def submit_contact_form():
+    # Formulardaten empfangen
+    name = request.form.get('name')
+    email = request.form.get('email')
+    subject = request.form.get('subject')
+    message = request.form.get('message')
+
+    # Verzeichnis für gespeicherte Formulardaten
+    form_folder = 'form_data'
+    if not os.path.exists(form_folder):
+        try:
+            os.makedirs(form_folder)
+        except Exception as e:
+            # Fehlerbehandlung beim Erstellen des Ordners
+            return f"Fehler beim Erstellen des Ordners: {e}", 500
+
+    # Speichern der Formulardaten in einer Textdatei
+    try:
+        with open(os.path.join(form_folder, 'submissions.txt'), 'a') as f:
+            f.write(f"Name: {name}\n")
+            f.write(f"Email: {email}\n")
+            f.write(f"Subject: {subject}\n")
+            f.write(f"Message: {message}\n")
+            f.write("-" * 40 + "\n")
+
+    except Exception as e:
+        return f"Fehler beim Speichern der Formulardaten: {e}", 500
+
+    # Erfolgsnachricht und Weiterleitung
+    flash("Thank you for your message. We will get back to you shortly (per Email).", 'success')
+    return redirect(url_for('contact'))  # Zurück zur Kontaktseite
 
 if __name__ == '__main__':
     with app.app_context():

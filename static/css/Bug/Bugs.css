@@ -131,3 +131,26 @@ footer .footer-link {
 footer .footer-link:hover {
     text-decoration: underline; /* Unterstreichung bei Hover */
 }
+
+/* Standard Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Track bleibt transparent */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00bcd4; /* Blaue Daumenfarbe */
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #000; /* Schwarzer Daumen beim Hover */
+}
+/* Verhindert horizontale Scrollbars */
+body {
+    overflow-x: hidden;
+}
