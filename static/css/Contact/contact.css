@@ -142,9 +142,9 @@ body {
 
 /* Erfolgsmeldung (Grün) */
 .flash-messages .alert.success {
-    background-color: #64ffda;
+    background-color: #1f7760;
     color: white;
-    border: 1px solid #00fff7;
+    border: 1px solid #1c8f86;
 }
 
 /* Fehlermeldung (Rot) */

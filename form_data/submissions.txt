@@ -1,40 +1,22 @@
-Name: asdasd
-Email: dadasda@gmF.coc
-Subject: afsafsf
-Message: afasfaf
-----------------------------------------
-Name: sadads
-Email: asfaf@fafaf.copm
-Subject: NIGGA
-Message: LECK MEINER EIER
-----------------------------------------
-Name: d
-Email: asdad@csad.com
-Subject: asdada
-Message: asdasda
-----------------------------------------
-Name: d
-Email: asdad@fsaf.com
-Subject: sadasd
-Message: sada
-----------------------------------------
-Name: d
-Email: asda@gmai.co
-Subject: dasd
-Message: asd
-----------------------------------------
-Name: d
-Email: asdad@gmail.com
-Subject: adsads
-Message: asdads
-----------------------------------------
-Name: s
-Email: saS@ASFAF.cacac
-Subject: fafa
-Message: afaf
-----------------------------------------
-Name: af
-Email: saS@ASFAF.cacac
-Subject: afs
-Message: asf
-----------------------------------------
+
+**EINGEREICHTE DATEN (am 2025-02-03 17:20:25)**
+===============================
+**Name:** Sven Kunz
+**Email:** sven9micha37@gmail.com
+**Betreff:** Test
+**Nachricht:**
+NERV NED UND PISS DICH
+
+**BENUTZERINFORMATIONEN**
+===========================
+**Benutzername:** Admin@TechNova.com
+**User ID:** 1
+**IP-Adresse:** 127.0.0.1
+**User-Agent:** Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36
+**Referer:** http://127.0.0.1:5000/Contact/
+**Session ID:** Keine Session
+
+========================================
+
+========================================
+

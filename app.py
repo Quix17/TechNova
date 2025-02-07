@@ -4,7 +4,7 @@ import secrets
 from datetime import datetime, timedelta
 from logging.handlers import RotatingFileHandler
 from authlib.integrations.flask_client import OAuth
-from flask import Flask, render_template, redirect, url_for, request, flash, jsonify, session, send_from_directory
+from flask import Flask, render_template, redirect, url_for, request, flash, jsonify, session, send_from_directory, render_template_string
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from flask_mail import Mail, Message
 from flask_migrate import Migrate
@@ -66,11 +66,17 @@ password_change_logger = create_logger('password_change_logger', 'password_chang
 password_reset_logger = create_logger('password_reset_logger', 'password_reset.log')
 failed_login_logger = create_logger('failed_login_logger', 'failed_login.log')
 account_deletion_logger = create_logger('account_deletion_logger', 'account_deletion.txt', logging.INFO)
+user_action_logger = create_logger('user_action_logger', 'user_action.log', logging.INFO)
+user_error_logger = create_logger('user_error_logger', 'user_error.log', logging.ERROR)
 
-# Fehlerbehandlung für Fehler 502, 404, 500
-@app.errorhandler(502)
+# Fehlerbehandlung für Fehler 400, 401, 403, 404, 500, 502, 501
+@app.errorhandler(400)
+@app.errorhandler(401)
+@app.errorhandler(403)
 @app.errorhandler(404)
 @app.errorhandler(500)
+@app.errorhandler(502)
+@app.errorhandler(501)
 def handle_error(error):
     user_ip = request.remote_addr  # IP-Adresse des Benutzers
     ray_id = secrets.token_hex(8)  # Zufällige Ray-ID
@@ -219,7 +225,6 @@ def login():
         if user:
             # Prüfen, ob der Account gesperrt ist
             if user.lock_time and datetime.utcnow() < user.lock_time:
-                # Benutzer ist gesperrt, Zeit abwarten
                 remaining_lock_time = user.lock_time - datetime.utcnow()
                 flash(f"Your account is locked. Please try again in {remaining_lock_time}.", 'danger')
                 failed_login_logger.warning(f"Account locked for {email}, still within lock time.")
@@ -228,31 +233,65 @@ def login():
             # Überprüfen des Passworts
             if check_password_hash(user.password, password):
                 login_logger.info(f"User {email} authenticated successfully!")
-                login_user(user)
+
+                # Prüfe, ob ein neuer Tag angebrochen ist, und setze `login_attempts_today` falls nötig zurück
+                today_date = datetime.utcnow().date()
+                if user.last_login_attempt_date != today_date:
+                    user.login_attempts_today = 0  # Zurücksetzen auf 0 für einen neuen Tag
+
+                # Tages- und Gesamtlaufzähler aktualisieren
+                user.login_attempts_today += 1  # Erhöhe die täglichen Anmeldeversuche
+                user.total_login_attempts += 1  # Erhöhe die Gesamtanzahl der Logins
+                user.last_login_attempt_date = today_date  # Aktualisiere das Datum des letzten Logins
+
+                # IP-Adresse und User-Agent setzen
+                ip_address = request.headers.get('X-Forwarded-For') or request.remote_addr or "0.0.0.0"
+                user_agent = request.headers.get('User-Agent') or "Unknown User-Agent"
+
+                # Weitere Benutzer-Login-Informationen aktualisieren
+                user.last_login = datetime.utcnow()
+                user.last_ip = ip_address
+                user.user_agent = user_agent
                 user.failed_login_attempts = 0
-                user.lock_time = None  # Sperre zurücksetzen
-                db.session.commit()
-                activity_logger.info(f"User {email} logged in successfully.")
-                return redirect(url_for('dashboard'))
+                user.lock_time = None
+
+                # Daten speichern
+                try:
+                    db.session.commit()
+                    login_logger.info(
+                        f"Database commit successful for user {email}. IP: {user.last_ip}, User-Agent: {user.user_agent}")
+                except Exception as e:
+                    error_logger.error(f"Database commit failed for user {email}. Error: {str(e)}")
+                    flash("An error occurred while saving your login details. Please try again later.", "danger")
+                    return render_template("Anmeldung/login.html")
+
+                # Benutzer anmelden
+                login_user(user)
+                activity_logger.info(
+                    f"User {email} logged in successfully from IP: {user.last_ip} with User-Agent: {user.user_agent}")
+                return redirect(url_for("dashboard"))
             else:
-                # Passwort ist falsch, fehlerhaften Login-Zähler erhöhen
+                # Berechnung für einen fehlgeschlagenen Login
                 user.failed_login_attempts += 1
                 remaining_attempts = MAX_FAILED_ATTEMPTS - user.failed_login_attempts
 
+                # Account sperren, wenn fehlgeschlagene Versuche überschritten werden
                 if user.failed_login_attempts >= MAX_FAILED_ATTEMPTS:
-                    # Account sperren
                     user.lock_time = datetime.utcnow() + LOCK_TIME
                     db.session.commit()
-                    failed_login_logger.warning(f"Account locked for {email} due to too many failed login attempts.")
                     flash(f"Too many failed login attempts. Your account is locked for {LOCK_TIME}.", 'danger')
+                    failed_login_logger.warning(f"Account locked for {email} due to too many failed login attempts.")
                 else:
                     db.session.commit()
-                    failed_login_logger.warning(f"Failed login attempt with email: {email}")
                     flash(f'Invalid email or password. You have {remaining_attempts} attempt(s) left.', 'danger')
 
+                return render_template("Anmeldung/login.html")
         else:
-            flash('Invalid email or password. Please try again.', 'danger')
+            login_logger.warning(f"Login attempt failed: No user found with email {email}.")
+            flash("Invalid email or password. Please try again.", 'danger')
+            return render_template("Anmeldung/login.html")
 
+    # GET-Request: Einfach nur die Login-Seite anzeigen
     return render_template('Anmeldung/login.html')
 
 
@@ -383,9 +422,27 @@ def forgot_password():
     return render_template('Anmeldung/forgot_password.html')
 
 def send_reset_email(to_email, token):
-    reset_url = url_for('reset_password', token=token, _external=True)  # Generiere den Reset-Link
+    reset_url = url_for('reset_password', token=token, _external=True)
 
-    msg = Message('Password Reset Request', recipients=[to_email], sender=os.getenv('MAIL_USERNAME'))  # Sender hinzufügen
+    # Lese das HTML-Template von der Datei
+    with open('templates/email/password_email.html', 'r', encoding='utf-8') as file:
+        template = file.read()
+
+    # Ersetze den Platzhalter mit der Reset-URL
+    html_content = template.replace('{reset_url}', reset_url)
+
+    # Verwende die E-Mail-Adresse, die bei forgot_password eingegeben wurde, als Sender
+    sender_email = to_email
+
+    # Erstelle die E-Mail-Nachricht
+    msg = Message(
+        'Password Reset Request',
+        recipients=[to_email],
+        sender=sender_email,
+        html=html_content,
+    )
+
+    # Textversion für E-Mail-Clients, die kein HTML unterstützen
     msg.body = f"""
     Hello,
 
@@ -395,15 +452,19 @@ def send_reset_email(to_email, token):
 
     If you did not request a password reset, please ignore this email.
 
-    Regards,
+    This link will expire in 24 hours.
+
+    Best regards,
     Your Team
     """
+
     try:
         mail.send(msg)
-        logging.info(f"Reset password email sent to {to_email}")
+        logging.info(f"Reset password email sent to {to_email} with sender {sender_email}")
     except Exception as e:
-        print(f"Error sending email: {e}")
-        flash('An error occurred while sending the reset email. Please try again later.', 'danger')
+        logging.error(f"Error sending email: {e}")
+        raise Exception('An error occurred while sending the reset email.')
+
 
 @app.route('/reset_password/<token>', methods=['GET', 'POST'])
 def reset_password(token):
@@ -453,6 +514,11 @@ def hilfe():
 def bugs_page():
     return render_template('Test/Bug/Bugs.html')
 
+@app.route('/meer')
+@login_required
+def meer():
+    return render_template('Meer/meer.html')
+
 @app.route('/impressum')
 def impressum():
     return render_template('Impressum/impressum.html')
@@ -487,13 +553,17 @@ def check_password():
 
     # Überprüfe, ob das Passwort in der Liste häufiger Passwörter ist
     if password.lower() in common_passwords:
-        return jsonify({"is_common": True, "message": "Das Passwort ist zu gängig und sollte vermieden werden!"}), 200  # OK-Antwort, aber mit einer Warnung
+        return jsonify({"is_common": True, "message": "Passwort ist zu gängig!"}), 200  # OK-Antwort, aber mit einer Warnung
 
     return jsonify({"is_common": False, "message": "Das Passwort ist sicher."}), 200  # OK-Antwort bei sicherem Passwort
 
 @app.route('/Contact/')
 def contact():
     return render_template('Contact/contact.html')
+
+
+from datetime import datetime
+
 
 @app.route('/submit_contact_form', methods=['POST'])
 def submit_contact_form():
@@ -503,30 +573,71 @@ def submit_contact_form():
     subject = request.form.get('subject')
     message = request.form.get('message')
 
+    # Benutzerbezogene Daten
+    user_ip = request.remote_addr  # IP-Adresse des Benutzers
+    user_id = current_user.id if current_user.is_authenticated else 'Anonym'
+    username = current_user.email if current_user.is_authenticated else 'Unbekannt'  # Benutzername (oder Anonym)
+    user_agent = request.headers.get('User-Agent', 'Unbekannt')  # User-Agent des Benutzers
+    referer = request.headers.get('Referer', 'Unbekannt')  # Referer (woher die Anfrage kam)
+    session_data = session.sid if hasattr(session, 'sid') else 'Keine Session'  # Session ID
+
+    # Aktuelles Datum und Uhrzeit
+    timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
     # Verzeichnis für gespeicherte Formulardaten
     form_folder = 'form_data'
     if not os.path.exists(form_folder):
         try:
             os.makedirs(form_folder)
         except Exception as e:
-            # Fehlerbehandlung beim Erstellen des Ordners
-            return f"Fehler beim Erstellen des Ordners: {e}", 500
+            flash(f"Fehler beim Erstellen des Ordners: {e}", 'danger')
+            return redirect(url_for('contact'))
 
-    # Speichern der Formulardaten in einer Textdatei
+    # Detaillierte Logging-Nachricht (mit strukturierter Formatierung)
+    log_message = (
+        f"\n**EINGEREICHTE DATEN (am {timestamp})**\n"
+        f"===============================\n"
+        f"**Name:** {name}\n"
+        f"**Email:** {email}\n"
+        f"**Betreff:** {subject}\n"
+        f"**Nachricht:**\n{message}\n\n"
+
+        f"**BENUTZERINFORMATIONEN**\n"
+        f"===========================\n"
+        f"**Benutzername:** {username}\n"
+        f"**User ID:** {user_id}\n"
+        f"**IP-Adresse:** {user_ip}\n"
+        f"**User-Agent:** {user_agent}\n"
+        f"**Referer:** {referer}\n"
+        f"**Session ID:** {session_data}\n\n"
+
+        f"{'=' * 40}\n\n"
+        f"{'=' * 40}\n\n"
+    )
+
+    # Weitere Benutzerdaten und Aktionen loggen
+    user_action_logger.info(f"Benutzeraktionen: {log_message}")
+
     try:
+        # Speichern der Formulardaten in einer Textdatei
         with open(os.path.join(form_folder, 'submissions.txt'), 'a') as f:
-            f.write(f"Name: {name}\n")
-            f.write(f"Email: {email}\n")
-            f.write(f"Subject: {subject}\n")
-            f.write(f"Message: {message}\n")
-            f.write("-" * 40 + "\n")
+            f.write(log_message)
+
+        # Erfolgsprotokollierung
+        success_message = f"Formular erfolgreich übermittelt von Benutzer {username} ({user_id}) (IP: {user_ip})"
+        user_action_logger.info(success_message)
 
     except Exception as e:
-        return f"Fehler beim Speichern der Formulardaten: {e}", 500
+        # Fehler beim Speichern der Formulardaten
+        error_message = f"Fehler beim Speichern der Formulardaten für Benutzer {username} ({user_id}): {e}"
+        user_error_logger.error(error_message)  # Fehler loggen
+        flash(f"Fehler beim Speichern der Formulardaten: {e}", 'danger')
+        return redirect(url_for('contact'))
 
-    # Erfolgsnachricht und Weiterleitung
-    flash("Thank you for your message. We will get back to you shortly (per Email).", 'success')
-    return redirect(url_for('contact'))  # Zurück zur Kontaktseite
+    # Erfolgsnachricht
+    flash("Vielen Dank für Ihre Nachricht. Wir werden uns in Kürze bei Ihnen melden, per E-Mail.", 'success')
+    return redirect(url_for('contact'))
+
 
 if __name__ == '__main__':
     with app.app_context():

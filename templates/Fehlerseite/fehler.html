@@ -3,38 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechNova Error {{ error_code }}</title>
+    <title>TechNova Fehler</title>
 
     <!-- Standard Favicon -->
     <link rel="icon" href="/static/Bilder/TechNova/favicon.ico" type="image/x-icon">
-
-    <!-- Favicon in verschiedenen Größen für den Browser -->
     <link rel="icon" sizes="16x16" href="/static/Bilder/TechNova/favicon-16x16.png">
     <link rel="icon" sizes="32x32" href="/static/Bilder/TechNova/favicon-32x32.png">
-
-    <!-- Favicon für Android-Geräte -->
     <link rel="icon" sizes="192x192" href="/static/Bilder/TechNova/android-chrome-192x192.png">
     <link rel="icon" sizes="512x512" href="/static/Bilder/TechNova/android-chrome-512x512.png">
-
-    <!-- Favicon für Apple-Geräte (Home Screen) -->
     <link rel="apple-touch-icon" href="/static/Bilder/TechNova/apple-touch-icon.png">
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Error/error.css') }}">
+    <!-- Gemeinsames CSS und JS für alle Fehlercodes -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Error/404-animation.css') }}">
+    <script src="{{ url_for('static', filename='js/Error/404-animation.js') }}" defer></script>
+
+    <style>
+        .error-details {
+            position: fixed;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            transition: top 1s ease-in-out;
+            text-align: center;
+        }
+        .error-details a {
+            color: #00bfff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .error-details a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(() => {
+                document.querySelector(".error-details").style.top = "20px";
+            }, 500);
+        });
+    </script>
 </head>
 <body>
-    <div class="error-container">
-        <h1>Oops, etwas ist schiefgelaufen!</h1>
+    <!-- Dynamische Fehleranimationen -->
+    {% if error_code == 400 %}
+        {% include 'Fehlerseite/400-animation.html' %}
+    {% elif error_code == 401 %}
+        {% include 'Fehlerseite/401-animation.html' %}
+    {% elif error_code == 403 %}
+        {% include 'Fehlerseite/403-animation.html' %}
+    {% elif error_code == 404 %}
+        {% include 'Fehlerseite/404-animation.html' %}
+    {% elif error_code == 500 %}
+        {% include 'Fehlerseite/500-animation.html' %}
+    {% elif error_code == 503 %}
+        {% include 'Fehlerseite/503-animation.html' %}
+    {% else %}
+        {% include 'Fehlerseite/unknown-animation.html' %}
+    {% endif %}
+
+    <!-- Fehlerdetails -->
+    <div class="error-details">
         <p class="error-code">Fehlercode: {{ error_code }}</p>
-
-        <div class="details">
-            <p><strong>Ihre IP-Adresse:</strong> {{ ip }}</p>
-            <p><strong>HTTP-Methode:</strong> {{ method }}</p>
-            <p class="ray-id"><strong>Ray ID:</strong> {{ ray_id }}</p>
-            <p><strong>Benutzer:</strong> {{ user }}</p>
-        </div>
-
-        <p>Wir arbeiten daran, das Problem zu beheben. Bitte versuchen Sie es später noch einmal!</p>
-        <p><a href="{{ url_for('contact') }}">Kontaktieren Sie uns</a> bei weiteren Fragen.</p>
-
-        <a href="{{ url_for('home') }}" class="cta">Zurück zur Startseite</a>
+        <p><strong>Ihre IP-Adresse:</strong> {{ ip }}</p>
+        <p><strong>HTTP-Methode:</strong> {{ method }}</p>
+        <p class="ray-id"><strong>Ray ID:</strong> {{ ray_id }}</p>
+        <p><strong>Benutzer:</strong> {{ user }}</p>
+        <p><a href="{{ url_for('home') }}">Zurück zur Startseite</a> | <a href="{{ url_for('contact') }}">Kontakt</a></p>
     </div>
+
+    <!-- Fehlercodes, die angezeigt werden können -->
+    {% if error_code == 400 %}
+    {% elif error_code == 401 %}
+    {% elif error_code == 403 %}
+    {% elif error_code == 404 %}
+    {% elif error_code == 500 %}
+    {% elif error_code == 503 %}
+    {% else %}
+    {% endif %}
+
+</body>
+</html>

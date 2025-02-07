@@ -40,6 +40,7 @@ header h1 {
     justify-content: space-between;
     margin-top: 50px;
     gap: 40px;
+    flex-wrap: wrap;  /* Flexbox Wrap hinzugefügt */
 }
 
 .company-info, .legal-info {
@@ -79,31 +80,32 @@ header h1 {
     top: 0;
 }
 
-/* Footer */
+/* Footer Styling */
 footer {
-    background-color: #1a1a1a;
-    color: #f1f1f1;
-    text-align: center;
-    padding: 20px;
-    position: fixed;
-    bottom: 0;
+    background-color: #000; /* Schwarzer Hintergrund */
+    color: #575757; /* Weißer Text */
+    padding: 15px 0; /* Wenig Abstand oben und unten */
+    text-align: center; /* Zentrierter Text */
+}
+
+footer .container {
     width: 100%;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 1200px; /* Maximale Breite des Containers */
+    margin: 0 auto; /* Zentriert den Container */
+    padding: 0 20px; /* Etwas Abstand an den Seiten */
 }
 
 footer p {
-    font-size: 1rem;
-    margin: 0;
+    margin: 5px 0; /* Kleiner Abstand zwischen den Absätzen */
 }
 
-/* Link-Stile */
-footer a {
-    color: #00bcd4; /* Türkis */
+footer .footer-link {
+    color: #00bcd4; /* Türkis für die Links */
     text-decoration: none; /* Entfernt die Unterstreichung */
 }
 
-footer a:hover {
-    color: #38b8a3; /* Etwas dunkleres Türkis beim Hover-Effekt */
+footer .footer-link:hover {
+    text-decoration: underline; /* Unterstreichung bei Hover */
 }
 
 
@@ -116,13 +118,43 @@ a:hover {
 
 /* Responsive Design für kleinere Bildschirme */
 @media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;  /* Kleinere Schriftgröße für mobile Ansicht */
+    }
+
     .content-container {
         flex-direction: column;
         align-items: center;
+        gap: 20px;  /* Weniger Abstand zwischen den Sektionen */
     }
 
     .company-info, .legal-info {
-        width: 100%;
+        width: 90%;  /* Breite auf 90% der Seite reduzieren */
+        padding: 15px;
+    }
+
+    footer p {
+        font-size: 0.9rem;  /* Kleinere Schriftgröße im Footer */
+    }
+}
+
+/* Responsives Design für sehr kleine Bildschirme */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;  /* Kleinere Schriftgröße für kleine Geräte */
+    }
+
+    header h1 {
+        font-size: 1.2rem;  /* Noch kleinere Schriftgröße für den Header */
+    }
+
+    .company-info, .legal-info {
+        width: 100%;  /* Beide Abschnitte nehmen 100% der Breite ein */
+        padding: 10px;
+    }
+
+    footer {
+        font-size: 0.8rem;  /* Kleinere Schrift im Footer */
     }
 }
 

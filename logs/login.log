@@ -1,49 +1,12 @@
-2025-01-28 13:17:20,160 - INFO - Login attempt with email: Admin@TechNova.com
-2025-01-28 13:17:20,230 - INFO - User Admin@TechNova.com authenticated successfully!
-2025-01-29 16:35:51,123 - INFO - Login attempt with email: Admin@TechNova.com
-2025-01-29 16:36:09,810 - INFO - Login attempt with email: Admin@TechNova.com
-2025-01-29 16:36:09,886 - INFO - User Admin@TechNova.com authenticated successfully!
-2025-01-29 17:34:51,371 - INFO - Login attempt with email: Admin@TechNova.com
-2025-01-29 17:34:51,442 - INFO - User Admin@TechNova.com authenticated successfully!
-2025-01-29 17:51:31,276 - INFO - Login attempt with email: Admin@TechNova.com
-2025-01-29 17:51:31,349 - INFO - User Admin@TechNova.com authenticated successfully!
-2025-01-29 17:54:01,391 - INFO - Login attempt with email: Admin@TechNova.com
-2025-01-29 17:54:01,462 - INFO - User Admin@TechNova.com authenticated successfully!
-2025-01-29 21:27:16,002 - INFO - Login attempt with email: Admin@TechNova.com
-2025-01-29 21:27:16,075 - INFO - User Admin@TechNova.com authenticated successfully!
-2025-01-30 22:07:26,873 - INFO - Login attempt with email: Admin@TechNova.com
-2025-01-30 22:07:26,948 - INFO - User Admin@TechNova.com authenticated successfully!
-2025-01-31 21:35:03,316 - INFO - Login attempt with email: Admin@TechNova.com
-2025-01-31 21:35:03,392 - INFO - User Admin@TechNova.com authenticated successfully!
-2025-01-31 22:24:37,549 - INFO - Login attempt with email: Admin@TechNova.com
-2025-01-31 22:24:37,621 - INFO - User Admin@TechNova.com authenticated successfully!
-2025-01-31 22:28:33,927 - INFO - Login attempt with email: Admin@TechNova.com
-2025-01-31 22:28:34,001 - INFO - User Admin@TechNova.com authenticated successfully!
-2025-02-01 00:01:06,909 - INFO - Login attempt with email: Admin@TechNova.com
-2025-02-01 00:01:06,982 - INFO - User Admin@TechNova.com authenticated successfully!
-2025-02-01 15:13:57,543 - INFO - Login attempt with email: Admin@TechNova.com
-2025-02-01 15:13:57,617 - INFO - User Admin@TechNova.com authenticated successfully!
-2025-02-01 15:44:39,087 - INFO - Login attempt with email: Admin@TechNova.com
-2025-02-01 15:44:39,159 - INFO - User Admin@TechNova.com authenticated successfully!
-2025-02-01 16:06:45,459 - INFO - Login attempt with email: Admin@TechNova.com
-2025-02-01 16:06:45,533 - INFO - User Admin@TechNova.com authenticated successfully!
-2025-02-01 18:09:29,574 - INFO - Login attempt with email: Admin@TechNova.com
-2025-02-01 18:09:29,649 - INFO - User Admin@TechNova.com authenticated successfully!
-2025-02-01 19:21:29,963 - INFO - Login attempt with email: Admin@TechNova.com
-2025-02-01 19:21:30,036 - INFO - User Admin@TechNova.com authenticated successfully!
-2025-02-01 19:58:57,931 - INFO - Login attempt with email: Admin@TechNova.com
-2025-02-01 19:58:58,001 - INFO - User Admin@TechNova.com authenticated successfully!
-2025-02-02 00:07:57,568 - INFO - Login attempt with email: Admin@TechNova.com
-2025-02-02 00:07:57,643 - INFO - User Admin@TechNova.com authenticated successfully!
-2025-02-02 00:17:38,177 - INFO - Login attempt with email: Admin@TechNova.com
-2025-02-02 00:17:38,249 - INFO - User Admin@TechNova.com authenticated successfully!
-2025-02-02 00:36:59,893 - INFO - Login attempt with email: Admin@TechNova.com
-2025-02-02 00:36:59,963 - INFO - User Admin@TechNova.com authenticated successfully!
-2025-02-02 00:39:19,223 - INFO - Login attempt with email: Admin@TechNova.com
-2025-02-02 00:39:19,294 - INFO - User Admin@TechNova.com authenticated successfully!
-2025-02-02 00:43:10,401 - INFO - Login attempt with email: Admin@TechNova.com
-2025-02-02 00:43:10,472 - INFO - User Admin@TechNova.com authenticated successfully!
-2025-02-02 01:23:57,729 - INFO - Login attempt with email: Admin@TechNova.com
-2025-02-02 01:23:57,802 - INFO - User Admin@TechNova.com authenticated successfully!
-2025-02-02 01:24:30,829 - INFO - Login attempt with email: Admin@TechNova.com
-2025-02-02 01:24:30,901 - INFO - User Admin@TechNova.com authenticated successfully!
+2025-02-06 14:21:34,626 - INFO - Login attempt with email: sven9micha37@gmail.com
+2025-02-06 14:21:34,699 - INFO - User sven9micha37@gmail.com authenticated successfully!
+2025-02-06 14:21:34,709 - INFO - Database commit successful for user sven9micha37@gmail.com. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36
+2025-02-06 15:16:01,218 - INFO - Login attempt with email: sven9micha37@gmail.com
+2025-02-06 15:16:01,289 - INFO - User sven9micha37@gmail.com authenticated successfully!
+2025-02-06 15:16:01,298 - INFO - Database commit successful for user sven9micha37@gmail.com. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36
+2025-02-06 18:05:35,259 - INFO - Login attempt with email: sven9micha37@gmail.com
+2025-02-06 18:05:35,339 - INFO - User sven9micha37@gmail.com authenticated successfully!
+2025-02-06 18:05:35,349 - INFO - Database commit successful for user sven9micha37@gmail.com. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36
+2025-02-06 21:30:27,193 - INFO - Login attempt with email: Admin@TechNova.de
+2025-02-06 21:30:27,263 - INFO - User Admin@TechNova.de authenticated successfully!
+2025-02-06 21:30:27,273 - INFO - Database commit successful for user Admin@TechNova.de. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36

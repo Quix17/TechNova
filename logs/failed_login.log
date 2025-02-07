@@ -1,0 +1,5 @@
+2025-02-04 15:11:05,450 - WARNING - Failed login attempt with email: Admin@TechNova.com
+2025-02-04 15:12:12,327 - WARNING - Failed login attempt with email: Admin@TechNova.com
+2025-02-04 15:12:36,732 - WARNING - Failed login attempt with email: Admin@TechNova.com
+2025-02-04 15:12:41,013 - WARNING - Failed login attempt with email: Admin@TechNova.com
+2025-02-04 15:12:45,505 - WARNING - Account locked for Admin@TechNova.com due to too many failed login attempts.

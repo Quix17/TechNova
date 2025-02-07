@@ -21,14 +21,16 @@
     <!-- CSS-Dateien -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/Anmeldung/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/Anmeldung/r-p-12-64.css') }}">
-
-    <!-- Augen Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
     <!-- JavaScript-Dateien -->
-    <script src="{{ url_for('static', filename='js/Anmeldung/su-p-a-v.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/Anmeldung/passwort-animation-signup.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/Anmeldung/L-p-g.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/Anmeldung/password_checker.js') }}" defer></script>
+    <script src="https://assets.codepen.io/16327/MorphSVGPlugin3.min.js"></script>
+    <script src="https://assets.codepen.io/16327/ScrambleTextPlugin3.min.js"></script>
+    <script src="https://unpkg.com/gsap@3.11.0/dist/gsap.min.js"></script>
+
 </head>
 <body style="background-image: url('{{ url_for('static', filename='Bilder/Anmeldung/Willkommen.jpg') }}'); background-size: cover; background-position: center;">
     <div class="card-container">
@@ -70,8 +72,8 @@
                     <span class="input-icon">🔒</span>
                     <label for="password"></label>
                     <input type="password" class="input-field" name="password" id="password" placeholder="Password" required oninput="checkPasswordStrength()">
-                    <span class="input-icon" id="toggle-password" onclick="togglePassword()">
-                        <i class="fas fa-eye"></i>
+                    <span class="input-icon" id="toggle-password" onclick="togglePassword()" style="cursor pointer;">
+                        <i class="fas fa-eye" id="eye-icon"></i>
                     </span>
                 </div>
 
@@ -80,8 +82,8 @@
                     <span class="input-icon">🔒</span>
                     <label for="confirm-password"></label>
                     <input type="password" class="input-field" name="confirm_password" id="confirm-password" placeholder="Confirm Password" required oninput="checkPasswordMatch()">
-                    <span class="input-icon" id="toggle-confirm-password" onclick="toggleConfirmPassword()">
-                        <i class="fas fa-eye"></i>
+                    <span class="input-icon" id="toggle-confirm-password" onclick="toggleConfirmPassword()" style="cursor pointer;">
+                        <i class="fas fa-eye" id="eye-icon2"></i>
                     </span>
                 </div>
                 <div class="btn">

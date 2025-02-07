@@ -81,7 +81,7 @@ function checkIfCommonPassword(password, commonPasswordMessage) {
     .then(response => response.json())
     .then(data => {
         if (data.is_common) {
-            commonPasswordMessage.innerHTML = "Das Passwort ist zu gängig und sollte vermieden werden!";
+            commonPasswordMessage.innerHTML = "Passwort ist zu gängig!";
             commonPasswordMessage.style.color = "red";
         } else {
             commonPasswordMessage.innerHTML = "Das Passwort ist sicher.";
@@ -139,7 +139,7 @@ async function checkIfCommonPassword(password) {
 
         // Überprüfe die Antwort, um zu sehen, ob das Passwort gängig ist
         if (data.is_common) {
-            commonPasswordMessage.innerHTML = "Das Passwort ist zu gängig und sollte vermieden werden!";
+            commonPasswordMessage.innerHTML = "Passwort ist zu gängig!";
             commonPasswordMessage.style.color = "red";
         } else {
             commonPasswordMessage.innerHTML = "Das Passwort ist sicher.";
