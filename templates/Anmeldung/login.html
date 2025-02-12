@@ -16,13 +16,14 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
     <!-- JavaScript-Dateien -->
+    <script src="{{ url_for('static', filename='js/Anmeldung/Effekt-Karten.js') }}"></script>
     <script src="{{ url_for('static', filename='js/Anmeldung/passwort-animation-login.js') }}" defer></script>
     <script src="https://assets.codepen.io/16327/MorphSVGPlugin3.min.js"></script>
     <script src="https://assets.codepen.io/16327/ScrambleTextPlugin3.min.js"></script>
     <script src="https://unpkg.com/gsap@3.11.0/dist/gsap.min.js"></script>
 
 </head>
-<body style="background-image: url('{{ url_for('static', filename='Bilder/Anmeldung/Willkommen.jpg') }}'); background-size: cover; background-position: center;">
+<body style="background-image: url('http://127.0.0.1:5000/static/Bilder/Anmeldung/Willkommen.jpg'); background-size: cover; background-position: center;">
     <div class="card">
         <form class="form" method="POST" action="{{ url_for('login') }}">
             <p id="heading">Login</p>

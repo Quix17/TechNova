@@ -310,3 +310,154 @@ body {
     position: relative;
     z-index: 1;
 }
+
+
+
+
+
+/* Modal-Styling */
+/* Modal-Styling für das zentrierte Formular */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background-color: #2c2c2c; /* Dunkelgrau passend zur Seite */
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    width: 450px;
+    max-width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: scaleUp 0.3s ease-out;
+    position: relative; /* Für die Position des Close-Buttons */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; /* Sicherstellen, dass das Modal horizontal mittig ist */
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.modal h2 {
+    color: #f44336; /* Warnfarbe in Rot */
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.modal p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #b0b0b0;
+    line-height: 1.5;
+    animation: fadeInText 0.5s ease-out;
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal button {
+    background-color: #6c1a89; /* Passende lila Farbe */
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal button:hover {
+    background-color: #9a2a99;
+    transform: translateY(-2px); /* Leichte Verschiebung nach oben beim Hover */
+}
+
+.modal button:active {
+    transform: translateY(2px); /* Leichter Effekt beim Drücken */
+}
+
+/* Schließ-Button oben rechts */
+.modal .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
+    color: #f44336; /* Rote Farbe für das X */
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.modal .close-btn:hover {
+    color: #9a2a99; /* Lila Farbe für den Close-Button im Hover */
+}
+
+/* Responsives Design für das Modal */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 85%;
+        padding: 25px;
+    }
+
+    .modal button {
+        padding: 12px 25px;
+        font-size: 1.1rem;
+    }
+
+    .modal h2 {
+        font-size: 1.4rem;
+    }
+
+    .modal p {
+        font-size: 1rem;
+    }
+}

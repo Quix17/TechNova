@@ -8,9 +8,9 @@ app = Flask(__name__)
 # Passwortanforderungen
 def check_password_requirements(password):
     # Mindestens 26 Zeichen
-    length_check = len(password) >= 26
+    length_check = len(password) >= 12
     # Mindestens 5 Großbuchstaben
-    uppercase_check = len(re.findall(r'[A-Z]', password)) >= 5
+    uppercase_check = len(re.findall(r'[A-Z]', password)) >= 3
     # Mindestens 2 Zahlen
     number_check = len(re.findall(r'\d', password)) >= 2
     # Mindestens 2 Sonderzeichen

@@ -32,23 +32,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     BLINK(); // Initialisieren des Blinkens
 
-    // Bewegungslogik für das Auge bei Mausbewegung
-    const posMapper = gsap.utils.mapRange(-100, 100, 30, -30);
-    let reset;
-
-    const MOVE_EYE = ({ x, y }) => {
-        if (reset) reset.kill();
-        reset = gsap.delayedCall(2, () => {
-            gsap.to('.eye', { xPercent: 0, yPercent: 0, duration: 0.2 });
-        });
-        const BOUNDS = EYE.getBoundingClientRect();
-        gsap.set('.eye', {
-            xPercent: gsap.utils.clamp(-30, 30, posMapper(BOUNDS.x - x)),
-            yPercent: gsap.utils.clamp(-30, 30, posMapper(BOUNDS.y - y))
-        });
-    };
-
-    window.addEventListener('pointermove', MOVE_EYE);
 
     // Event-Listener für Toggle des Passworts
     TOGGLE.addEventListener('click', () => {
@@ -121,7 +104,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Verhindern des Formularabsendens
+        // Verhindern des Formularabsendens
     const FORM = document.querySelector('form');
-    FORM.addEventListener('submit', event => event.preventDefault());
-});
+    });

@@ -324,27 +324,7 @@ a {
     transition: all 0.3s ease-in-out;
 }
 
-/* Stil für den Button im Passwort-Generator Kärtchen */
-.generate-button {
-    width: 80%;  /* Button schmaler */
-    padding: 0.5em;
-    border-radius: 10px;
-    background-color: #252525;
-    color: white;
-    font-size: 1em;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-    display: block;
-    margin: 10px auto;
-}
-
-/* Hover-Effekt für den Button */
-.generate-button:hover {
-    background-color: #000000;
-}
-
-/* Stil für das generierte Passwort - Textfeld zum Kopieren */
+/* Stil für das generierte Passwort*/
 .generated-password-text {
     margin-top: 10px;
     color: #d3d3d3;
@@ -363,8 +343,44 @@ a {
     font-size: 1.1em;
 }
 
-/* Stil für das Textfeld im Fokus (kopieren) */
-.generated-password-text:focus {
-    background-color: #171717;
+
+/* Copy Password icon */
+.password-input-container {
+    position: relative;
+    width: 100%;
+}
+
+.copy-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
     color: #ffffff;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.copy-button:hover {
+    color: #333;
+}
+
+.notification {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #41006a;
+    color: #c246c2;
+    padding: 16px 32px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: top 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.notification.show {
+    top: 20px;
 }

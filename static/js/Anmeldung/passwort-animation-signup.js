@@ -19,24 +19,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789`~,.<>?/;":][}{+_)(*&^%$#@!±=-§';
 
-    // Blinken des Augen-Elements (dies bleibt, aber es wird nicht genutzt)
-    let blinkTl;
-    const BLINK = () => {
-        const delay = gsap.utils.random(2, 8);
-        const duration = BLINK_SPEED;
-        const repeat = Math.random() > 0.5 ? 3 : 1;
-        blinkTl = gsap.timeline({
-            delay,
-            onComplete: () => BLINK(),
-            repeat,
-            yoyo: true
-        })
-            .to('.lid--upper', { morphSVG: '.lid--lower', duration })
-            .to('#eye-open path', { morphSVG: '#eye-closed path', duration }, 0);
-    };
-
-    BLINK(); // Initialisieren des Blinkens
-
     // Funktion für das Toggle für Passwort
     const togglePassword = (input, toggle, proxy) => {
         if (busy) return;
@@ -81,7 +63,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
             gsap.timeline({
                 onComplete: () => {
-                    BLINK();
                     busy = false;
                 }
             })
@@ -111,5 +92,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Verhindern des Formularabsendens
     const FORM = document.querySelector('form');
-    FORM.addEventListener('submit', event => event.preventDefault());
 });

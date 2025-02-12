@@ -24,6 +24,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
     <!-- JavaScript-Dateien -->
+    <script src="{{ url_for('static', filename='js/Anmeldung/Password copy.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/Anmeldung/passwort-animation-signup.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/Anmeldung/L-p-g.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/Anmeldung/password_checker.js') }}" defer></script>
@@ -111,9 +112,12 @@
                 <p id="strength-status">Schwach</p>
             </div>
 
-            <div>
-                <label for="generated-password"></label><input type="text" id="generated-password" class="generated-password-text" readonly placeholder="Generiertes Passwort wird hier angezeigt">
-            </div>
+<div class="password-input-container">
+    <input type="text" id="generated-password" class="generated-password-text" readonly placeholder="Generiertes Passwort wird hier angezeigt">
+    <button id="copy-password" class="copy-button">
+        <i class="fas fa-copy" id="copy-icon"></i>
+    </button>
+</div>
 
             <div>
                 <label for="password-length"></label><input type="range" id="password-length" min="12" max="64" value="20" oninput="updatePasswordLength()">

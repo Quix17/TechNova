@@ -3,21 +3,24 @@ function checkPasswordStrength() {
     const password = document.getElementById("password").value;
     const strengthStatus = document.getElementById("strength-status");
     const strengthBar = document.getElementById("password-strength-bar");
-    const requirements = document.getElementById("password-requirements").children;
     const commonPasswordMessage = document.getElementById("common-password-message");
 
     // Neue Regeln für Passwortanforderungen
     const lengthCheck = /^(?=.{12,})/;  // Passwort muss mindestens 12 Zeichen lang sein
     const uppercaseCheck = /[A-Z].*[A-Z].*[A-Z]/;  // Mindestens 3 Großbuchstaben
     const numberCheck = /\d.*\d/;  // Mindestens 2 Zahlen
-    const specialCheck = /[!@#$%^&*(),.?":{}|<>].*[!@#$%^&*(),.?":{}|<>]/;  // Mindestens 2 Sonderzeichen
     const noRepeatCheck = /(.)\1{2,}/;  // Keine Wiederholungen wie 'aaa'
 
-    // Überprüfen, ob alle Kriterien erfüllt sind
+    // Sonderzeichen zählen (Erweiterter RegEx)
+    const specialChars = /[!@#$%^&*(),.?":{}|<>;:'\[\]\-_+=]/g;  // Erweiterter RegEx für Sonderzeichen
+    let specialCharCount = (password.match(specialChars) || []).length;  // Zähle alle Sonderzeichen im Passwort
+
+    console.log("Gefundene Sonderzeichen: ", specialCharCount);  // Debugging-Ausgabe
+
     const isValidLength = lengthCheck.test(password);
     const isValidUppercase = uppercaseCheck.test(password);
     const isValidNumber = numberCheck.test(password);
-    const isValidSpecial = specialCheck.test(password);
+    const isValidSpecial = specialCharCount >= 2;  // Mindestens 3 Sonderzeichen
     const isValidNoRepeat = !noRepeatCheck.test(password);
 
     // Anzeige der Anforderungen

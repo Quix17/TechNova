@@ -20,3 +20,26 @@ NERV NED UND PISS DICH
 
 ========================================
 
+
+**EINGEREICHTE DATEN (am 2025-02-12 16:56:57)**
+===============================
+**Name:** Sven Kunz
+**Email:** sven9micha37@gmail.com
+**Betreff:** Test
+**Nachricht:**
+csp https://cdnjs.cloudflare.com https://ajax.googleapis.com https://assets.codepen.io https://unpkg.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: http://127.0.0.1:5000 https://127.0.0.1:5000 https://via.placeholder.com; font-src 'self' https://cdnjs.cloudflare.com; connect-src 'self'; frame-ancestors 'none'; object-src 'none';"
+
+
+**BENUTZERINFORMATIONEN**
+===========================
+**Benutzername:** Technova@server.cz
+**User ID:** 4
+**IP-Adresse:** 127.0.0.1
+**User-Agent:** Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36
+**Referer:** http://127.0.0.1:5000/Contact/
+**Session ID:** Keine Session
+
+========================================
+
+========================================
+

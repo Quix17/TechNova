@@ -175,6 +175,11 @@ def log_page_access(response):
         access_logger.info(f"Page accessed: {request.path} by user {current_user.email}")
     else:
         access_logger.info(f"Page accessed: {request.path} by user Anonymous")
+
+    # Content-Security-Policy Header setzen
+    csp_policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://ajax.googleapis.com https://assets.codepen.io https://unpkg.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: http://127.0.0.1:5000 https://127.0.0.1:5000 https://via.placeholder.com; font-src 'self' https://cdnjs.cloudflare.com; connect-src 'self'; frame-ancestors 'none'; object-src 'none';"
+    response.headers['Content-Security-Policy'] = csp_policy
+
     return response
 
 # Authlib OAuth
