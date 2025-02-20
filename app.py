@@ -1,15 +1,20 @@
+import json
 import logging
 import os
 import secrets
-from datetime import datetime, timedelta
+from datetime import timedelta
 from logging.handlers import RotatingFileHandler
+from flask_cors import cross_origin
+
 from authlib.integrations.flask_client import OAuth
-from flask import Flask, render_template, redirect, url_for, request, flash, jsonify, session, send_from_directory, render_template_string
+from flask import Flask, render_template, redirect, url_for, request, flash, jsonify, session, send_from_directory
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from flask_mail import Mail, Message
 from flask_migrate import Migrate
 from geoip2.webservice import Client
+from sqlalchemy import text
 from werkzeug.security import generate_password_hash, check_password_hash
+
 from A_P_und_cp import check_password_requirements, is_common_password, common_passwords
 from Editprofile import edit_profile
 from blogposts import register_blogposts
@@ -177,7 +182,7 @@ def log_page_access(response):
         access_logger.info(f"Page accessed: {request.path} by user Anonymous")
 
     # Content-Security-Policy Header setzen
-    csp_policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://ajax.googleapis.com https://assets.codepen.io https://unpkg.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: http://127.0.0.1:5000 https://127.0.0.1:5000 https://via.placeholder.com; font-src 'self' https://cdnjs.cloudflare.com; connect-src 'self'; frame-ancestors 'none'; object-src 'none';"
+    csp_policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://ajax.googleapis.com https://assets.codepen.io https://unpkg.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: http://127.0.0.1:5000 https://127.0.0.1:5000 https://via.placeholder.com; font-src 'self' https://cdnjs.cloudflare.com; connect-src 'self' http://localhost:5000; frame-ancestors 'none'; object-src 'none';"
     response.headers['Content-Security-Policy'] = csp_policy
 
     return response
@@ -273,8 +278,9 @@ def login():
                 # Benutzer anmelden
                 login_user(user)
                 activity_logger.info(
-                    f"User {email} logged in successfully from IP: {user.last_ip} with User-Agent: {user.user_agent}")
-                return redirect(url_for("dashboard"))
+                f"User {email} logged in successfully from IP: {user.last_ip} with User-Agent: {user.user_agent}")
+                return redirect(url_for('dashboard', user_id=user.id))
+
             else:
                 # Berechnung für einen fehlgeschlagenen Login
                 user.failed_login_attempts += 1
@@ -368,7 +374,7 @@ def auth0_callback():
 
             login_user(existing_user)
             logging.info(f"Auth0 login successful for user: {email}")
-            return redirect(url_for('dashboard'))
+            return redirect(url_for('dashboard', user_id=user.i))
         else:
             print("Failed to parse user data.")
             flash('Authentication failed. Please try again.', 'danger')
@@ -378,17 +384,32 @@ def auth0_callback():
         flash('Authentication failed. Please try again.', 'danger')
         return redirect(url_for('home'))
 
-@app.route('/dashboard', methods=['GET', 'POST'])
-@login_required
-def dashboard():
+
+@app.route('/dashboard_id<int:user_id>', methods=['GET', 'POST'])
+@login_required  # Sicherstellen, dass der Benutzer eingeloggt ist
+def dashboard(user_id):
+    # Debugging: Überprüfen, ob der Benutzer eingeloggt ist
+    if not current_user.is_authenticated:
+        flash("Du bist nicht eingeloggt! Bitte logge dich ein, um auf das Dashboard zuzugreifen.", "danger")
+        return redirect(url_for('login'))  # Stelle sicher, dass der Benutzer eingeloggt ist
+
+    # Sicherstellen, dass der angeforderte user_id dem aktuell eingeloggten Benutzer entspricht
+    if user_id != current_user.id:
+        flash("Du hast keinen Zugriff auf dieses Dashboard.", "danger")
+        return redirect(url_for('login'))  # Falls der User-ID nicht übereinstimmt, zurück zum Login
+
     if request.method == 'POST':
         entered_key = request.form.get('key')
         if entered_key == current_user.key:
-            return "Access Granted!"
+            flash("Access Granted!", "success")
+            return render_template('Dashboard/dashboard.html')
         else:
             flash("Invalid Key!", "danger")
 
-    return render_template('Dashboard/dashboard.html')
+    # Übergabe der user_id an das Template
+    return render_template('Dashboard/dashboard.html', user_id=current_user.id)
+
+
 
 @app.route('/ai-projekt')
 @login_required
@@ -398,7 +419,6 @@ def ai_projekt():
 @app.route('/logout')
 def logout():
     if current_user.is_authenticated:
-        # Logge den Logout-Ereignis
         logout_logger.info(f"User {current_user.email} logged out.")  # Hier wird der logout_logger verwendet
 
     logout_user()  # Der Benutzer wird abgemeldet
@@ -507,6 +527,7 @@ def password_generator(length):
     return jsonify({'password': password})
 
 @app.route('/updates')
+@login_required
 def update():
     return render_template('Test/Updates/updates.html')
 
@@ -533,12 +554,18 @@ def datenschutz():
     return render_template('DSGVO/Datenschutz.html')
 
 @app.route('/Aurora-Ki')
+@login_required
 def auroraKi():
     return send_from_directory('aurora-chat/public', 'index.html')
 
 @app.route('/NB')
 def nutzungsbedingungen():
     return render_template('Nutzungsbedingung/NB.html')
+
+@app.route('/backup_codes')
+@login_required
+def backup_codes():
+    return render_template('Anmeldung/backup_codes.html')
 
 # Blueprint registrieren
 app.register_blueprint(edit_profile, url_prefix='/edit_profile')
@@ -642,6 +669,196 @@ def submit_contact_form():
     # Erfolgsnachricht
     flash("Vielen Dank für Ihre Nachricht. Wir werden uns in Kürze bei Ihnen melden, per E-Mail.", 'success')
     return redirect(url_for('contact'))
+
+
+@app.route('/save_backup_codes', methods=['POST'])
+def save_backup_codes():
+    try:
+        data = request.get_json()  # Empfange die Daten als JSON
+        user_id = data.get('user_id')  # Benutzer-ID extrahieren
+        codes = data.get('codes')  # Backup-Codes extrahieren
+
+        # Überprüfen, ob die notwendigen Daten vorhanden sind
+        if not user_id or not codes:
+            return jsonify({"success": False, "message": "Benutzer-ID oder Codes fehlen."})
+
+        # Benutzer anhand der user_id finden
+        user = User.query.get(user_id)
+
+        # Wenn der Benutzer nicht existiert, eine Fehlermeldung zurückgeben
+        if not user:
+            return jsonify({"success": False, "message": "Benutzer nicht gefunden."})
+
+    
+        # Speichern der Backup-Codes im Benutzer-Objekt
+        user.backup_codes = codes
+        db.session.commit()  # Änderungen in der DB speichern
+
+        return jsonify({"success": True, "message": "Backup-Codes wurden erfolgreich gespeichert."})
+
+    except Exception as e:
+        print(f"Fehler beim Speichern der Backup-Codes: {e}")
+        return jsonify({"success": False, "message": f"Fehler beim Speichern der Backup-Codes: {str(e)}"})
+
+
+@app.route('/check_backup_codes/<int:user_id>', methods=['GET'])
+def check_backup_codes(user_id):
+    try:
+        user = User.query.get(user_id)
+
+        if not user:
+            print(f"Benutzer mit ID {user_id} nicht gefunden.")
+            return jsonify({"success": False, "message": "Benutzer nicht gefunden."})
+
+        codesExist = user.backup_codes is not None
+        print(f"Benutzer mit ID {user_id} hat Backup-Codes: {codesExist}")
+
+        return jsonify({"success": True, "codesExist": codesExist})
+
+    except Exception as e:
+        print(f"Fehler beim Prüfen der Backup-Codes: {e}")
+        return jsonify({"success": False, "message": f"Fehler beim Prüfen der Backup-Codes: {str(e)}"})
+
+
+@app.route('/login_with_backup', methods=['POST'])
+def login_with_backup():
+    try:
+        data = request.get_json()
+        email = data.get('email')
+        backup_code = data.get('backup_code')
+
+        if not email or not backup_code:
+            raise ValueError("Bitte füllen Sie alle Felder aus.")
+
+        user = User.query.filter_by(email=email).first()
+
+        if not user:
+            raise ValueError("Benutzer nicht gefunden.")
+
+        if not user.backup_codes:
+            raise ValueError("Für dieses Konto wurden noch keine Backup-Codes generiert.")
+
+        if backup_code in user.backup_codes:
+            if not user.backup_codes[backup_code]['used']:
+                user.backup_codes[backup_code]['used'] = True
+                backup_codes_json = json.dumps(user.backup_codes)
+                db.session.execute(
+                    text("UPDATE user SET backup_codes = :backup_codes WHERE email = :email"),
+                    {"backup_codes": backup_codes_json, "email": email}
+                )
+                db.session.commit()
+                login_user(user)
+                return jsonify({"status": "success", "message": "Login erfolgreich! Willkommen im Dashboard."}), 200
+
+            else:
+                raise ValueError("Dieser Backup-Code wurde bereits verwendet.")
+
+        raise ValueError("Ungültiger oder nicht existierender Backup-Code.")
+
+    except ValueError as ve:  # Fängt nur ValueErrors ab
+        app.logger.error(f"Fehler im Login-Prozess: {str(ve)}")
+        return jsonify({"status": "error", "message": str(ve)}), 400  # Einrückung prüfen!
+
+    except Exception as e:  # Fängt alle anderen Fehler ab
+        app.logger.error(f"Unerwarteter Fehler: {str(e)}")
+        return jsonify({"status": "error", "message": "Ein unerwarteter Fehler ist aufgetreten."}), 500
+
+
+
+@app.route('/get_backup_code_info', methods=['GET'])
+@login_required
+def get_backup_code_info():
+    # Hole den Benutzer aus der Datenbank
+    user = User.query.get(current_user.id)
+    
+    # Gib die Anzahl der generierten Codes und den Zeitpunkt der letzten Generierung zurück
+    return jsonify({
+        'backup_code_generation_count': user.backup_code_generation_count,
+        'last_backup_code_generation': user.last_backup_code_generation.isoformat() if user.last_backup_code_generation else None
+    })
+
+
+@app.route('/get_remaining_timeout', methods=['GET'])
+@login_required
+def get_remaining_timeout():
+    # Hole den Benutzer aus der Datenbank
+    user = User.query.get(current_user.id)
+    
+    # Berechne den verbleibenden Timeout
+    if user.last_backup_code_generation:
+        last_generated = user.last_backup_code_generation
+        time_diff = datetime.utcnow() - last_generated
+        timeout_in_hours = (user.backup_code_generation_count + 1) * 24  # 24h, 48h, 72h
+        remaining_time = timeout_in_hours - time_diff.total_seconds() / 3600
+    else:
+        remaining_time = 0  # Kein Timeout, falls noch nie generiert
+
+    user.remaining_timeout = max(0, remaining_time)  # Speichert die verbleibende Zeit, keine negative Werte
+    db.session.commit()
+
+    return jsonify({'remaining_timeout': max(0, remaining_time)})
+
+
+@app.route('/update_backup_code_info', methods=['POST'])
+@login_required
+def update_backup_code_info():
+    # Hole den Benutzer aus der Datenbank
+    user = User.query.get(current_user.id)
+    
+    # Erhöhe die Generierungsanzahl und setze das aktuelle Datum
+    user.backup_code_generation_count += 1
+    user.last_backup_code_generation = datetime.utcnow()
+    
+    # Berechne die Wartezeit basierend auf der Generierungsanzahl (in Stunden)
+    timeout_in_hours = (user.backup_code_generation_count + 1) * 24
+    user.remaining_timeout = timeout_in_hours
+    
+    # Speichere die Änderungen
+    db.session.commit()
+
+    return jsonify({'success': True})
+
+
+@app.route('/save-cookies-acceptance', methods=['POST'])
+@cross_origin()  # Nur diese Route erlaubt CORS
+def save_cookies_acceptance():
+    print("POST-Request an /save-cookies-acceptance empfangen.")  # Debugging-Ausgabe
+
+    try:
+        data = request.get_json()
+        print("Empfangene Daten:", data)  # Debugging-Ausgabe
+    except Exception as e:
+        print("Fehler beim Abrufen der JSON-Daten:", e)
+        return jsonify({"message": "Fehler beim Abrufen der Daten"}), 500
+
+    user_id = data.get('userId')
+    cookies_accepted = data.get('cookiesAccepted')
+    print("cookiesAccepted vom Client:", cookies_accepted)  # Debugging-Ausgabe
+
+    if cookies_accepted is None:
+        return jsonify({"message": "Fehler: cookiesAccepted ist None"}), 400
+
+    user = User.query.get(user_id)
+    if not user:
+        print("Benutzer nicht gefunden.")
+        return jsonify({"message": "Benutzer nicht gefunden"}), 404
+
+    print(f"Benutzer gefunden: {user}")
+
+    cookies_value = "true" if cookies_accepted else "false"
+    print("Gespeicherter Wert für cookiesAccepted:", cookies_value)
+
+    # Prüfen, ob der Wert gespeichert werden kann
+    try:
+        user.cookies_accepted = cookies_value
+        db.session.commit()
+        print("Daten erfolgreich gespeichert.")
+    except Exception as e:
+        print("Fehler beim Speichern der Zustimmung:", e)
+        db.session.rollback()
+        return jsonify({"message": "Fehler beim Speichern der Zustimmung"}), 500
+
+    return jsonify({"message": "Zustimmung erfolgreich gespeichert"}), 200
 
 
 if __name__ == '__main__':

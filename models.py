@@ -23,6 +23,11 @@ class User(db.Model, UserMixin):
     user_agent = db.Column(db.String(255), nullable=True)  # User-Agent
     captcha_verified = db.Column(db.Boolean, default=False)  # CAPTCHA verifiziert (für Botschutz)
     account_locked = db.Column(db.Boolean, default=False)  # Flag, ob der Account gesperrt wurde
+    backup_codes = db.Column(db.JSON, nullable=True)  # JSON-Feld für Backup-Codes als Dictionary (Code als Schlüssel, used als Wert)
+    backup_code_generation_count = db.Column(db.Integer, default=0)  # Zähler für generierte Backup-Codes
+    last_backup_code_generation = db.Column(db.DateTime, nullable=True)  # Zeit der letzten Code-Generierung
+    remaining_timeout = db.Column(db.Integer, default=0)  # Verbleibende Zeit im Timeout in Stunden
+    cookies_accepted = db.Column(db.String(5))  # Standard auf False
 
     def __repr__(self):
         return f'<User {self.email}>'

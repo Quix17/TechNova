@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login mit Backup-Code</title>
+    <!-- Standard Favicon -->
+    <link rel="icon" href="/static/Bilder/TechNova/favicon.ico" type="image/x-icon">
+
+    <!-- Favicon in verschiedenen Größen für den Browser -->
+    <link rel="icon" sizes="16x16" href="/static/Bilder/TechNova/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" href="/static/Bilder/TechNova/favicon-32x32.png">
+
+    <!-- Favicon für Android-Geräte -->
+    <link rel="icon" sizes="192x192" href="/static/Bilder/TechNova/android-chrome-192x192.png">
+    <link rel="icon" sizes="512x512" href="/static/Bilder/TechNova/android-chrome-512x512.png">
+
+    <!-- Favicon für Apple-Geräte (Home Screen) -->
+    <link rel="apple-touch-icon" href="/static/Bilder/TechNova/apple-touch-icon.png">
+
+    <!-- Css Daten -->
+    <link rel="stylesheet" href="/static/css/Anmeldung/backup_code.css">
+    <link rel="stylesheet" href="/static/css/Anmeldung/error message für die backup codes.css">
+</head>
+<body>
+
+<div id="error-message" class="error-message"></div>
+
+
+<div class="container">
+    <!-- Zurück-Pfeil-Link -->
+    <a href="{{ url_for('login') }}" class="back-arrow">&larr;</a>
+
+    <h1>Login mit Backup-Code</h1>
+
+    <!-- Formular für Login -->
+    <div class="form-group">
+        <input type="email" id="email" placeholder="E-Mail-Adresse" required>
+    </div>
+    <div class="form-group">
+        <input type="text" id="backup-code" placeholder="Backup-Code" required>
+    </div>
+    <button onclick="login()">Einloggen</button>
+</div>
+
+
+<!-- Js Daten -->
+<script src="{{ url_for('static', filename='js/Anmeldung/backup code.js') }}"></script>
+
+</body>
+</html>

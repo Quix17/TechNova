@@ -64,12 +64,76 @@ function checkPassword() {
 
 // Funktion zur Generierung von Backup-Codes
 function generateBackupCodes() {
-    var codes = [];
-    for (var i = 0; i < 5; i++) {
-        codes.push(Math.random().toString(36).substring(2, 8).toUpperCase());
-    }
-    document.getElementById("backup-codes").innerHTML = "<h3>Backup-Codes:</h3><ul>" + codes.map(code => `<li>${code}</li>`).join('') + "</ul>";
+    var userId = document.getElementById("user-id").value;
+    var now = Date.now();
+
+    // Hole die verbleibende Timeout-Zeit vom Server
+    fetch('/get_remaining_timeout', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        var remainingTimeout = data.remaining_timeout; // Zeit in Stunden
+        
+        // Wenn es einen verbleibenden Timeout gibt, zeige die Warnung
+        if (remainingTimeout > 0) {
+            alert("Du kannst erst in " + Math.ceil(remainingTimeout) + " Stunden erneut Backup-Codes generieren.");
+            return;
+        }
+
+        // Erstelle die Backup-Codes
+        var codes = {};
+        for (var i = 0; i < 5; i++) {
+            var code = Math.random().toString(36).substring(2, 8).toUpperCase();
+            codes[code] = { used: false };
+        }
+
+        // Zeige die generierten Codes an
+        document.getElementById("backup-codes").innerHTML = "<h3>Backup-Codes:</h3><ul>" +
+            Object.keys(codes).map(code => `<li>${code}</li>`).join('') + "</ul>";
+
+        // Sende die Backup-Codes und die Benutzer-ID an den Server
+        fetch('/save_backup_codes', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ user_id: userId, codes: codes })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Aktualisiere die Generierungsanzahl und den Timeout auf dem Server
+                fetch('/update_backup_code_info', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert("Backup-Codes wurden erfolgreich gespeichert.");
+                    } else {
+                        console.error("Fehler beim Aktualisieren der Generierungsanzahl.");
+                        alert("Fehler beim Speichern der Backup-Codes.");
+                    }
+                });
+            } else {
+                console.error("Fehler beim Speichern der Backup-Codes:", data.message);
+                alert("Fehler beim Speichern der Backup-Codes.");
+            }
+        })
+        .catch(error => {
+            console.error("Fehler:", error);
+            alert("Es gab einen Fehler bei der Anfrage.");
+        });
+    });
 }
+
 
 // Funktion zur Steuerung der Tabs (Automatische Aktivierung des ersten Tabs)
 document.addEventListener('DOMContentLoaded', function () {

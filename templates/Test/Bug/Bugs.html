@@ -34,6 +34,9 @@
             <span class="bug-text">Aurora gibt einen Fehler/Keine Antwort, Tokens Verbraucht</span>
         </li>
         <li class="bug-item">
+            <span class="bug-text">Nach dem ersten erstellen der Backup Codes direkt 48h timeout anstatt von 24h</span>
+        </li>
+        <li class="bug-item">
             <span class="bug-text">Der Inhalt des Aurora-AI-Projekts kann sich mit anderem Inhalt überlappen, wenn das Browserfenster in der Höhe zu klein ist.</span>
         </li>
     </ul>
@@ -47,6 +50,6 @@
 <footer>
     <div class="container">
         <p>&copy; 2025 TechNova. Alle Rechte vorbehalten.</p>
-    <p><a href="/impressum" style="color: #00bcd4; text-decoration: none;">Impressum</a> | <a href="/Datenschutz" style="color: #00bcd4; text-decoration: none;">Datenschutz</a> | <a href="/dashboard" style="color: #00bcd4; text-decoration: none;">Dashboard</a> | <a href="/updates" style="color: #00bcd4; text-decoration: none;">Updates</a> | <a href="/Hilfe" style="color: #00bcd4; text-decoration: none;">Hilfe</a></p>
+    <p><a href="/impressum" style="color: #00bcd4; text-decoration: none;">Impressum</a> | <a href="/Datenschutz" style="color: #00bcd4; text-decoration: none;">Datenschutz</a> | <a href="{{ url_for('dashboard', user_id=current_user.id) }}" style="color: #00bcd4; text-decoration: none;">Dashboard</a> | <a href="/updates" style="color: #00bcd4; text-decoration: none;">Updates</a> | <a href="/Hilfe" style="color: #00bcd4; text-decoration: none;">Hilfe</a></p>
     </div>
 </footer>

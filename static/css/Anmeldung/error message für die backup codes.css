@@ -1,0 +1,20 @@
+.error-message {
+    position: fixed;
+    top: -50px; /* Startet außerhalb des Bildschirms */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #c246c2;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: top 0.7s ease-in-out; /* Sanftes Runtergleiten */
+    z-index: 1000;
+}
+
+.error-message.show {
+    top: 20px; /* Sichtbar auf der Seite */
+}

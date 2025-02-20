@@ -16,6 +16,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
     <!-- JavaScript-Dateien -->
+    <script src="{{ url_for('static', filename='js/Anmeldung/Cookie Banner.js') }}"></script>
     <script src="{{ url_for('static', filename='js/Anmeldung/Effekt-Karten.js') }}"></script>
     <script src="{{ url_for('static', filename='js/Anmeldung/passwort-animation-login.js') }}" defer></script>
     <script src="https://assets.codepen.io/16327/MorphSVGPlugin3.min.js"></script>
@@ -61,5 +62,14 @@
             <a href="{{ url_for('forgot_password') }}" class="button3">Passwort vergessen?</a>
         </form>
     </div>
+
+    <div id="cookie-banner">
+        <p>
+            Diese Website verwendet keine eigenen Cookies. Alle Cookies, die durch den Besuch dieser Seite erstellt werden, werden direkt durch Ihren Browser gesetzt. Sie können diese Cookies jederzeit über die Einstellungen Ihres Browsers verwalten oder löschen. Alle anderen Daten werden sicher serverseitig gespeichert. 
+            Weitere Informationen sowie Hinweise zum Einsehen oder Löschen der Daten finden Sie in unserer <a href="/Datenschutz" target="_blank">Datenschutzerklärung</a>.
+        </p>
+        <button id="accept-cookies">OK</button>
+    </div>
+
 </body>
 </html>

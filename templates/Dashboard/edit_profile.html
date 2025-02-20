@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="/static/css/Dashboard/edit_profile.css">
 </head>
 
-<a href="{{ url_for('dashboard') }}" class="animated-back">
+<a href="{{ url_for('dashboard', user_id=current_user.id) }}" class="animated-back">
     <span>← Zurück zum Dashboard</span>
 </a>
 
@@ -98,12 +98,15 @@
                 <h2>Kontoschutz</h2>
                 <p>Schütze dein Konto mit zusätzlichen Sicherheitsmaßnahmen.</p>
 
-                <h2>Backup-Codes / Kein Zweck!</h2>
+                <h2>Backup-Codes</h2>
                 <p>Generiere einmalige Backup-Codes für den Fall, dass du den Zugang zu deinem Konto verlierst.</p>
                 <button class="btn-action" onclick="generateBackupCodes()">Backup-Codes generieren</button>
+                <input type="hidden" id="user-id" value="{{ current_user.id }}">
 
                 <div id="backup-codes"></div>
             </div>
+         </div>
+    </div>
 
 <!-- Konto löschen Tab -->
 <div class="tab-pane" id="account">

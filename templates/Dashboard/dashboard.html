@@ -71,7 +71,13 @@
         </div>
     </div>
 </div>
+
+<!-- Füge hier die user_id als data-Attribut ein -->
+<div id="userInfo" data-user-id="{{ user_id }}"></div>
+
     <!-- Verlinkung der externe JavaScript-Datei -->
+    <script src="{{ url_for('static', filename='js/Anmeldung/userID.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/Anmeldung/Cookie Banner accept.js') }}"></script>
     <script src="/static/js/Dashboard/Karten.js"></script>
 </body>
 </html>

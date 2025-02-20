@@ -289,7 +289,7 @@
 <footer>
     <div class="container">
         <p>&copy; 2025 TechNova. Alle Rechte vorbehalten.</p>
-        <p style="display: inline; margin-right: 10px;"><a href="/impressum" style="color: #00bcd4; text-decoration: none;">Impressum</a></p> | <p style="display: inline; margin-left: 10px;"><a href="/Datenschutz" style="color: #00bcd4; text-decoration: none;">Datenschutz</a></p> | <p style="display: inline; margin-left: 10px;"><a href="/dashboard" style="color: #00bcd4; text-decoration: none;">Dashboard</a></p>
+        <p style="display: inline; margin-right: 10px;"><a href="/impressum" style="color: #00bcd4; text-decoration: none;">Impressum</a></p> | <p style="display: inline; margin-left: 10px;"><a href="/Datenschutz" style="color: #00bcd4; text-decoration: none;">Datenschutz</a></p> | <p style="display: inline; margin-left: 10px;"><a href="{{ url_for('dashboard', user_id=current_user.id) }}" style="color: #00bcd4; text-decoration: none;">Dashboard</a></p>
     </div>
 </footer>
 

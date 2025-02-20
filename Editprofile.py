@@ -1,9 +1,11 @@
+import logging
 import os
 import re
-import logging
-from flask import Blueprint, render_template, request, redirect, url_for, flash
+
+from flask import Blueprint, request, redirect, url_for, flash, render_template
 from flask_login import login_required, current_user, logout_user
 from werkzeug.security import generate_password_hash
+
 from models import db, User
 
 # Blueprint erstellen
@@ -67,6 +69,7 @@ def check_password_requirements(password):
 @edit_profile.route('/editprofile', methods=['GET', 'POST'])
 @login_required
 def editprofile():
+    global user
     if request.method == 'POST':
         # E-Mail Änderung
         old_email = request.form.get('old_email')
@@ -138,4 +141,8 @@ def editprofile():
                 app_logger.error(f"Error deleting account for user {current_user.email}: {e}")
                 return redirect(url_for('edit_profile.editprofile'))
 
-    return render_template('Dashboard/edit_profile.html')
+        # Rückgabe der Template-Datei nach der Bearbeitung
+        return render_template('Dashboard/dashboard.html', user_id=current_user.id)
+
+    # Wenn der Request ein GET-Request ist, zeige das Edit-Profile-Template an
+    return render_template('Dashboard/edit_profile.html', user_id=current_user.id)

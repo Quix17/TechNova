@@ -1,0 +1,102 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #6a4c9c, #d70077); /* Lila-Pink Hintergrund */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.6); /* Dunkler Hintergrund mit Transparenz */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-sizing: border-box; /* Sicherstellen, dass Padding und Border in der Breite enthalten sind */
+    position: relative; /* Damit der Pfeil relativ dazu positioniert werden kann */
+}
+
+/* Der Link mit dem Pfeil */
+.back-arrow {
+    font-size: 1.5em; /* Setzt den Pfeil etwas kleiner */
+    color: #888888;   /* Grau für den Pfeil */
+    text-decoration: none; /* Entfernt die Unterstreichung des Links */
+    transition: color 0.3s ease-in-out; /* Sanfter Übergang der Farbe */
+    position: absolute; /* Positioniert den Pfeil oben links */
+    top: 20px; /* Verschiebt den Pfeil nach unten */
+    left: 20px; /* Verschiebt den Pfeil nach links */
+}
+
+/* Hover-Effekt für den Pfeil */
+.back-arrow:hover {
+    color: #8a2be2; /* Ändert die Farbe des Pfeils beim Hover in Lila */
+}
+
+h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left; /* Felder links ausrichten */
+}
+
+input {
+    width: 100%; /* Maximale Breite innerhalb des Containers */
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background-color: #333;
+    color: #fff;
+    font-size: 1rem;
+    box-sizing: border-box; /* Padding und Border berücksichtigen */
+}
+
+input:focus {
+    outline: none;
+    border-color: #d70077; /* Pink */
+    background-color: #444;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #d70077; /* Pink */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #a6005c; /* Dunkleres Pink */
+}
+
+.error {
+    color: #ff4d4d;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.success {
+    color: #28a745;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.message {
+    margin-top: 20px;
+}

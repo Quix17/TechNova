@@ -34,14 +34,17 @@
         <nav class="navigation">
             <a href="#section1">Allgemeine Bestimmungen</a>
             <a href="#section2">Nutzungsrechte</a>
-            <a href="#section3">Registrierung und Konto</a>
+            <a href="#section3">Konto</a>
             <a href="#section4">Haftungsausschluss</a>
-            <a href="#section5">Änderung der Nutzungsbedingungen</a>
+            <a href="#section5">Änderung der NB</a>
             <a href="#section7">Nutzer</a>
+            <a href="#section8">Verbotene Aktivitäten</a>
+            <a href="#section9">DSGVO</a>
+            <a href="#section10">Rechte & Pflichten des Anbieters</a>
+            <a href="#section11">Kontakt</a>
         </nav>
     </div>
 </header>
-
 
 <!-- Start des Inhalts -->
 <main class="content">
@@ -52,7 +55,7 @@
         <div class="content-item">
             <button class="section-title">Einführung</button>
             <div class="section-content">
-                <p>Diese Nutzungsbedingungen regeln die Nutzung der Aurora KI und aller damit verbundenen Dienste. Du erklärst dich durch den Zugriff auf die Website oder Nutzung der Dienste mit den Bedingungen einverstanden.</p>
+                <p>Diese Nutzungsbedingungen regeln die Nutzung der TechNova-Plattform und aller damit verbundenen Dienste. Du erklärst dich durch den Zugriff auf die Website oder Nutzung der Dienste mit den Bedingungen einverstanden.</p>
             </div>
         </div>
         <div class="content-item">
@@ -131,7 +134,6 @@
         </div>
     </section>
 
-
     <!-- Verantwortung der Nutzer -->
     <section id="section7" class="section">
         <h2>7. Verantwortung der Nutzer</h2>
@@ -182,23 +184,25 @@
         </div>
     </section>
 
-<!-- Kontakt und Support -->
-<section id="section11" class="section">
-    <h2>11. Kontakt und Support</h2>
-    <div class="content-item">
-        <button class="section-title">Kundensupport</button>
-        <div class="section-content">
-            <p>Falls du Unterstützung benötigst, wende dich bitte an unser Support-Team. Wir sind erreichbar per E-Mail unter <a href="mailto:sup.technova@gmail.com" style="color: #00bcd4;">sup.technova@gmail.com</a> oder über unser Support-Formular auf der Website.</p>
+    <!-- Kontakt und Support -->
+    <section id="section11" class="section">
+        <h2>11. Kontakt und Support</h2>
+        <div class="content-item">
+            <button class="section-title">Kundensupport</button>
+            <div class="section-content">
+                <p>Falls du Unterstützung benötigst, wende dich bitte an unser Support-Team. Wir sind erreichbar per E-Mail unter <a href="mailto:sup.technova@gmail.com" style="color: #00bcd4;">sup.technova@gmail.com</a> oder über unser Support-Formular auf der Website. Für "geschäftliche Anliegen" erreichst du uns unter <a href="mailto:technova@gmail.com" style="color: #00bcd4;">technova@gmail.com</a>.</p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
 </main>
 
 <!-- Footer -->
 <footer class="footer">
     <p>&copy; 2025 Aurora KI. Alle Rechte vorbehalten.</p>
-    <p style="display: inline; margin-right: 10px;"><a href="/impressum" style="; text-decoration: none;">Impressum</a> |</p><p style="display: inline; margin-right: 10px;"><a href="/Datenschutz" style="; text-decoration: none;">Datenschutz</a> |</p><p style="display: inline; margin-right: 10px;"><a href="/dashboard" style="; text-decoration: none;">Dashboard</a> |</p><p style="display: inline; margin-right: 10px;"><a href="/updates" style="; text-decoration: none;">Updates</a> |</p><p style="display: inline; margin-right: 10px;"><a href="/Hilfe" style="; text-decoration: none;">Hilfe</a></p>
+    <p style="display: inline; margin-right: 10px;"><a href="/impressum" style="; text-decoration: none;">Impressum</a> |</p><p style="display: inline; margin-right: 10px;"><a href="/Datenschutz" style="; text-decoration: none;">Datenschutz</a> |</p><p style="display: inline; margin-right: 10px;"><a href="{{ url_for('dashboard', user_id=current_user.id) }}" style="; text-decoration: none;">Dashboard</a> |</p><p style="display: inline; margin-right: 10px;"><a href="/updates" style="; text-decoration: none;">Updates</a> |</p><p style="display: inline; margin-right: 10px;"><a href="/Hilfe" style="; text-decoration: none;">Hilfe</a></p>
 </footer>
+
 <script src="/static/js/Nutzungsbedinung/NB.js"></script>
 </body>
 </html>

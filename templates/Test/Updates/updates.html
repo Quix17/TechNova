@@ -47,11 +47,6 @@
                         <li><span style="color: white; font-size: 12px;">19.01.25 20:56</span> <span style="color: gray;">Footer in Updates immer ganz unten und dauerhaft angezeigt, fixed.</span></li>
                         <li><span style="color: white; font-size: 12px;">19.01.25 20:48</span> <span style="color: gray;">Footer in den Blogposts fixed und die custom scrollbar.</span></li>
                         <li><span style="color: white; font-size: 12px;">19.01.25 13:21</span> <span style="color: gray;">Fixed Scrollbar bei Loader.</span></li>
-                        <li><span style="color: white; font-size: 12px;">19.01.25 20:48</span> <span style="color: gray;">Test</span></li>
-                        <li><span style="color: white; font-size: 12px;">19.01.25 20:48</span> <span style="color: gray;">Test</span></li>
-                        <li><span style="color: white; font-size: 12px;">19.01.25 20:48</span> <span style="color: gray;">Test</span></li>
-                        <li><span style="color: white; font-size: 12px;">19.01.25 20:48</span> <span style="color: gray;">Test</span></li>
-                        <li><span style="color: white; font-size: 12px;">19.01.25 20:48</span> <span style="color: gray;">Test</span></li>
                     </ul>
                 </div>
             </div>
@@ -61,6 +56,7 @@
                 <h3>Big Bug Fixes</h3>
                 <div class="fix-list">
                     <ul>
+                        <li><span style="color: white; font-size: 12px;">15.02.25 18:27</span> <span style="color: gray;">Sicherheit der Backup-Code-Generierung erhöht: 1x generiert = 24h, 2x → 48h, 3x → 72h, usw.</span></li>
                         <li><span style="color: white; font-size: 12px;">27.01.25 18:22</span> <span style="color: gray;">Common Password Checker geht jetzt.</span></li>
                         <li><span style="color: white; font-size: 12px;">19.01.25 15:11</span> <span style="color: gray;">Reset Password sendet jetzt eine E-Mail mit einem Token und Link</span></li>
                         <li><span style="color: white; font-size: 12px;">17.01.25 22:33</span> <span style="color: gray;">Datenbankfehler behoben mit einem clear</span></li>
@@ -73,6 +69,8 @@
                 <h3>Added Features</h3>
                 <div class="fix-list">
                     <ul>
+                        <li><span style="color: white; font-size: 12px;">15.02.25 0:16</span> <span style="color: gray;">Added: Login Vorgang mit Backup Codes.</span></li>
+                        <li><span style="color: white; font-size: 12px;">14.02.25 17:23</span> <span style="color: gray;">Added: Backup Codes.</span></li>
                         <li><span style="color: white; font-size: 12px;">02.02.25 21:10</span> <span style="color: gray;">Added: Das Kontaktformular sendet jetzt deine Nachricht an den Server.</span></li>
                         <li><span style="color: white; font-size: 12px;">27.01.25 19:07</span> <span style="color: gray;">Added: Login und Signup error Messages.</span></li>
                         <li><span style="color: white; font-size: 12px;">26.01.25 23:29</span> <span style="color: gray;">Added: Account sperrt nach mehreren fehlgeschlagenen Login-Versuchen.</span></li>
@@ -90,7 +88,7 @@
 <footer>
     <div class="container">
         <p>&copy; 2025 TechNova. Alle Rechte vorbehalten.</p>
-        <p style="display: inline; margin-right: 10px;"><a href="/bugs" style="color: #00bcd4; text-decoration: none;">Bugs</a> | <a href="/dashboard" style="color: #00bcd4; text-decoration: none;">Dashboard</a></p>
+        <p style="display: inline; margin-right: 10px;"><a href="/bugs" style="color: #00bcd4; text-decoration: none;">Bugs</a> | <a href="{{ url_for('dashboard', user_id=current_user.id) }}" style="color: #00bcd4; text-decoration: none;">Dashboard</a></p>
     </div>
 </footer>
 
