@@ -699,7 +699,7 @@ footer p {
 .outer-cont::before {
   content: "";
   position: absolute;
-  inset: 0;
+    inset: 0;
   margin: auto;
   border-radius: 12px;
   filter: blur(0);
@@ -1031,4 +1031,36 @@ img {
 /* Verhindert horizontale Scrollbars */
 body {
     overflow-x: hidden;
+}
+
+
+
+
+
+/* Get Early Access Text */
+.early-access-text {
+    margin-top: 20px; /* Abstand zum p-Tag */
+    text-align: center; /* Zentriert den Text */
+    font-size: 16px;
+    color: #fff;
+    background: linear-gradient(to right, #484848 0, #fff 10%, #484848 20%);
+    background-size: 200% 100%; /* Sicherstellen, dass der Hintergrund groß genug ist */
+    background-position: 100% 0; /* Anfangspunkt der Animation */
+    -webkit-background-clip: text; /* Wendet den Farbverlauf auf den Text an */
+    -webkit-text-fill-color: transparent; /* Setzt den Text transparent für den Verlauf */
+    animation: shine 3s infinite linear; /* Schimmer-Effekt */
+    animation-fill-mode: forwards;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    display: inline-block; /* Damit der Text als Block angezeigt wird */
+}
+
+/* Shine Animation */
+@keyframes shine {
+    0% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: -100% 0; /* Der Effekt läuft jetzt unendlich weiter */
+    }
 }

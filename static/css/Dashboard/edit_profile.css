@@ -264,56 +264,76 @@ body {
   background-color: #000000; /* Hellerer Hover-Effekt für den Track */
 }
 
-/* Zurück zum Dashboard button */
+/* Moderner Zurück-Button mit Glassmorphism & Glow */
 .animated-back {
-    display: inline-block;
-    background-color: #9b59b6;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, rgba(238, 105, 165, 0.6), rgba(154, 81, 255, 0.6));
     color: white;
-    padding: 10px 20px;
+    padding: 12px 26px;
     font-size: 16px;
+    font-weight: bold;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(238, 105, 165, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     position: relative;
     overflow: hidden;
-    transition: transform 0.4s ease, background-color 0.3s ease;
-    margin-bottom: 20px;
-    font-weight: bold;
+    transition: all 0.4s ease-in-out;
 }
 
-.animated-back::before {
+/* Leichter Glow-Effekt */
+.animated-back::after {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: -100%;
+    left: -100%;
     width: 300%;
     height: 300%;
-    background-color: #e91e63;
-    transition: width 0.3s ease, height 0.3s ease, top 0.3s ease, left 0.3s ease;
+    background: radial-gradient(circle, rgba(238, 105, 165, 0.3) 10%, rgba(154, 81, 255, 0.1) 60%);
+    transition: all 0.5s ease-in-out;
     border-radius: 50%;
     z-index: 0;
-    transform: translate(-50%, -50%);
 }
 
+/* Hover-Effekt mit Glow */
 .animated-back:hover {
-    transform: scale(1.1);
-    background-color: #8e44ad;
+    background: linear-gradient(135deg, rgba(238, 105, 165, 0.8), rgba(154, 81, 255, 0.8));
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 25px rgba(238, 105, 165, 0.6);
 }
 
+/* Glow bewegt sich beim Hover */
+.animated-back:hover::after {
+    top: 0;
+    left: 0;
+}
+
+/* Klick-Animation */
+.animated-back:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 0 3px 15px rgba(238, 105, 165, 0.4);
+}
+
+/* Pfeil-Icon */
+.animated-back::before {
+    content: '←';
+    font-size: 18px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Pfeil schiebt sich leicht nach links beim Hover */
 .animated-back:hover::before {
-    width: 0;
-    height: 0;
-    top: 50%;
-    left: 50%;
+    transform: translateX(-5px);
 }
 
+/* Text auf Vordergrund setzen */
 .animated-back span {
     position: relative;
     z-index: 1;
 }
-
-
-
-
 
 /* Modal-Styling */
 .modal {
@@ -459,4 +479,55 @@ body {
     .modal p {
         font-size: 1rem;
     }
+}
+
+
+/* Error Success Message für die Generierung von den Backup codes*/
+
+#msg-box {
+    display: none; /* Standardmäßig versteckt */
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Erfolgsnachricht */
+.msg-success {
+    background-color: #d1f0d1;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+}
+
+/* Fehlermeldung */
+.msg-fail {
+    background-color: #f8d7da;
+    color: #b71c1c;
+    border: 1px solid #f5c6cb;
+}
+
+/* Animationen */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-10px); }
+}
+
+/* Klasse für das Einblenden */
+.show {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Klasse für das Ausblenden */
+.hide {
+    animation: fadeOut 0.5s ease-in-out;
+    display: none; /* Versteckt das Element komplett */
 }

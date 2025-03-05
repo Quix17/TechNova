@@ -1,18 +1,18 @@
 
-**EINGEREICHTE DATEN (am 2025-02-03 17:20:25)**
+**EINGEREICHTE DATEN (am 2025-02-21 21:49:02)**
 ===============================
-**Name:** Sven Kunz
-**Email:** sven9micha37@gmail.com
-**Betreff:** Test
+**Name:** d
+**Email:** fafaf@gad.ca
+**Betreff:** afaf
 **Nachricht:**
-NERV NED UND PISS DICH
+afaf
 
 **BENUTZERINFORMATIONEN**
 ===========================
-**Benutzername:** Admin@TechNova.com
-**User ID:** 1
+**Benutzername:** Technova@server.cz
+**User ID:** 4
 **IP-Adresse:** 127.0.0.1
-**User-Agent:** Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36
+**User-Agent:** Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
 **Referer:** http://127.0.0.1:5000/Contact/
 **Session ID:** Keine Session
 
@@ -21,21 +21,73 @@ NERV NED UND PISS DICH
 ========================================
 
 
-**EINGEREICHTE DATEN (am 2025-02-12 16:56:57)**
+**EINGEREICHTE DATEN (am 2025-02-22 00:30:58)**
 ===============================
 **Name:** Sven Kunz
 **Email:** sven9micha37@gmail.com
 **Betreff:** Test
 **Nachricht:**
-csp https://cdnjs.cloudflare.com https://ajax.googleapis.com https://assets.codepen.io https://unpkg.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: http://127.0.0.1:5000 https://127.0.0.1:5000 https://via.placeholder.com; font-src 'self' https://cdnjs.cloudflare.com; connect-src 'self'; frame-ancestors 'none'; object-src 'none';"
-
+121f2f1
 
 **BENUTZERINFORMATIONEN**
 ===========================
 **Benutzername:** Technova@server.cz
 **User ID:** 4
 **IP-Adresse:** 127.0.0.1
-**User-Agent:** Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36
+**User-Agent:** Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+**Referer:** http://127.0.0.1:5000/Contact/
+**Session ID:** Keine Session
+
+========================================
+
+========================================
+
+
+**EINGEREICHTE DATEN (am 2025-03-01 20:40:46)**
+===============================
+**Name:** Sven Kunz
+**Email:** sven9micha37@gmail.com
+**Betreff:** Test
+**Nachricht:**
+Mal schauen ob der server noch die nachricht empfangen kann oder er einfach keinen Bock mehr hat^^
+
+**BENUTZERINFORMATIONEN**
+===========================
+**Benutzername:** Technova@server.cz
+**User ID:** 4
+**IP-Adresse:** 127.0.0.1
+**User-Agent:** Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+**Referer:** http://127.0.0.1:5000/Contact/
+**Session ID:** Keine Session
+
+========================================
+
+========================================
+
+
+**EINGEREICHTE DATEN (am 2025-03-01 20:42:06)**
+===============================
+**Name:** aafafaf
+**Email:** sven9micha37@gmail.com
+**Betreff:** adadad
+**Nachricht:**
+9-n?cRILPv^|;_9-n?cRILPv^|;_T#;J4h91AVIsSGV&X[EXxO:*Q8tZ'y
+9-n?cRILPv^|;_T#;J4h91AVIsSGV&X[EXxO:*Q8tZ'y
+9-n?cRILPv^|;_T#;J4h91AVIsSGV&X[EXxO:*Q8tZ'y
+9-n?cRILPv^|;_T#;J4h91AVIsSGV&X[EXxO:*Q8tZ'y
+9-n?cRILPv^|;_T#;J4h91AVIsSGV&X[EXxO:*Q8tZ'y
+9-n?cRILPv^|;_T#;J4h91AVIsSGV&X[EXxO:*Q8tZ'y
+T#;J4h91AVIsSGV&X[EXxO:*Q8tZ'y
+9-n?cRILPv^|;_T#;J4h91AVIsSGV&X[EXxO:*Q8tZ'y
+9-n?cRILPv^|;_T#;J4h91AVIsSGV&X[EXxO:*Q8tZ'y
+
+
+**BENUTZERINFORMATIONEN**
+===========================
+**Benutzername:** sven9micha37@gmail.com
+**User ID:** 2
+**IP-Adresse:** 127.0.0.1
+**User-Agent:** Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
 **Referer:** http://127.0.0.1:5000/Contact/
 **Session ID:** Keine Session
 

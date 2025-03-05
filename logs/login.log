@@ -312,3 +312,75 @@
 2025-02-20 21:30:08,899 - INFO - Login attempt with email: sven9micha37@gmail.com
 2025-02-20 21:30:08,972 - INFO - User sven9micha37@gmail.com authenticated successfully!
 2025-02-20 21:30:08,981 - INFO - Database commit successful for user sven9micha37@gmail.com. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-02-21 17:17:00,497 - INFO - Login attempt with email: sven9micha37@gmail.com
+2025-02-21 17:17:00,569 - INFO - User sven9micha37@gmail.com authenticated successfully!
+2025-02-21 17:17:00,584 - INFO - Database commit successful for user sven9micha37@gmail.com. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-02-21 17:17:43,222 - INFO - Login attempt with email: sven9micha37@gmail.com
+2025-02-21 17:17:43,294 - INFO - User sven9micha37@gmail.com authenticated successfully!
+2025-02-21 17:17:43,313 - INFO - Database commit successful for user sven9micha37@gmail.com. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-02-21 21:11:40,380 - INFO - Login attempt with email: sven9micha37@gmail.com
+2025-02-21 21:11:40,454 - INFO - User sven9micha37@gmail.com authenticated successfully!
+2025-02-21 21:11:40,473 - INFO - Database commit successful for user sven9micha37@gmail.com. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-02-21 21:24:47,768 - INFO - Login attempt with email: Technova@nova.cz
+2025-02-21 21:24:47,839 - INFO - User Technova@nova.cz authenticated successfully!
+2025-02-21 21:24:47,855 - INFO - Database commit successful for user Technova@nova.cz. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-02-21 21:29:44,811 - INFO - Login attempt with email: Technova@server.cz
+2025-02-21 21:29:44,882 - INFO - User Technova@server.cz authenticated successfully!
+2025-02-21 21:29:44,903 - INFO - Database commit successful for user Technova@server.cz. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-02-21 21:32:22,440 - INFO - Login attempt with email: Technova@server.cz
+2025-02-21 21:32:22,511 - INFO - User Technova@server.cz authenticated successfully!
+2025-02-21 21:32:22,527 - INFO - Database commit successful for user Technova@server.cz. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-02-21 21:32:53,291 - INFO - Login attempt with email: Technova@server.cz
+2025-02-21 21:32:53,360 - INFO - User Technova@server.cz authenticated successfully!
+2025-02-21 21:32:53,373 - INFO - Database commit successful for user Technova@server.cz. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-02-21 21:42:50,942 - INFO - Login attempt with email: Technova@server.cz
+2025-02-21 21:42:51,012 - INFO - User Technova@server.cz authenticated successfully!
+2025-02-21 21:42:51,027 - INFO - Database commit successful for user Technova@server.cz. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-03-01 19:05:50,984 - INFO - Login attempt with email: Technova@server.cz
+2025-03-01 19:05:51,058 - INFO - User Technova@server.cz authenticated successfully!
+2025-03-01 19:05:51,077 - INFO - Database commit successful for user Technova@server.cz. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-03-01 20:07:09,608 - INFO - Login attempt with email: Technova@server.cz
+2025-03-01 20:07:09,680 - INFO - User Technova@server.cz authenticated successfully!
+2025-03-01 20:07:09,700 - INFO - Database commit successful for user Technova@server.cz. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-03-01 20:41:44,362 - INFO - Login attempt with email: sven9micha37@gmail.com
+2025-03-01 20:41:44,432 - INFO - User sven9micha37@gmail.com authenticated successfully!
+2025-03-01 20:41:44,446 - INFO - Database commit successful for user sven9micha37@gmail.com. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-03-01 20:43:57,795 - INFO - Login attempt with email: Test@Tester.com
+2025-03-01 20:43:57,864 - INFO - User Test@Tester.com authenticated successfully!
+2025-03-01 20:43:57,879 - INFO - Database commit successful for user Test@Tester.com. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-03-01 20:47:00,065 - INFO - Login attempt with email: sven9micha37@gmail.com
+2025-03-01 20:47:00,134 - INFO - User sven9micha37@gmail.com authenticated successfully!
+2025-03-01 20:47:00,148 - INFO - Database commit successful for user sven9micha37@gmail.com. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-03-03 12:43:44,204 - INFO - Login attempt with email: Test@Tester.com
+2025-03-03 12:43:44,281 - INFO - User Test@Tester.com authenticated successfully!
+2025-03-03 12:43:44,301 - INFO - Database commit successful for user Test@Tester.com. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-03-03 12:56:00,052 - INFO - Login attempt with email: Technova@nova.cz
+2025-03-03 12:56:00,123 - INFO - User Technova@nova.cz authenticated successfully!
+2025-03-03 12:56:00,136 - INFO - Database commit successful for user Technova@nova.cz. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-03-03 12:58:12,264 - INFO - Login attempt with email: Admin@TechNova.de
+2025-03-03 12:58:12,335 - INFO - User Admin@TechNova.de authenticated successfully!
+2025-03-03 12:58:12,348 - INFO - Database commit successful for user Admin@TechNova.de. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-03-03 12:59:36,122 - INFO - Login attempt with email: jafiAFJA@gam.con
+2025-03-03 12:59:36,192 - INFO - User jafiAFJA@gam.con authenticated successfully!
+2025-03-03 12:59:36,204 - INFO - Database commit successful for user jafiAFJA@gam.con. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-03-03 13:08:46,518 - INFO - Login attempt with email: Admin@Test.com
+2025-03-03 13:08:46,589 - INFO - User Admin@Test.com authenticated successfully!
+2025-03-03 13:08:46,602 - INFO - Database commit successful for user Admin@Test.com. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-03-03 23:30:46,974 - INFO - Login attempt with email: Admin@Test.com
+2025-03-03 23:30:47,050 - INFO - User Admin@Test.com authenticated successfully!
+2025-03-03 23:30:47,066 - INFO - Database commit successful for user Admin@Test.com. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-03-04 10:17:44,067 - INFO - Login attempt with email: Admin@Test.com
+2025-03-04 10:17:44,141 - INFO - User Admin@Test.com authenticated successfully!
+2025-03-04 10:17:44,157 - INFO - Database commit successful for user Admin@Test.com. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-03-04 10:20:16,705 - INFO - Login attempt with email: Admin@Test.com
+2025-03-04 10:20:16,775 - INFO - User Admin@Test.com authenticated successfully!
+2025-03-04 10:20:16,792 - INFO - Database commit successful for user Admin@Test.com. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-03-04 10:45:09,453 - INFO - Login attempt with email: Admin@Test.com
+2025-03-04 10:45:09,527 - INFO - User Admin@Test.com authenticated successfully!
+2025-03-04 10:45:09,540 - INFO - Database commit successful for user Admin@Test.com. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-03-04 10:47:37,556 - INFO - Login attempt with email: jafiAFJA@gam.con
+2025-03-04 10:47:37,627 - INFO - User jafiAFJA@gam.con authenticated successfully!
+2025-03-04 10:47:37,642 - INFO - Database commit successful for user jafiAFJA@gam.con. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-03-05 23:02:09,850 - INFO - Login attempt with email: ad@sdf.cs
+2025-03-05 23:02:09,926 - INFO - User ad@sdf.cs authenticated successfully!
+2025-03-05 23:02:09,947 - INFO - Database commit successful for user ad@sdf.cs. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36

@@ -1,102 +1,146 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #6a4c9c, #d70077); /* Lila-Pink Hintergrund */
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+/* Allgemeine Stile */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
+/* Body ohne Hintergrund, damit dein Bild richtig angezeigt wird */
+body {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+/* Container-Design */
 .container {
-    background-color: rgba(0, 0, 0, 0.6); /* Dunkler Hintergrund mit Transparenz */
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    width: 100%;
-    max-width: 400px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    padding: 40px;
     text-align: center;
-    box-sizing: border-box; /* Sicherstellen, dass Padding und Border in der Breite enthalten sind */
-    position: relative; /* Damit der Pfeil relativ dazu positioniert werden kann */
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    width: 350px;
+    animation: fadeIn 1s ease-in-out;
 }
 
-/* Der Link mit dem Pfeil */
+/* Zurück-Pfeil */
 .back-arrow {
-    font-size: 1.5em; /* Setzt den Pfeil etwas kleiner */
-    color: #888888;   /* Grau für den Pfeil */
-    text-decoration: none; /* Entfernt die Unterstreichung des Links */
-    transition: color 0.3s ease-in-out; /* Sanfter Übergang der Farbe */
-    position: absolute; /* Positioniert den Pfeil oben links */
-    top: 20px; /* Verschiebt den Pfeil nach unten */
-    left: 20px; /* Verschiebt den Pfeil nach links */
-}
-
-/* Hover-Effekt für den Pfeil */
-.back-arrow:hover {
-    color: #8a2be2; /* Ändert die Farbe des Pfeils beim Hover in Lila */
-}
-
-h1 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
     color: #fff;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    font-weight: bold;
-    letter-spacing: 1px;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
-.form-group {
+.back-arrow:hover {
+    color: #ff66cc;
+}
+
+/* Überschrift */
+h1 {
+    font-size: 26px;
+    color: #fff;
     margin-bottom: 20px;
-    text-align: left; /* Felder links ausrichten */
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Eingabefelder */
+.form-group {
+    margin-bottom: 15px;
 }
 
 input {
-    width: 100%; /* Maximale Breite innerhalb des Containers */
+    width: 100%;
     padding: 12px;
-    margin: 8px 0;
-    border-radius: 6px;
-    border: 1px solid #ddd;
-    background-color: #333;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
     color: #fff;
-    font-size: 1rem;
-    box-sizing: border-box; /* Padding und Border berücksichtigen */
+    font-size: 16px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
 }
 
 input:focus {
+    background: rgba(255, 255, 255, 0.3);
     outline: none;
-    border-color: #d70077; /* Pink */
-    background-color: #444;
+    transform: scale(1.05);
 }
 
+/* Login-Button */
 button {
     width: 100%;
     padding: 12px;
-    background-color: #d70077; /* Pink */
-    color: white;
+    background: linear-gradient(45deg, #ff66cc, #6600cc);
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
     cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s, filter 0.3s;
 }
 
 button:hover {
-    background-color: #a6005c; /* Dunkleres Pink */
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 102, 204, 0.6);
+    filter: brightness(1.2);
 }
 
-.error {
-    color: #ff4d4d;
-    font-size: 14px;
-    margin-top: 10px;
+/* Error Mesagge Anzeigen*/
+.error-message {
+    position: fixed;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px); /* Start leicht oben */
+    background: linear-gradient(135deg, #ff4d4d, #cc0099);
+    color: white;
+    padding: 14px 24px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    min-width: 280px;
+    max-width: 90vw;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    z-index: 1000;
+    pointer-events: none; /* Blockiert keine Klicks */
 }
 
-.success {
-    color: #28a745;
-    font-size: 14px;
-    margin-top: 10px;
+.error-message.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
 
-.message {
-    margin-top: 20px;
+.error-message.hide {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+}
+
+
+/* Animationen */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

@@ -22,14 +22,14 @@
     <link rel="stylesheet" href="/static/css/Anmeldung/backup_code.css">
     <link rel="stylesheet" href="/static/css/Anmeldung/error message für die backup codes.css">
 </head>
-<body>
+<body style="background-image: url('{{ url_for('static', filename='Bilder/Anmeldung/Hintergrund_ALL.jpg') }}'); background-size: cover; background-position: center;">
 
 <div id="error-message" class="error-message"></div>
 
 
 <div class="container">
     <!-- Zurück-Pfeil-Link -->
-    <a href="{{ url_for('login') }}" class="back-arrow">&larr;</a>
+    <a href="{{ url_for('forgot_password') }}" class="back-arrow">&larr;</a>
 
     <h1>Login mit Backup-Code</h1>
 

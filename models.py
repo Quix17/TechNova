@@ -32,6 +32,10 @@ class User(db.Model, UserMixin):
     def __repr__(self):
         return f'<User {self.email}>'
 
+    def is_banned(self):
+        """Prüft, ob der Nutzer gesperrt ist"""
+        return self.account_locked and (self.ban_until is None or self.ban_until > datetime.utcnow())
+
     @property
     def is_active(self):
         return not self.account_locked  # Aktiv nur, wenn nicht gesperrt
