@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Report System</title>
+
+    <!-- Favicon Links -->
+    <link rel="icon" href="/static/Bilder/TechNova/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="/static/Bilder/TechNova/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" href="/static/Bilder/TechNova/favicon-32x32.png">
+    <link rel="icon" sizes="192x192" href="/static/Bilder/TechNova/android-chrome-192x192.png">
+    <link rel="icon" sizes="512x512" href="/static/Bilder/TechNova/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" href="/static/Bilder/TechNova/apple-touch-icon.png">
+
+        <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/Bug/Form.css">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bug Report System</h1>
+            <p class="subtitle">Hilf uns, unsere Website zu verbessern</p>
+        </header>
+
+        <div class="form-container">
+            <form id="bugReportForm" action="/submit_bug" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="title">Titel <span class="badge badge-required">Erforderlich</span></label>
+                        <input type="text" id="title" name="title" placeholder="Kurze Beschreibung des Bugs" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="severity">Schweregrad <span class="badge badge-required">Erforderlich</span></label>
+                        <select id="severity" name="severity" required>
+                            <option value="">Bitte auswählen</option>
+                            <option value="critical">Kritisch</option>
+                            <option value="major">Schwerwiegend</option>
+                            <option value="minor">Geringfügig</option>
+                            <option value="trivial">Trivial</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="module">Betroffenes Modul <span class="badge badge-required">Erforderlich</span></label>
+                    <select id="module" name="module" required>
+                        <option value="">Bitte auswählen</option>
+                        <option value="frontend">Frontend / UI</option>
+                        <option value="backend">Backend / Server</option>
+                        <option value="database">Datenbank</option>
+                        <option value="api">API</option>
+                        <option value="performance">Performance</option>
+                        <option value="other">Sonstiges</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="browser">Browser</label>
+                        <input type="text" id="browser" name="browser" placeholder="z.B. Chrome 120">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="os">Betriebssystem</label>
+                        <input type="text" id="os" name="os" placeholder="z.B. Windows 11">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Detaillierte Beschreibung <span class="badge badge-required">Erforderlich</span></label>
+                    <textarea id="description" name="description" placeholder="Beschreibe den Bug so detailliert wie möglich. Was ist passiert? Was hast du erwartet? Welche Schritte sind nötig, um den Bug zu reproduzieren?" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="screenshot">Screenshot URL</label>
+                    <input type="url" id="screenshot" name="screenshot" placeholder="Link zu einem Screenshot oder Video (falls vorhanden)">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Dein Name</label>
+                        <input type="text" id="name" name="name" placeholder="Optional">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-Mail <span class="badge badge-required">Erforderlich</span></label>
+                        <input type="email" id="email" name="email" placeholder="Für Rückfragen und Updates" required>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button type="reset" class="button-cancel">Zurücksetzen</button>
+                    <button type="submit">Bug melden</button>
+                </div>
+            </form>
+        </div>
+
+        <footer>
+            <p>© 2025 Bug Report System • Alle Rechte vorbehalten</p>
+        </footer>
+    </div>
+
+    <script src="/static/js/Bug/Form.js"></script>
+
+</body>
+</html>

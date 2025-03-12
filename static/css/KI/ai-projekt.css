@@ -979,7 +979,7 @@ footer p {
 .card-inhalt .card__list .card__list_item {
   display: flex;
   align-items: center;
-  gap: 0.75rem;               /* Etwas größerer Abstand zwischen Checkmark und Text */
+  gap: 0.75rem;/* Etwas größerer Abstand zwischen Checkmark und Text */
 }
 
 /* Stil für die Checkmarks */
@@ -1005,9 +1005,6 @@ footer p {
   color: var(--white);
 }
 
-
-
-
 .subtitle {
     position: absolute;
     width: 1px; /* Minimale Breite */
@@ -1032,9 +1029,6 @@ img {
 body {
     overflow-x: hidden;
 }
-
-
-
 
 
 /* Get Early Access Text */

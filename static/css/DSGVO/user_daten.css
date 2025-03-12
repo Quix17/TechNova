@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+.container {
+    max-width: 700px;
+    padding: 30px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1s ease-in-out;
+    margin-bottom: 50px;
+}
+
+h1 {
+    font-size: 28px;
+    text-align: center;
+}
+
+.intro {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.data-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(10px);
+    animation: slideUp 0.5s ease-in-out forwards;
+}
+
+.data-item h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    background: linear-gradient(45deg, #ff00ff, #ff66cc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.data-item p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.data-item:nth-child(1) { animation-delay: 0.2s; }
+.data-item:nth-child(2) { animation-delay: 0.4s; }
+.data-item:nth-child(3) { animation-delay: 0.6s; }
+.data-item:nth-child(4) { animation-delay: 0.8s; }
+.data-item:nth-child(5) { animation-delay: 1s; }
+.data-item:nth-child(6) { animation-delay: 1.2s; }
+.data-item:nth-child(7) { animation-delay: 1.4s; }
+.data-item:nth-child(8) { animation-delay: 1.6s; }
+.data-item:nth-child(9) { animation-delay: 1.8s; }
+
+
+footer {
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    left: 0;
+}
+
+footer p {
+    margin: 0;
+    opacity: 0.6;
+    transition: opacity 0.3s ease-in-out;
+}
+
+footer:hover p {
+    opacity: 1;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px; /* Breite der Scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1); /* Hintergrund der Scroll-Leiste */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #ff00ff, #ff66cc); /* Lila-Rosa Farbverlauf */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #e600e6, #ff33aa); /* Dunkleres Lila-Pink beim Hover */
+}

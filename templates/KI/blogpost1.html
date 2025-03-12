@@ -3,214 +3,380 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Die Entstehung der Künstlichen Intelligenz</title>
+    <title>Die faszinierende Entstehung der Künstlichen Intelligenz | TechNova</title>
 
-    <!-- Standard Favicon -->
-<link rel="icon" href="/static/Bilder/TechNova/favicon.ico" type="image/x-icon">
+    <!-- Favicons beibehalten -->
+    <link rel="icon" href="/static/Bilder/TechNova/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="/static/Bilder/TechNova/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" href="/static/Bilder/TechNova/favicon-32x32.png">
+    <link rel="icon" sizes="192x192" href="/static/Bilder/TechNova/android-chrome-192x192.png">
+    <link rel="icon" sizes="512x512" href="/static/Bilder/TechNova/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" href="/static/Bilder/TechNova/apple-touch-icon.png">
 
-<!-- Favicon in verschiedenen Größen für den Browser -->
-<link rel="icon" sizes="16x16" href="/static/Bilder/TechNova/favicon-16x16.png">
-<link rel="icon" sizes="32x32" href="/static/Bilder/TechNova/favicon-32x32.png">
+    <!-- Google Fonts einbinden -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
-<!-- Favicon für Android-Geräte -->
-<link rel="icon" sizes="192x192" href="/static/Bilder/TechNova/android-chrome-192x192.png">
-<link rel="icon" sizes="512x512" href="/static/Bilder/TechNova/android-chrome-512x512.png">
+    <!-- Font Awesome für Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<!-- Favicon für Apple-Geräte (Home Screen) -->
-<link rel="apple-touch-icon" href="/static/Bilder/TechNova/apple-touch-icon.png">
-
+    <!-- Link zur externen CSS-Datei beibehalten -->
     <link rel="stylesheet" href="/static/css/KI/blogpost1.css">
     <script src="/static/js/KI/blogpost1.js" defer></script>
 </head>
 <body>
-
-    <!-- Header mit dynamischer Navigation -->
+    <!-- Verbesserte Header-Struktur -->
     <header>
         <div class="navbar">
-            <h1>Die Entstehung der Künstlichen Intelligenz</h1>
-            <nav>
-                <a href="#section1">Philosophie</a>
-                <a href="#section2">Mathematik</a>
-                <a href="#section3">Erste KI</a>
-                <a href="#section4">Turing-Test</a>
-                <a href="#section5">KI-Winter</a>
-                <a href="#section6">Renaissance</a>
-                <a href="#section7">Deep Learning</a>
-                <a href="#section8">AlphaGo</a>
-                <a href="#section9">Moderne KI</a>
-                <a href="#section10">Ethik</a>
+            <nav id="mainNav">
+                <a href="#Start" class="nav-item">Startseite</a>
+                <a href="#section1" class="nav-item">Philosophie</a>
+                <a href="#section2" class="nav-item">Mathematik</a>
+                <a href="#section3" class="nav-item">Erste KI</a>
+                <a href="#section4" class="nav-item">Turing-Test</a>
+                <a href="#section5" class="nav-item">KI-Winter</a>
+                <a href="#section6" class="nav-item">Renaissance</a>
+                <a href="#section7" class="nav-item">Deep Learning</a>
+                <a href="#section8" class="nav-item">AlphaGo</a>
+                <a href="#section9" class="nav-item">Moderne KI</a>
+                <a href="#section10" class="nav-item">Ethik</a>
             </nav>
         </div>
     </header>
 
+    <!-- Hero-Bereich für mehr visuellen Einfluss -->
+    <section class="hero" id="Start">
+        <div class="hero-content">
+            <h1>Die Evolution der Künstlichen Intelligenz</h1>
+            <p>Eine faszinierende Reise durch die Geschichte der KI - von philosophischen Konzepten bis zu revolutionären Technologien, die unsere Welt verändern.</p>
+            <a href="#section1" class="btn-primary">Zeitreise starten</a>
+        </div>
+    </section>
+
     <div class="content">
-        <!-- Abschnitt 1: Philosophische Grundlagen -->
+        <!-- Abschnitt 1: Verbesserte philosophische Grundlagen -->
         <section id="section1" class="section section-odd background-1">
-            <div class="section-header">
-                <h2>1. Früheste philosophische Wurzeln</h2>
-            </div>
-            <div class="section-body">
-                <ul>
-                    <li><strong>Aristoteles</strong>: Begründete Logik, Grundlage für KI-Denken.</li>
-                    <li><strong>Thomas Hobbes</strong>: Glaubte, dass Denken mechanisch ist.</li>
-                    <li><strong>René Descartes</strong>: Trennte Geist und Materie, führte zur KI-Frage.</li>
-                    <li>Frühe Philosophen fragten: „Könnte eine Maschine je denken?“</li>
-                    <li>Die Idee der Maschinenintelligenz entstammt dem Wunsch, menschliche Denkprozesse zu verstehen und nachzubilden.</li>
-                </ul>
+            <div class="time-marker">Antike - 17. Jahrhundert</div>
+            <div class="section-inner">
+                <div class="section-header">
+                    <h2>1. Früheste philosophische Wurzeln der KI</h2>
+                    <p>Die Grundlagen des maschinellen Denkens wurden schon vor Jahrtausenden gelegt</p>
+                </div>
+                <div class="section-body">
+                    <figure class="section-image">
+                        <img src="/static/Bilder/TechNova/Philosophie.jpg" alt="Philosophische Grundlagen der KI" width="800" height="400">
+                        <figcaption>Der lange Weg von philosophischen Konzepten zu moderner KI</figcaption>
+                    </figure>
+                    <ul>
+                        <li><strong>Aristoteles (384-322 v. Chr.)</strong> begründete die formale Logik mit seinem Syllogismus-System, das später zur Grundlage für KI-Denken und algorithmische Prozesse wurde. Seine kategorische Einteilung von Wissen schuf ein frühes Modell für Wissensrepräsentation.</li>
+                        <li><strong>Thomas Hobbes (1588-1679)</strong> vertrat in "Leviathan" die revolutionäre These, dass Denken im Grunde ein mechanischer Prozess sei - "Denken ist nichts anderes als ein Rechnen". Diese mechanistische Weltanschauung legte den Grundstein für die Idee, dass Intelligenz simuliert werden könnte.</li>
+                        <li><strong>René Descartes (1596-1650)</strong> trennte mit seinem Dualismus Geist und Materie, was zur fundamentalen Frage führte, ob eine Maschine je über Bewusstsein verfügen könnte. Sein "Ich denke, also bin ich" führte zu Debatten über Bewusstsein in Maschinen.</li>
+                        <li><strong>Gottfried Wilhelm Leibniz (1646-1716)</strong> entwickelte ein binäres Zahlensystem und träumte von einer universellen Symbolsprache (characteristica universalis), mit der alle Probleme durch Kalkulation gelöst werden könnten – ein direkter Vorläufer heutiger Programmiersprachen.</li>
+                        <li><strong>Die philosophische Frage</strong> "Könnte eine Maschine je denken wie ein Mensch?" treibt bis heute die KI-Forschung an und steht im Zentrum der Debatte über starke KI und künstliches Bewusstsein.</li>
+                    </ul>
+                    <blockquote>
+                        "Die Maschinen der Zukunft werden denken können. Das ist nicht philosophische Spekulation, sondern technische Realität." - Marvin Minsky, KI-Pionier
+                    </blockquote>
+                </div>
             </div>
         </section>
 
-        <!-- Abschnitt 2: Mathematische Grundlagen -->
+        <!-- Abschnitt 2: Verbesserte mathematische Grundlagen -->
         <section id="section2" class="section section-even background-2">
-            <div class="section-header">
-                <h2>2. Mathematische Grundlagen der modernen KI</h2>
-            </div>
-            <div class="section-body">
-                <ul>
-                    <li><strong>Logik</strong>: Grundlage für symbolische KI, hilft Maschinen beim Problemlösen.</li>
-                    <li><strong>Turing-Maschine</strong>: Alan Turing definierte die Rechenmaschine als Modell für KI.</li>
-                    <li><strong>Algorithmen</strong>: Effiziente Datenverarbeitung ermöglichte erste KI-Anwendungen.</li>
-                    <li><strong>Wahrscheinlichkeitsrechnung</strong>: Ermöglicht KI, mit Unsicherheit umzugehen (z.B. bei maschinellem Lernen).</li>
-                    <li>Mathematik ermöglichte es, die KI als praktische Technologie umzusetzen.</li>
-                </ul>
+            <div class="time-marker">19. - 20. Jahrhundert</div>
+            <div class="section-inner">
+                <div class="section-header">
+                    <h2>2. Mathematische Grundlagen der modernen KI</h2>
+                    <p>Ohne mathematische Innovationen wäre KI nie über philosophische Gedankenspiele hinausgekommen</p>
+                </div>
+                <div class="section-body">
+                    <figure class="section-image">
+                        <img src="/static/Bilder/TechNova/Mathe.jpg" alt="Mathematische Grundlagen der KI" width="800" height="400">
+                        <figcaption>Die mathematischen Konzepte, die KI möglich machten</figcaption>
+                    </figure>
+                    <ul>
+                        <li><strong>George Boole (1815-1864)</strong> entwickelte die Boolesche Algebra, die binäre Operatoren wie AND, OR und NOT definierte – heute die Grundlage der digitalen Logik und Computerarchitektur.</li>
+                        <li><strong>Gottlob Frege und Bertrand Russell</strong> entwickelten die Prädikatenlogik weiter, die später für Expertensysteme und logisches Programmieren in der KI-Forschung entscheidend wurde.</li>
+                        <li><strong>Alan Turings revolutionäre Turing-Maschine (1936)</strong> definierte erstmals theoretisch, was berechenbar ist, und schuf damit das abstrakte Modell für jeden Computer und jede KI. Seine Arbeit zur Entschlüsselung der Enigma im Zweiten Weltkrieg demonstrierte frühe algorithmische Intelligenz.</li>
+                        <li><strong>Claude Shannon (1948)</strong> begründete die Informationstheorie, die quantifizierte, wie Information gemessen, gespeichert und übertragen werden kann – ein Grundpfeiler für Datenkompression und maschinelles Lernen.</li>
+                        <li><strong>Die Wahrscheinlichkeitstheorie und bayessche Statistik</strong> ermöglichten KI-Systemen, mit Unsicherheit umzugehen und Entscheidungen auf Basis unvollständiger Informationen zu treffen – ein Schlüsselkonzept für moderne KI-Systeme.</li>
+                    </ul>
+                    <div class="info-box">
+                        <h4>Bedeutung der Turing-Maschine</h4>
+                        <p>Die Turing-Maschine war ein theoretisches Konstrukt, das bewies, dass jede berechenbare Funktion durch eine Maschine ausgeführt werden kann. Dies legte den Grundstein für die Computerarchitektur und später die künstliche Intelligenz. Der Universalitätsgedanke von Turing – dass eine Maschine jede andere simulieren kann – ist heute in der Cloud-Computing-Infrastruktur verkörpert, die moderne KI-Systeme antreibt.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Abschnitt 3: Die erste künstliche Intelligenz -->
+        <!-- Abschnitt 3: Verbesserte erste KI -->
         <section id="section3" class="section section-odd background-3">
-            <div class="section-header">
-                <h2>3. Die erste „Künstliche Intelligenz“</h2>
-            </div>
-            <div class="section-body">
-                <ul>
-                    <li><strong>1956</strong>: John McCarthy prägte den Begriff „Künstliche Intelligenz“ bei der Dartmouth Conference.</li>
-                    <li><strong>Logic Theorist</strong>: Entwickelt von Newell und Simon, konnte mathematische Beweise führen.</li>
-                    <li><strong>General Problem Solver</strong>: Versuch, einen Algorithmus für jede Problemlösung zu schaffen.</li>
-                    <li>Erste Programme verwendeten symbolische Logik und Datenstrukturen.</li>
-                    <li>Diese ersten KI-Systeme waren jedoch begrenzt und konnten nur einfache Aufgaben durchführen.</li>
-                </ul>
+            <div class="time-marker">1956</div>
+            <div class="section-inner">
+                <div class="section-header">
+                    <h2>3. Die Geburt der „Künstlichen Intelligenz"</h2>
+                    <p>Der historische Moment, in dem KI als eigenständiges Forschungsfeld definiert wurde</p>
+                </div>
+                <div class="section-body">
+                    <figure class="section-image">
+                        <img src="/static/Bilder/TechNova/Geburt_Ki.png" alt="Dartmouth Konferenz" width="800" height="400">
+                        <figcaption>Die historische Dartmouth-Konferenz 1956 - Geburtsstunde der KI</figcaption>
+                    </figure>
+                    <ul>
+                        <li><strong>Die Dartmouth-Konferenz 1956</strong> markierte die offizielle Geburt des Forschungsfeldes der Künstlichen Intelligenz. John McCarthy prägte hier den Begriff "Artificial Intelligence" und definierte ihn als "die Wissenschaft und das Ingenieurshandwerk, intelligente Maschinen zu erschaffen".</li>
+                        <li><strong>Der Logic Theorist</strong>, entwickelt von Allen Newell, Herbert Simon und Cliff Shaw, war das erste Programm, das mathematische Beweise führen konnte. Es bewies 38 der 52 Theoreme aus den Principia Mathematica von Whitehead und Russell, teilweise eleganter als die originalen Beweise.</li>
+                        <li><strong>Der General Problem Solver (GPS)</strong> war ein ambitionierter Versuch, einen universellen Algorithmus für jede Art von Problemlösung zu schaffen. Er verwendete das Prinzip der Mittel-Ziel-Analyse, um komplexe Probleme in einfachere Teilprobleme zu zerlegen.</li>
+                        <li><strong>Arthur Samuel</strong> entwickelte 1959 ein Schachprogramm mit der revolutionären Fähigkeit, aus eigener Erfahrung zu lernen – ein früher Vorläufer des maschinellen Lernens und der selbstverbessernden Systeme.</li>
+                        <li><strong>Frank Rosenblatt</strong> stellte 1958 das Perceptron vor, ein frühes neuronales Netzwerk, das visuelle Muster erkennen konnte und die grundlegende Einheit für moderne Deep-Learning-Systeme wurde.</li>
+                    </ul>
+                    <blockquote>
+                        "Jeder Aspekt des Lernens oder jedes andere Merkmal der Intelligenz kann so präzise beschrieben werden, dass eine Maschine dazu gebracht werden kann, es zu simulieren." - Dartmouth-Konferenz Proposal, 1955
+                    </blockquote>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="date">1950</span>
+                            <p>Alan Turing veröffentlicht "Computing Machinery and Intelligence"</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="date">1956</span>
+                            <p>Dartmouth-Konferenz prägt den Begriff "Künstliche Intelligenz"</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="date">1958</span>
+                            <p>Frank Rosenblatt entwickelt das Perceptron</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="date">1959</span>
+                            <p>Arthur Samuel demonstriert maschinelles Lernen im Damespiel</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Abschnitt 4: Der Turing-Test -->
+        <!-- Abschnitt 4: Verbesserter Turing-Test -->
         <section id="section4" class="section section-even background-4">
-            <div class="section-header">
-                <h2>4. Der Turing-Test</h2>
-            </div>
-            <div class="section-body">
-                <ul>
-                    <li><strong>1950</strong>: Alan Turing stellt die Frage: „Können Maschinen denken?“</li>
-                    <li><strong>Turing-Test</strong>: Ein Test, bei dem eine Maschine als „denkfähig“ gilt, wenn sie einen Menschen in einer Konversation täuschen kann.</li>
-                    <li>Der Test prüft nicht, ob Maschinen wirklich denken, sondern nur, ob sie wie Menschen kommunizieren können.</li>
-                    <li>Wichtiger Meilenstein, der das Konzept der Maschinenintelligenz weiter populär machte.</li>
-                    <li>Der Test wird heute noch als Maßstab für die Messung von KI-Intelligenz diskutiert.</li>
-                </ul>
+            <div class="time-marker">1950</div>
+            <div class="section-inner">
+                <div class="section-header">
+                    <h2>4. Der Turing-Test und die Frage nach Maschinendenken</h2>
+                    <p>Ein revolutionärer Maßstab für künstliche Intelligenz, der bis heute diskutiert wird</p>
+                </div>
+                <div class="section-body">
+                    <figure class="section-image">
+                        <img src="/static/Bilder/TechNova/Turing_test.png" alt="Turing-Test Illustration" width="800" height="400">
+                        <figcaption>Der Turing-Test: Kann eine Maschine so kommunizieren, dass sie von einem Menschen nicht unterschieden werden kann?</figcaption>
+                    </figure>
+                    <ul>
+                        <li><strong>1950 veröffentlichte Alan Turing</strong> seinen bahnbrechenden Aufsatz "Computing Machinery and Intelligence", in dem er die provokante Frage stellte: "Können Maschinen denken?" Er erkannte, dass eine direkte Antwort philosophisch problematisch war, und schlug stattdessen einen pragmatischen Test vor.</li>
+                        <li><strong>Das Imitationsspiel (später Turing-Test genannt)</strong> definiert: Eine Maschine gilt als "intelligent", wenn ein menschlicher Fragesteller in einer Konversation nicht unterscheiden kann, ob er mit einer Maschine oder einem Menschen kommuniziert.</li>
+                        <li><strong>Der Test prüft nicht das Bewusstsein</strong> einer Maschine, sondern ihre Fähigkeit zur natürlichen Kommunikation – Turing schätzte, dass Maschinen bis zum Jahr 2000 den Test zu 30% bestehen würden, eine Prognose, die sich als zu optimistisch herausstellte.</li>
+                        <li><strong>Moderne Varianten</strong> des Turing-Tests umfassen den Loebner-Preis (seit 1991), bei dem jährlich Chatbots gegeneinander antreten, sowie den Winograd Schema Challenge, der speziell für Kontextverständnis entwickelt wurde.</li>
+                        <li><strong>Kritiker wie John Searle</strong> argumentieren mit dem "Chinesischen Zimmer"-Gedankenexperiment, dass Simulation von Intelligenz nicht gleichbedeutend mit echtem Verstehen sei – eine Debatte, die mit modernen Sprachmodellen wieder hochaktuell geworden ist.</li>
+                    </ul>
+                    <div class="info-box">
+                        <h4>Die Turing-Test Debatte heute</h4>
+                        <p>Mit dem Aufkommen fortgeschrittener Sprachmodelle wie GPT und Claude ist die Debatte um den Turing-Test neu entflammt. Während diese Systeme in vielen Gesprächen von Menschen nicht mehr unterscheidbar sind, bleibt die Frage offen, ob dies "echte Intelligenz" darstellt oder nur eine zunehmend ausgefeilte Simulation. Turing selbst würde argumentieren, dass diese Unterscheidung möglicherweise bedeutungslos ist, wenn das Verhalten nicht mehr unterscheidbar ist.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Abschnitt 5: Der KI-Winter -->
+        <!-- Abschnitt 5: Verbesserter KI-Winter -->
         <section id="section5" class="section section-odd background-5">
-            <div class="section-header">
-                <h2>5. Der KI-Winter</h2>
-            </div>
-            <div class="section-body">
-                <ul>
-                    <li><strong>1970er-1980er Jahre</strong>: KI erlebte mehrere Rückschläge, bekannt als der „KI-Winter“.</li>
-                    <li>Technische Hürden und mangelnde Rechenleistung führten zu Enttäuschungen.</li>
-                    <li>Erste Erwartungen, dass Maschinen menschliche Intelligenz nachbilden können, wurden nicht erfüllt.</li>
-                    <li>Forschung verlagerte sich auf spezialisierte Expertensysteme und symbolische KI.</li>
-                    <li>Der KI-Winter führte zu einer langsamen und vorsichtigen Weiterentwicklung der Technologie.</li>
-                </ul>
+            <div class="time-marker">1970er-1980er Jahre</div>
+            <div class="section-inner">
+                <div class="section-header">
+                    <h2>5. Der KI-Winter: Enttäuschung und Ernüchterung</h2>
+                    <p>Nach der anfänglichen Euphorie folgte eine Phase der Desillusionierung</p>
+                </div>
+                <div class="section-body">
+                    <figure class="section-image">
+                        <img src="/static/Bilder/TechNova/Ki_Winter.jpg" alt="KI-Winter" width="800" height="400">
+                        <figcaption>Der KI-Winter: Eine Zeit reduzierter Förderung und gedämpfter Erwartungen</figcaption>
+                    </figure>
+                    <ul>
+                        <li><strong>Der Begriff "KI-Winter"</strong> wurde in Anlehnung an den "nuklearen Winter" geprägt und bezeichnet Phasen drastisch reduzierter Forschungsförderung und Interesse an KI zwischen den 1970er und 1980er Jahren.</li>
+                        <li><strong>Der ALPAC-Bericht 1966</strong> kritisierte die überzogenen Versprechungen der maschinellen Übersetzung und führte zur ersten Kürzung von Forschungsgeldern für KI-Projekte in den USA.</li>
+                        <li><strong>Sir James Lighthill</strong> verfasste 1973 einen vernichtenden Bericht für die britische Regierung, der die Unfähigkeit der KI-Forschung kritisierte, ihre Versprechen einzulösen. Dies führte zur Einstellung fast aller KI-Forschung in Großbritannien.</li>
+                        <li><strong>Technische Limitationen</strong> wie unzureichende Rechenleistung, zu geringe Datensätze und fundamentale Grenzen der damaligen KI-Ansätze (wie das XOR-Problem bei Perceptrons) machten viele ambitionierte Ziele unerreichbar.</li>
+                        <li><strong>Trotz des Winters</strong> entstanden wichtige Fortschritte: Expertensysteme wie MYCIN für medizinische Diagnosen, die Programmiersprache Prolog für logische Programmierung und frühe Robotik-Fortschritte am Stanford Research Institute.</li>
+                    </ul>
+                    <div class="comparison">
+                        <div class="comparison-column">
+                            <h4>Gründe für den KI-Winter</h4>
+                            <ul>
+                                <li>Überhöhte Versprechen und Erwartungen</li>
+                                <li>Mangelnde Rechenleistung</li>
+                                <li>Unzureichende Algorithmen</li>
+                                <li>Zu kleine Datensätze</li>
+                                <li>Fehlende Erfolge bei genereller KI</li>
+                            </ul>
+                        </div>
+                        <div class="comparison-column">
+                            <h4>Überlebende Technologien</h4>
+                            <ul>
+                                <li>Expertensysteme in Spezialdomänen</li>
+                                <li>Frühe Spracherkennung</li>
+                                <li>Logische Programmierung</li>
+                                <li>Computer Vision-Grundlagen</li>
+                                <li>Industrielle Robotik</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <blockquote>
+                        "In der KI haben wir alle Komponenten für Intelligenz bis auf den intelligenten Teil." - Marvin Minsky während des KI-Winters
+                    </blockquote>
+                </div>
             </div>
         </section>
 
-        <!-- Abschnitt 6: Die Wiederbelebung der KI -->
+        <!-- Abschnitt 6: Verbesserte Wiederbelebung der KI -->
         <section id="section6" class="section section-even background-6">
-            <div class="section-header">
-                <h2>6. Die Wiederbelebung der KI</h2>
-            </div>
-            <div class="section-body">
-                <ul>
-                    <li><strong>1980er Jahre</strong>: Fortschritte in der Entwicklung neuronaler Netzwerke führten zu einer Wiederbelebung der KI.</li>
-                    <li>Die **Backpropagation**-Methode ermöglichte es neuronalen Netzwerken, durch Fehler zu lernen.</li>
-                    <li><strong>Expertensysteme</strong>: Begannen, in der Industrie, besonders in der Medizin und Ingenieurwissenschaften, Anwendung zu finden.</li>
-                    <li>Neuer Fokus auf praktischen Anwendungen anstelle von theoretischen Konzepten.</li>
-                    <li>KI-Modelle konnten nun bessere Ergebnisse liefern, besonders in spezialisierten Bereichen.</li>
-                </ul>
+            <div class="time-marker">1980er Jahre</div>
+            <div class="section-inner">
+                <div class="section-header">
+                    <h2>6. Die Renaissance der KI: Expertensysteme und neue Ansätze</h2>
+                    <p>Spezialisierte Systeme und praktische Anwendungen belebten das Feld neu</p>
+                </div>
+                <div class="section-body">
+                    <figure class="section-image">
+                        <img src="/static/Bilder/TechNova/Renaissance.jpg" alt="Expertensysteme" width="800" height="400">
+                        <figcaption>Expertensysteme wie MYCIN und DENDRAL revolutionierten spezifische Anwendungsbereiche</figcaption>
+                    </figure>
+                    <ul>
+                        <li><strong>Expertensysteme</strong> wurden zum kommerziellen Durchbruch der KI. Programme wie XCON (für Computer-Konfiguration bei Digital Equipment), DENDRAL (zur Identifizierung chemischer Verbindungen) und MYCIN (für medizinische Diagnosen) brachten reale wirtschaftliche Vorteile.</li>
+                        <li><strong>Die Backpropagation-Methode</strong>, unabhängig von mehreren Forschern wiederentdeckt und popularisiert durch Rumelhart, Hinton und Williams 1986, ermöglichte es neuronalen Netzwerken, aus ihren Fehlern zu lernen – ein fundamentaler Durchbruch für das maschinelle Lernen.</li>
+                        <li><strong>Japan startete 1982</strong> das ambitionierte "Fifth Generation Computer Project" mit einem Budget von 850 Millionen Dollar, um Computer zu entwickeln, die natürliche Sprache verstehen und mit künstlicher Intelligenz arbeiten sollten.</li>
+                        <li><strong>Der kommerzielle Erfolg von Expertensystemen</strong> führte zu einer neuen KI-Bubble, mit Unternehmen wie Symbolics, Intellicorp und Teknowledge, die in den 1980er Jahren Hunderte Millionen Dollar an Investitionen anzogen.</li>
+                        <li><strong>Ein pragmatischerer Ansatz</strong> setzte sich durch: Statt nach der allgemeinen künstlichen Intelligenz zu streben, konzentrierte man sich auf lösbare Probleme in spezifischen Domänen – ein Fokus, der bis heute in der KI-Forschung nachwirkt.</li>
+                    </ul>
+                    <div class="milestone">
+                        <h4>Der Paradigmenwechsel: Von Regeln zu Daten</h4>
+                        <p>In dieser Zeit begann ein entscheidender Paradigmenwechsel in der KI-Forschung: weg von manuell codierten Regeln und hin zu statistischen Methoden und datengetriebenen Ansätzen. Diese Veränderung legte den Grundstein für den späteren Erfolg von Machine Learning und Deep Learning. Frederick Jelinek vom IBM Research formulierte es prägnant: "Jedes Mal, wenn ich einen Linguisten feuere, verbessert sich die Leistung unserer Spracherkennung."</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Abschnitt 7: Der Durchbruch mit Deep Learning -->
+        <!-- Abschnitt 7: Verbesserter Deep Learning Durchbruch -->
         <section id="section7" class="section section-odd background-7">
-            <div class="section-header">
-                <h2>7. Der Durchbruch mit Deep Learning</h2>
-            </div>
-            <div class="section-body">
-                <ul>
-                    <li><strong>2010er Jahre</strong>: Deep Learning revolutionierte die KI durch die Verwendung von tiefen neuronalen Netzwerken.</li>
-                    <li>Verstärkte Rechenleistung und große Datenmengen ermöglichten erstmals echte Fortschritte in der Bild- und Spracherkennung.</li>
-                    <li><strong>Convolutional Neural Networks (CNNs)</strong>: Wichtig für die Bildverarbeitung und automatisierte Erkennung.</li>
-                    <li><strong>Generative Adversarial Networks (GANs)</strong>: Neue Modelle zur Erzeugung realistischer Bilder und Daten.</li>
-                    <li>Deep Learning führte zu beeindruckenden Erfolgen, z.B. in der medizinischen Bildanalyse und autonomem Fahren.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Abschnitt 8: AlphaGo und der Sieg über den Go-Weltmeister -->
-        <section id="section8" class="section section-even background-8">
-            <div class="section-header">
-                <h2>8. AlphaGo und der Sieg über den Go-Weltmeister</h2>
-            </div>
-            <div class="section-body">
-                <ul>
-                    <li><strong>2016</strong>: Google DeepMind’s AlphaGo besiegte den Go-Weltmeister Lee Sedol.</li>
-                    <li>Go galt als besonders schwieriges Spiel für KI wegen seiner enormen Anzahl an möglichen Zügen.</li>
-                    <li>AlphaGo nutzte Deep Learning und Monte-Carlo-Methoden, um das Spiel zu meistern.</li>
-                    <li>Der Sieg von AlphaGo zeigte das enorme Potenzial von KI in komplexen und strategischen Aufgaben.</li>
-                    <li>Dieser Durchbruch setzte einen neuen Standard für KI-Entwicklungen weltweit.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Abschnitt 9: KI in der modernen Welt -->
-        <section id="section9" class="section section-odd background-9">
-            <div class="section-header">
-                <h2>9. KI in der modernen Welt</h2>
-            </div>
-            <div class="section-body">
-                <ul>
-                    <li><strong>Medizin</strong>: KI hilft bei Diagnosen und der Analyse medizinischer Daten.</li>
-                    <li><strong>Autonomes Fahren</strong>: Selbstfahrende Autos nutzen KI für Echtzeitentscheidungen.</li>
-                    <li><strong>Sprachassistenten</strong>: Siri, Alexa und Google Assistant basieren auf KI, um natürliche Sprache zu verstehen.</li>
-                    <li><strong>Industrie</strong>: Automatisierung von Fertigungsprozessen durch KI-gestützte Roboter.</li>
-                    <li>KI verändert die Arbeitswelt und wird zunehmend in viele Bereiche des täglichen Lebens integriert.</li>
-                </ul>
+            <div class="time-marker">2010er Jahre</div>
+            <div class="section-inner">
+                <div class="section-header">
+                    <h2>7. Der Durchbruch mit Deep Learning</h2>
+                    <p>Tiefe neuronale Netzwerke revolutionierten das maschinelle Lernen und die KI</p>
+                </div>
+                <div class="section-body">
+                    <figure class="section-image">
+                        <img src="/static/Bilder/TechNova/Deep_Learning.png" alt="Deep Learning Netzwerk" width="800" height="400">
+                        <figcaption>Mehrschichtige neuronale Netzwerke ermöglichten beispiellose Fortschritte in der Bild- und Spracherkennung</figcaption>
+                    </figure>
+                    <ul>
+                        <li><strong>Der ImageNet-Wettbewerb 2012</strong> markierte einen Wendepunkt: AlexNet, ein tiefes konvolutionales neuronales Netzwerk von Alex Krizhevsky, Ilya Sutskever und Geoffrey Hinton, reduzierte den Fehler bei der Bilderkennung dramatisch von 26% auf 15% und löste einen Boom in der Deep-Learning-Forschung aus.</li>
+                        <li><strong>Drei Schlüsselfaktoren</strong> ermöglichten den Deep-Learning-Durchbruch: massiv gesteigerte Rechenleistung (insbesondere durch GPUs), riesige Datensätze und verbesserte Algorithmen wie effiziente Aktivierungsfunktionen (ReLU) und Dropout zur Vermeidung von Überanpassung.</li>
+                        <li><strong>Convolutional Neural Networks (CNNs)</strong>, inspiriert von der visuellen Verarbeitung im Gehirn, revolutionierten die Bildverarbeitung und führten zu Durchbrüchen in der medizinischen Bildanalyse, autonomen Fahrzeugen und Gesichtserkennung.</li>
+                        <li><strong>Recurrent Neural Networks (RNNs)</strong> und ihre Weiterentwicklung LSTM (Long Short-Term Memory) ermöglichten Fortschritte in der Verarbeitung sequentieller Daten wie Sprache, Text und Zeitreihen.</li>
+                        <li><strong>Generative Adversarial Networks (GANs)</strong>, 2014 von Ian Goodfellow eingeführt, erschufen eine neue Klasse von KI-Systemen, die realistische Bilder, Musik und Text erzeugen können – die Grundlage für die heutige Welle kreativer KI-Anwendungen.</li>
+                    </ul>
+                    <div class="innovation-box">
+                        <h4>Transfer Learning: Die Multiplikation des Wissens</h4>
+                        <p>Ein entscheidender Fortschritt im Deep Learning war die Entwicklung des Transfer Learnings – die Fähigkeit, vortrainierte Modelle auf neue Aufgaben anzuwenden. Dies ermöglichte es, komplexe Modelle auch mit begrenzten Datenmengen zu nutzen und beschleunigte die KI-Entwicklung dramatisch. Ein auf ImageNet trainiertes Modell konnte plötzlich für medizinische Bildgebung, Satellitenbildanalyse oder industrielle Qualitätskontrolle adaptiert werden.</p>
+                    </div>
+                    <blockquote>
+                        "Wir überschätzen die KI in den nächsten zwei Jahren und unterschätzen sie in den nächsten zehn." - Andrew Ng, KI-Pionier und Mitbegründer von Coursera
+                    </blockquote>
+                </div>
             </div>
         </section>
 
-        <!-- Abschnitt 10: Ethische Fragestellungen der KI -->
-        <section id="section10" class="section section-even background-10">
-            <div class="section-header">
-                <h2>10. Ethische Fragestellungen der KI</h2>
+    <!-- Abschnitt 8: AlphaGo Bereich -->
+        <section id="section8">
+            <div class="time-marker">2016</div>
+            <div class="section-inner">
+                <div class="section-header">
+                    <h2>8. AlphaGo und der historische Sieg über den Go-Weltmeister</h2>
+                    <p>Ein Meilenstein, der zeigte, dass KI auch in hochkomplexen, intuitiven Domänen überlegen sein kann</p>
+                </div>
+                <div class="section-body">
+                    <figure>
+                        <img src="/static/Bilder/TechNova/Alpha_Go.png" alt="AlphaGo vs. Lee Sedol" width="800" height="400">
+                        <figcaption>Der historische Moment: AlphaGo besiegt Weltmeister Lee Sedol im März 2016</figcaption>
+                 </figure>
+                    <ul>
+                        <li><strong>Im März 2016</strong> besiegte DeepMinds AlphaGo den 18-fachen Go-Weltmeister Lee Sedol mit 4:1 in einem historischen Turnier in Seoul, Südkorea. Die Welt verfolgte gebannt, wie ein Computer in einem Spiel triumphierte, das als zu komplex für künstliche Intelligenz galt.</li>
+                        <li><strong>Go galt als "heiliger Gral" der KI-Forschung</strong>, mit rund 10^170 möglichen Spielpositionen – mehr als Atome im bekannten Universum. Statt alle Züge zu analysieren, musste AlphaGo "intuitiv" entscheiden.</li>
+                        <li><strong>Der berühmte "Move 37"</strong> im zweiten Spiel galt als so kreativ, dass Kommentatoren ihn zunächst für einen Fehler hielten. Dieser Zug zeigte, dass KI mehr als nur mechanisches Rechnen sein kann.</li>
+                        <li><strong>AlphaGo nutzte Deep Learning und Monte-Carlo-Baumsuche</strong>, um von menschlichen Go-Spielen zu lernen und dann durch Spiele gegen sich selbst zu verbessern.</li>
+                        <li><strong>Nach diesem Meilenstein</strong> entwickelte DeepMind AlphaGo Zero, das ohne menschliche Beispiele lernte und noch stärker wurde.</li>
+                    </ul>
+                    <div class="quote">
+                        <blockquote>"AlphaGo hat mir gezeigt, dass es Züge gibt, die Menschen möglicherweise nie entdeckt hätten. Die Welt des Go hat sich verändert."</blockquote>
+                        <cite>— Lee Sedol nach seiner Niederlage</cite>
+                 </div>
+             </div>
             </div>
-            <div class="section-body">
-                <ul>
-                    <li><strong>Arbeitsplatzverlust</strong>: Automatisierung durch KI führt zu Bedenken hinsichtlich Arbeitsplätzen.</li>
-                    <li><strong>Überwachung</strong>: KI-basierte Überwachungssysteme werfen Fragen zum Datenschutz auf.</li>
-                    <li><strong>Verantwortung</strong>: Wer ist verantwortlich, wenn KI-Entscheidungen fehlerhaft sind?</li>
-                    <li><strong>Bias</strong>: KI-Systeme können bestehende Vorurteile und Diskriminierung verstärken.</li>
-                    <li>Die ethischen Implikationen der KI sind eines der größten Themen der aktuellen Forschung.</li>
-                </ul>
+     </section>
+
+        <!-- Abschnitt 9: Moderne KI -->
+        <section id="section9">
+            <div class="time-marker">2020</div>
+            <div class="section-inner">
+                <div class="section-header">
+                    <h2>9. Moderne KI und der Durchbruch generativer Modelle</h2>
+                    <p>Die Ära der großen Sprachmodelle und der Bilderzeugung verändert unseren Alltag</p>
+                </div>
+                <div class="section-body">
+                    <figure>
+                        <img src="/static/Bilder/TechNova/Moderne_Ki.png" alt="Generative KI-Anwendungen" width="800" height="400">
+                        <figcaption>Moderne generative KI-Systeme revolutionieren kreative Prozesse</figcaption>
+                    </figure>
+                    <ul>
+                        <li><strong>Ab 2020</strong> erleben wir eine explosionsartige Entwicklung leistungsfähiger generativer KI-Modelle, die Texte, Bilder, Audio und sogar Videos erzeugen können.</li>
+                        <li><strong>GPT, DALL-E, Midjourney und Stable Diffusion</strong> sind prominente Beispiele für große vortrainierte Modelle, die mühelos kreative Inhalte erzeugen können.</li>
+                        <li><strong>Diese Technologien basieren auf Transformer-Architekturen</strong>, die 2017 von Google entwickelt wurden und effiziente Aufmerksamkeitsmechanismen implementieren.</li>
+                        <li><strong>Die Skalierung ist entscheidend:</strong> Moderne Modelle werden mit Billionen von Parametern auf enormen Datensätzen trainiert, was ihre bemerkenswerten Fähigkeiten erklärt.</li>
+                        <li><strong>KI-Assistenten</strong> integrieren sich in unser tägliches Leben und unterstützen bei Aufgaben wie Texterstellung, Programmierung, Informationssuche und kreativen Prozessen.</li>
+                    </ul>
+                    <div class="quote">
+                        <blockquote>"Wir befinden uns in einer neuen Ära der KI, in der die Grenzen zwischen menschlicher und maschineller Kreativität zunehmend verschwimmen."</blockquote>
+                        <cite>— KI-Forscher über den aktuellen Stand der Technik</cite>
+                    </div>
+                </div>
             </div>
         </section>
+
+        <!-- Abschnitt 10: Ethik -->
+        <section id="section10">
+            <div class="time-marker">Heute</div>
+            <div class="section-inner">
+                <div class="section-header">
+                    <h2>10. Ethik und verantwortungsvolle KI-Entwicklung</h2>
+                    <p>Die gesellschaftliche Herausforderung im Umgang mit künstlicher Intelligenz</p>
+                </div>
+                <div class="section-body">
+                    <figure>
+                        <img src="/static/Bilder/TechNova/Ethik_Ki.png" alt="KI-Ethik" width="800" height="400">
+                        <figcaption>Ethische Fragestellungen gewinnen mit zunehmender KI-Verbreitung an Bedeutung</figcaption>
+                    </figure>
+                    <ul>
+                        <li><strong>Transparenz und Erklärbarkeit:</strong> Je komplexer KI-Systeme werden, desto schwieriger wird es, ihre Entscheidungen nachzuvollziehen. Die Forderung nach erklärbarer KI wächst.</li>
+                        <li><strong>Fairness und Verzerrungen:</strong> KI-Systeme können gesellschaftliche Vorurteile verstärken, wenn sie mit verzerrten Daten trainiert werden. Die Forschung arbeitet an Methoden, um diese Probleme zu erkennen und zu beheben.</li>
+                        <li><strong>Datenschutz und Privatsphäre:</strong> Der Hunger nach Daten für KI-Training wirft Fragen zum Schutz persönlicher Informationen auf.</li>
+                        <li><strong>Auswirkungen auf Arbeit:</strong> KI automatisiert zunehmend Aufgaben in verschiedenen Branchen, was Arbeitsmarktveränderungen und Anpassungsbedarf bedeutet.</li>
+                        <li><strong>Regulierung und Governance:</strong> Weltweit arbeiten Regierungen an Rahmenwerken für den verantwortungsvollen Einsatz von KI-Technologien.</li>
+                    </ul>
+                    <div class="quote">
+                        <blockquote>"Die wichtigste Frage ist nicht, ob KI unser Leben verändern wird – das tut sie bereits – sondern wie wir sicherstellen, dass diese Veränderungen zum Wohle aller Menschen beitragen."</blockquote>
+                        <cite>— Expertenmeinung zur verantwortungsvollen KI-Entwicklung</cite>
+                    </div>
+                    <div class="conclusion">
+                        <p>Mit der rasanten Entwicklung der künstlichen Intelligenz stehen wir vor der gemeinsamen Aufgabe, diese mächtige Technologie so zu gestalten, dass sie im Einklang mit menschlichen Werten steht und unsere Gesellschaft positiv bereichert. Dies erfordert einen kontinuierlichen Dialog zwischen Technologieentwicklern, politischen Entscheidungsträgern und der Zivilgesellschaft.</p>
+                    </div>
+                </div>
+            </div>
+    </section>
     </div>
-
-    <!-- Footer -->
-<footer>
-    <div class="container">
-        <p>&copy; 2025 TechNova. Alle Rechte vorbehalten.</p>
-        <p style="display: inline; margin-right: 10px;"><a href="/impressum" style="color: #00bcd4; text-decoration: none;">Impressum</a></p> | <p style="display: inline; margin-left: 10px;"><a href="/Datenschutz" style="color: #00bcd4; text-decoration: none;">Datenschutz</a></p> | <p style="display: inline; margin-left: 10px;"><a href="/ai-projekt" style="color: #00bcd4; text-decoration: none;">Aurora-KI</a></p>
-    </div>
-</footer>
 </body>
 </html>

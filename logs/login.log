@@ -384,3 +384,160 @@
 2025-03-05 23:02:09,850 - INFO - Login attempt with email: ad@sdf.cs
 2025-03-05 23:02:09,926 - INFO - User ad@sdf.cs authenticated successfully!
 2025-03-05 23:02:09,947 - INFO - Database commit successful for user ad@sdf.cs. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-03-05 23:23:30,027 - INFO - Login attempt with email: ad@sdf.cs
+2025-03-05 23:23:30,112 - INFO - User ad@sdf.cs authenticated successfully!
+2025-03-05 23:23:30,142 - INFO - Database commit successful for user ad@sdf.cs. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-03-06 12:05:14,487 - INFO - Login attempt with email: ad@sdf.cs
+2025-03-06 12:05:14,564 - INFO - User ad@sdf.cs authenticated successfully!
+2025-03-06 12:05:14,582 - INFO - Database commit successful for user ad@sdf.cs. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-03-06 12:24:18,668 - INFO - Login attempt with email: Technova@nova.cz
+2025-03-06 12:24:18,749 - INFO - User Technova@nova.cz authenticated successfully!
+2025-03-06 12:24:18,765 - INFO - Database commit successful for user Technova@nova.cz. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-03-06 21:40:17,142 - INFO - Login attempt with email: Admin@Test.com
+2025-03-06 21:40:17,221 - INFO - User Admin@Test.com authenticated successfully!
+2025-03-06 21:40:17,238 - INFO - Database commit successful for user Admin@Test.com. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-03-06 23:17:31,375 - INFO - Login attempt with email: Admin@Test.com
+2025-03-06 23:17:31,452 - INFO - User Admin@Test.com authenticated successfully!
+2025-03-06 23:17:31,469 - INFO - Database commit successful for user Admin@Test.com. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-03-06 23:23:00,960 - INFO - Login attempt with email: jafiAFJA@gam.con
+2025-03-06 23:23:01,036 - INFO - User jafiAFJA@gam.con authenticated successfully!
+2025-03-06 23:23:01,052 - INFO - Database commit successful for user jafiAFJA@gam.con. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-03-07 20:58:00,725 - INFO - Login attempt with email: jafiAFJA@gam.con
+2025-03-07 20:58:00,895 - INFO - User jafiAFJA@gam.con authenticated successfully!
+2025-03-07 20:58:00,922 - INFO - Database commit successful for user jafiAFJA@gam.con. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 01:22:35,051 - INFO - Login attempt with email: Website@server.com
+2025-03-08 01:22:35,133 - INFO - User Website@server.com authenticated successfully!
+2025-03-08 01:22:35,149 - INFO - Database commit successful for user Website@server.com. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 01:24:39,973 - INFO - Login attempt with email: AVABF@faf.caom
+2025-03-08 01:24:40,046 - INFO - User AVABF@faf.caom authenticated successfully!
+2025-03-08 01:24:40,062 - INFO - Database commit successful for user AVABF@faf.caom. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 01:31:38,868 - INFO - Login attempt with email: afaf@gaf.coaf
+2025-03-08 01:31:38,945 - INFO - User afaf@gaf.coaf authenticated successfully!
+2025-03-08 01:31:38,963 - INFO - Database commit successful for user afaf@gaf.coaf. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 01:31:58,779 - INFO - Login attempt with email: afaf@gaf.coaf
+2025-03-08 01:31:58,858 - INFO - User afaf@gaf.coaf authenticated successfully!
+2025-03-08 01:31:58,875 - INFO - Database commit successful for user afaf@gaf.coaf. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 01:33:50,364 - INFO - Login attempt with email: asdadwqd@asd.acs
+2025-03-08 01:33:50,442 - INFO - User asdadwqd@asd.acs authenticated successfully!
+2025-03-08 01:33:50,459 - INFO - Database commit successful for user asdadwqd@asd.acs. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 01:34:13,660 - INFO - Login attempt with email: asdadwqd@asd.acs
+2025-03-08 01:34:13,742 - INFO - User asdadwqd@asd.acs authenticated successfully!
+2025-03-08 01:34:13,753 - INFO - Database commit successful for user asdadwqd@asd.acs. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 01:35:35,147 - INFO - Login attempt with email: afafadf@saf.asd
+2025-03-08 01:35:35,225 - INFO - User afafadf@saf.asd authenticated successfully!
+2025-03-08 01:35:35,237 - INFO - Database commit successful for user afafadf@saf.asd. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 01:35:45,481 - INFO - Login attempt with email: afafadf@saf.asd
+2025-03-08 01:35:45,555 - INFO - User afafadf@saf.asd authenticated successfully!
+2025-03-08 01:35:45,572 - INFO - Database commit successful for user afafadf@saf.asd. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 01:37:00,401 - INFO - Login attempt with email: asdadwqd@asd.acs
+2025-03-08 01:37:00,477 - INFO - User asdadwqd@asd.acs authenticated successfully!
+2025-03-08 01:37:00,491 - INFO - Database commit successful for user asdadwqd@asd.acs. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 01:37:17,142 - INFO - Login attempt with email: asdadwqd@asd.acs
+2025-03-08 01:37:17,216 - INFO - User asdadwqd@asd.acs authenticated successfully!
+2025-03-08 01:37:17,230 - INFO - Database commit successful for user asdadwqd@asd.acs. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 01:38:49,737 - INFO - Login attempt with email: sfaff@fsa.aco
+2025-03-08 01:38:49,815 - INFO - User sfaff@fsa.aco authenticated successfully!
+2025-03-08 01:38:49,827 - INFO - Database commit successful for user sfaff@fsa.aco. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 01:42:00,156 - INFO - Login attempt with email: sfaff@fsa.aco
+2025-03-08 01:42:00,235 - INFO - User sfaff@fsa.aco authenticated successfully!
+2025-03-08 01:42:00,251 - INFO - Database commit successful for user sfaff@fsa.aco. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 01:44:06,422 - INFO - Login attempt with email: sfaff@fsa.aco
+2025-03-08 01:44:06,504 - INFO - User sfaff@fsa.aco authenticated successfully!
+2025-03-08 01:44:06,521 - INFO - Database commit successful for user sfaff@fsa.aco. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 01:46:57,376 - INFO - Login attempt with email: sfaff@fsa.aco
+2025-03-08 01:46:57,455 - INFO - User sfaff@fsa.aco authenticated successfully!
+2025-03-08 01:46:57,469 - INFO - Database commit successful for user sfaff@fsa.aco. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 01:49:42,238 - INFO - Login attempt with email: sfaff@fsa.aco
+2025-03-08 01:49:42,315 - INFO - User sfaff@fsa.aco authenticated successfully!
+2025-03-08 01:49:42,331 - INFO - Database commit successful for user sfaff@fsa.aco. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 01:50:59,908 - INFO - Login attempt with email: sfaff@fsa.aco
+2025-03-08 01:50:59,986 - INFO - User sfaff@fsa.aco authenticated successfully!
+2025-03-08 01:51:00,001 - INFO - Database commit successful for user sfaff@fsa.aco. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 01:55:47,157 - INFO - Login attempt with email: asdadwqd@asd.acs
+2025-03-08 01:55:47,238 - INFO - User asdadwqd@asd.acs authenticated successfully!
+2025-03-08 01:55:47,254 - INFO - Database commit successful for user asdadwqd@asd.acs. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 02:00:32,321 - INFO - Login attempt with email: adada@ad.cop
+2025-03-08 02:00:32,396 - INFO - User adada@ad.cop authenticated successfully!
+2025-03-08 02:00:32,412 - INFO - Database commit successful for user adada@ad.cop. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 02:04:54,889 - INFO - Login attempt with email: aseqwf@faf.csa
+2025-03-08 02:04:54,891 - WARNING - Login attempt failed: No user found with email aseqwf@faf.csa.
+2025-03-08 02:05:05,783 - INFO - Login attempt with email: aseqwf@faf.csa
+2025-03-08 02:05:05,784 - WARNING - Login attempt failed: No user found with email aseqwf@faf.csa.
+2025-03-08 02:05:30,792 - INFO - Login attempt with email: aseqwf@faf.csa
+2025-03-08 02:05:30,865 - INFO - User aseqwf@faf.csa authenticated successfully!
+2025-03-08 02:05:30,891 - INFO - Database commit successful for user aseqwf@faf.csa. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 02:07:28,945 - INFO - Login attempt with email: afqrqc@safa.asc
+2025-03-08 02:07:29,019 - INFO - User afqrqc@safa.asc authenticated successfully!
+2025-03-08 02:07:29,036 - INFO - Database commit successful for user afqrqc@safa.asc. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 02:10:09,621 - INFO - Login attempt with email: gagqa@asd.aca
+2025-03-08 02:10:09,699 - INFO - User gagqa@asd.aca authenticated successfully!
+2025-03-08 02:10:09,720 - INFO - Database commit successful for user gagqa@asd.aca. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 02:16:19,391 - INFO - Login attempt with email: asdad@rs.sad
+2025-03-08 02:16:19,474 - INFO - User asdad@rs.sad authenticated successfully!
+2025-03-08 02:16:19,495 - INFO - Database commit successful for user asdad@rs.sad. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 02:17:21,661 - INFO - Login attempt with email: asdad@rs.sad
+2025-03-08 02:17:21,739 - INFO - User asdad@rs.sad authenticated successfully!
+2025-03-08 02:17:21,754 - INFO - Database commit successful for user asdad@rs.sad. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 02:19:01,158 - INFO - Login attempt with email: asdad@rs.sad
+2025-03-08 02:19:01,235 - INFO - User asdad@rs.sad authenticated successfully!
+2025-03-08 02:19:01,254 - INFO - Database commit successful for user asdad@rs.sad. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 02:20:54,835 - INFO - Login attempt with email: asdad@rs.sad
+2025-03-08 02:20:54,916 - INFO - User asdad@rs.sad authenticated successfully!
+2025-03-08 02:20:54,937 - INFO - Database commit successful for user asdad@rs.sad. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 02:22:10,762 - INFO - Login attempt with email: asdad@rs.sad
+2025-03-08 02:22:10,849 - INFO - User asdad@rs.sad authenticated successfully!
+2025-03-08 02:22:10,865 - INFO - Database commit successful for user asdad@rs.sad. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 02:24:38,823 - INFO - Login attempt with email: dgsgw@asf.acp
+2025-03-08 02:24:38,898 - INFO - User dgsgw@asf.acp authenticated successfully!
+2025-03-08 02:24:38,911 - INFO - Database commit successful for user dgsgw@asf.acp. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 02:25:52,232 - INFO - Login attempt with email: asdafa@asd.aca
+2025-03-08 02:25:52,310 - INFO - User asdafa@asd.aca authenticated successfully!
+2025-03-08 02:25:52,322 - INFO - Database commit successful for user asdafa@asd.aca. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 02:33:22,570 - INFO - Login attempt with email: asdafa@asd.aca
+2025-03-08 02:33:22,648 - INFO - User asdafa@asd.aca authenticated successfully!
+2025-03-08 02:33:22,670 - INFO - Database commit successful for user asdafa@asd.aca. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 02:36:25,082 - INFO - Login attempt with email: afafaf@saf.asc
+2025-03-08 02:36:25,174 - INFO - User afafaf@saf.asc authenticated successfully!
+2025-03-08 02:36:25,196 - INFO - Database commit successful for user afafaf@saf.asc. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 02:37:57,593 - INFO - Login attempt with email: afafaf@saf.asc
+2025-03-08 02:37:57,672 - INFO - User afafaf@saf.asc authenticated successfully!
+2025-03-08 02:37:57,692 - INFO - Database commit successful for user afafaf@saf.asc. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 02:41:02,996 - INFO - Login attempt with email: afafaf@saf.asc
+2025-03-08 02:41:03,072 - INFO - User afafaf@saf.asc authenticated successfully!
+2025-03-08 02:41:03,087 - INFO - Database commit successful for user afafaf@saf.asc. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 02:41:41,657 - INFO - Login attempt with email: asfaf@ads.aca
+2025-03-08 02:41:41,733 - INFO - User asfaf@ads.aca authenticated successfully!
+2025-03-08 02:41:41,746 - INFO - Database commit successful for user asfaf@ads.aca. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 02:47:26,755 - INFO - Login attempt with email: asfaf@ads.aca
+2025-03-08 02:47:26,835 - INFO - User asfaf@ads.aca authenticated successfully!
+2025-03-08 02:47:26,850 - INFO - Database commit successful for user asfaf@ads.aca. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 02:47:58,420 - INFO - Login attempt with email: asfaf@ads.aca
+2025-03-08 02:47:58,498 - INFO - User asfaf@ads.aca authenticated successfully!
+2025-03-08 02:47:58,510 - INFO - Database commit successful for user asfaf@ads.aca. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 14:38:30,844 - INFO - Login attempt with email: Technova@nova.cz
+2025-03-08 14:38:30,934 - INFO - User Technova@nova.cz authenticated successfully!
+2025-03-08 14:38:30,953 - INFO - Database commit successful for user Technova@nova.cz. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 17:56:38,335 - INFO - Login attempt with email: Admin@TechNova.de
+2025-03-08 17:56:38,435 - INFO - User Admin@TechNova.de authenticated successfully!
+2025-03-08 17:56:38,458 - INFO - Database commit successful for user Admin@TechNova.de. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 18:53:36,667 - INFO - Login attempt with email: Admin@TechNova.de
+2025-03-08 18:53:36,744 - INFO - User Admin@TechNova.de authenticated successfully!
+2025-03-08 18:53:36,760 - INFO - Database commit successful for user Admin@TechNova.de. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 23:31:17,562 - INFO - Login attempt with email: Admin@TechNova.de
+2025-03-08 23:31:17,644 - INFO - User Admin@TechNova.de authenticated successfully!
+2025-03-08 23:31:17,664 - INFO - Database commit successful for user Admin@TechNova.de. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-08 23:31:49,423 - INFO - Login attempt with email: Admin@TechNova.de
+2025-03-08 23:31:49,503 - INFO - User Admin@TechNova.de authenticated successfully!
+2025-03-08 23:31:49,519 - INFO - Database commit successful for user Admin@TechNova.de. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-09 18:13:57,759 - INFO - Login attempt with email: Admin@TechNova.de
+2025-03-09 18:13:57,974 - INFO - User Admin@TechNova.de authenticated successfully!
+2025-03-09 18:13:58,002 - INFO - Database commit successful for user Admin@TechNova.de. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-12 18:41:04,073 - INFO - Login attempt with email: Admin@TechNova.de
+2025-03-12 18:41:04,214 - INFO - User Admin@TechNova.de authenticated successfully!
+2025-03-12 18:41:04,234 - INFO - Database commit successful for user Admin@TechNova.de. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-12 18:56:00,404 - INFO - Login attempt with email: Admin@TechNova.de
+2025-03-12 18:56:00,485 - INFO - User Admin@TechNova.de authenticated successfully!
+2025-03-12 18:56:00,503 - INFO - Database commit successful for user Admin@TechNova.de. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-12 21:14:36,157 - INFO - Login attempt with email: Admin@TechNova.de
+2025-03-12 21:14:36,249 - INFO - User Admin@TechNova.de authenticated successfully!
+2025-03-12 21:14:36,271 - INFO - Database commit successful for user Admin@TechNova.de. IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36

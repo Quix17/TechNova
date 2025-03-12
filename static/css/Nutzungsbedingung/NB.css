@@ -28,86 +28,73 @@ body {
     transition: background 0.3s ease;
 }
 
-/* Header-Inhalt mit Flexbox */
-.main-header .header-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
+/* Header-Stil */
+.main-header {
+    background: linear-gradient(135deg, #2a2a2a, #1e1e1e); /* Dunkelgrauer Verlauf */
+    color: #e0e0e0;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #00bcd4;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInDown 0.8s ease-out forwards;
 }
 
-/* Header-Logo */
-.main-header .logo {
-    font-size: 0.5em;
+/* Logo-Bereich */
+.logo h1 {
+    font-size: 2.5em;
     font-weight: bold;
-    color: #ffffff;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.main-header .logo:hover {
     color: #00bcd4;
+    margin: 0;
 }
 
-/* Navigationslinks */
-.main-header .header-content a {
-    font-size: 1.1em;
-    color: #ffffff;
+.logo p {
+    font-size: 1em;
+    color: #b0bec5;
+    margin-top: 5px;
+}
+
+/* Navigation */
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.navigation li {
+    margin: 5px 10px;
+}
+
+.navigation a {
     text-decoration: none;
-    padding: 10px 20px;
-    transition: background-color 0.3s, transform 0.2s ease;
-    border-radius: 5px;
-    margin-left: 20px;
-    position: relative;
+    color: #b0bec5;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
-/* Hover-Effekte für Navigation */
-.main-header .header-content a:hover {
-    background-color: #00bcd4;
-    color: #121212;
-    transform: scale(1.1);
+.navigation a:hover {
+    color: #00e5ff;
+    transform: translateY(-2px);
 }
 
-/* Hover-Indikator (Unterstreichung) */
-.main-header .header-content a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #00bcd4;
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.3s ease;
-}
-
-.main-header .header-content a:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
-
-/* Responsivität */
-@media (max-width: 768px) {
-    .main-header .header-content {
-        flex-direction: column;
-        align-items: flex-start;
+/* Animation */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
     }
-
-    .main-header .header-content a {
-        margin-left: 0;
-        margin-bottom: 10px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
 /* Main Content */
 .content {
-    padding-top: 90px; /* Platz für fixierten Header */
-    padding: 50px 20px;
+    padding: 120px;
     max-width: 1200px;
     margin: 0 auto;
 }

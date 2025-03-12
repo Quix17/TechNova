@@ -1,6 +1,4 @@
 import re
-import random
-import string
 from flask import Flask
 
 app = Flask(__name__)
@@ -18,15 +16,6 @@ def check_password_requirements(password):
 
     # Rückgabe der Ergebnisse der Passwortanforderungen
     return length_check, uppercase_check, number_check, special_check
-
-# Funktion zum Generieren eines Passworts mit einer bestimmten Länge
-def password_generator(length):
-    if length < 12 or length > 64:
-        return None
-    # Erzeuge ein zufälliges Passwort mit Großbuchstaben, Kleinbuchstaben, Zahlen und Sonderzeichen
-    all_characters = string.ascii_letters + string.digits + string.punctuation
-    password = ''.join(random.choice(all_characters) for i in range(length))
-    return password
 
 # Funktion zum Laden häufiger Passwörter
 def load_common_passwords(file_path):

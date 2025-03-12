@@ -20,7 +20,7 @@
 
     <!-- Dashboard Styles -->
     <link rel="stylesheet" href="/static/css/Dashboard/dashboard.css">
-    <!-- Verlinkung der externen Stylesheet-Datei für den Button -->
+    <link rel="stylesheet" href="/static/css/Dashboard/modal.css">
     <link rel="stylesheet" href="/static/css/Dashboard/K-button.css">
 </head>
 <body>
@@ -75,8 +75,30 @@
 <!-- Füge hier die user_id als data-Attribut ein -->
 <div id="userInfo" data-user-id="{{ user_id }}"></div>
 
+<!-- Modal -->
+<div id="info-modal" class="modal">
+    <div class="modal-content">
+        <h2 class="modal-center">👋 Willkommen auf TechNova!</h2>
+        <p class="modal-center">Hier ein paar wichtige Infos für dich:</p>
+
+        <div class="modal-info">
+            <p>📌 <strong>Navigation:</strong> Alle Weiterleitungen findest du immer im <strong>Footer</strong>.</p>
+            <p>📜 <strong>Rechtliches:</strong> Impressum, Datenschutz & Nutzungsbedingungen findest du auf der
+                <a href="{{ url_for('ai_projekt') }}" class="modal-link">Aurora KI</a>-Seite (ganz unten im Footer).</p>
+            <p>🔧 <strong>Support & Updates:</strong> Auf der
+                <a href="{{ url_for('bugs_page') }}" class="modal-link">Bugs</a>-Seite gibt’s aktuelle Updates & eine Hilfeseite.</p>
+        </div>
+
+        <!-- LETZTE ZEILE MITTIG -->
+        <p><strong>✨ Viel Spaß auf TechNova – und danke für<span class="modal-bottom-center">deinen Besuch! 🚀</span></strong></p>
+
+        <button id="modal-ok">Verstanden</button>
+    </div>
+</div>
+
+
     <!-- Verlinkung der externe JavaScript-Datei -->
-    <script src="{{ url_for('static', filename='js/Anmeldung/userID.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/Dashboard/modal.js') }}"></script>
     <script src="{{ url_for('static', filename='js/Anmeldung/Cookie Banner accept.js') }}"></script>
     <script src="/static/js/Dashboard/Karten.js"></script>
 </body>

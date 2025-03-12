@@ -2,7 +2,7 @@ import json
 import logging
 import os
 import secrets
-from datetime import timedelta, date
+from datetime import timedelta, date, datetime
 from logging.handlers import RotatingFileHandler
 from flask_cors import cross_origin
 
@@ -20,6 +20,7 @@ from Editprofile import edit_profile
 from blogposts import register_blogposts
 from models import db, User
 from password_generator import generate_password
+from bugform import save_bug_report
 
 # Verzeichnis für Logs erstellen
 log_folder = 'logs'
@@ -173,26 +174,25 @@ app.logger.setLevel(logging.INFO)
 werkzeug_logger = logging.getLogger('werkzeug')
 werkzeug_logger.setLevel(logging.INFO)
 
-from datetime import datetime
 
 @app.after_request
 def log_page_access(response):
-    # Liste von Routen, die nicht geloggt werden sollen
-    excluded_routes = [
+    # Liste der Routen, die nicht geloggt werden sollen (exakte Pfade oder Präfixe)
+    excluded_prefixes = [
         "/check-cookies-acceptance",
-        "/some-other-route",  # Weitere Routen hinzufügen, die nicht geloggt werden sollen
+        "/password_generator",
+        "/password_checker"
     ]
 
-    # Prüfen, ob der angeforderte Pfad in der Liste der auszuschließenden Routen ist
-    if request.path in excluded_routes:
+    # Prüfen, ob der angeforderte Pfad in einer der auszuschließenden Routen liegt
+    if any(request.path.startswith(prefix) for prefix in excluded_prefixes):
         return response  # Keine Log-Nachricht für diese Routen
 
     # Prüfen, ob die Anfrage zu einer statischen Datei gehört
     if "/static/" in request.path:
         return response  # Keine Log-Nachricht für statische Dateien
 
-    # Logge den Zugriff im benutzerdefinierten Format
-    # Prüfen, ob die Anfrage eine POST-Anfrage ist
+    # Logge den Zugriff
     if request.method == 'POST':
         if current_user.is_authenticated:
             access_logger.info(f"Page accessed: {request.path} by user {current_user.email} with POST method")
@@ -204,9 +204,8 @@ def log_page_access(response):
         else:
             access_logger.info(f"Page accessed: {request.path} by user Anonymous with {request.method} method")
 
-
     # Content-Security-Policy Header setzen
-    csp_policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://ajax.googleapis.com https://assets.codepen.io https://unpkg.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; img-src 'self' data: http://127.0.0.1:5000 https://127.0.0.1:5000 https://via.placeholder.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; connect-src 'self' http://localhost:5000; frame-ancestors 'none'; object-src 'none';"
+    csp_policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://ajax.googleapis.com https://assets.codepen.io https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; img-src 'self' data: http://127.0.0.1:5000 https://127.0.0.1:5000 https://via.placeholder.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; connect-src 'self' http://localhost:5000; frame-ancestors 'none'; object-src 'none';"
     response.headers['Content-Security-Policy'] = csp_policy
 
     return response
@@ -329,8 +328,6 @@ def login():
     # GET-Request: Einfach nur die Login-Seite anzeigen
     return render_template('Anmeldung/login.html')
 
-
-from datetime import datetime, date
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -604,6 +601,10 @@ def impressum():
 def datenschutz():
     return render_template('DSGVO/Datenschutz.html')
 
+@app.route('/user_daten')
+def userdaten():
+    return render_template('DSGVO/user_daten.html')
+
 @app.route('/Aurora-Ki')
 @login_required
 def auroraKi():
@@ -639,6 +640,15 @@ def check_password():
         return jsonify({"is_common": True, "message": "Passwort ist zu gängig!"}), 200  # OK-Antwort, aber mit einer Warnung
 
     return jsonify({"is_common": False, "message": "Das Passwort ist sicher."}), 200  # OK-Antwort bei sicherem Passwort
+
+@app.route('/Form')
+def form():
+    return render_template('/Test/Bug/Form.html')
+
+@app.route("/submit_bug", methods=["POST"])
+def submit_bug():
+    response_message = save_bug_report()
+    return jsonify({"message": response_message})
 
 @app.route('/Contact/')
 def contact():
@@ -875,7 +885,7 @@ def update_backup_code_info():
 def check_cookies_acceptance():
     try:
         data = request.get_json()
-    except Exception as e:
+    except Exception:
         return jsonify({"message": "Fehler beim Abrufen der Daten"}), 500
 
     user_id = data.get('userId')
@@ -887,7 +897,6 @@ def check_cookies_acceptance():
     if not user:
         return jsonify({"message": "Benutzer nicht gefunden"}), 404
 
-    # Gibt den aktuellen Wert von cookies_accepted zurück (True, False oder None)
     return jsonify({"cookiesAccepted": user.cookies_accepted}), 200
 
 
@@ -896,14 +905,15 @@ def check_cookies_acceptance():
 def save_cookies_acceptance():
     try:
         data = request.get_json()
-    except Exception as e:
+    except Exception:
         return jsonify({"message": "Fehler beim Abrufen der Daten"}), 500
 
     user_id = data.get('userId')
     cookies_accepted = data.get('cookiesAccepted')
 
-    if cookies_accepted is None:
-        return jsonify({"message": "Fehler: cookiesAccepted ist None"}), 400
+    # Nur speichern, wenn die Zustimmung tatsächlich gegeben wurde
+    if cookies_accepted is None or cookies_accepted is False:
+        return jsonify({"message": "Fehler: Zustimmung wurde nicht gegeben"}), 400
 
     user = User.query.get(user_id)
     if not user:
@@ -919,6 +929,7 @@ def save_cookies_acceptance():
         return jsonify({"message": f"Fehler beim Speichern der Zustimmung: {str(e)}"}), 500
 
     return jsonify({"message": "Zustimmung erfolgreich gespeichert"}), 200
+
 
 if __name__ == '__main__':
     with app.app_context():

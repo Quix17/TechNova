@@ -4,134 +4,71 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d91aebf-e027-4b21-8be0-53007fbfc5f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/contact.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/Dashboard/Backup_generierung.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/83da8be7-0d7b-4849-98f6-30d439823bfb.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/83da8be7-0d7b-4849-98f6-30d439823bfb/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/myapp.iml" beforeDir="false" />
+    <list default="true" id="cc6c5307-f6c6-45f6-8cc8-77c0fcc128f8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/bugform.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/Bug/Form.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/DSGVO/user_daten.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/Dashboard/modal.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/Anmeldung/clear.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/Bug/Form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/DSGVO/user_daten.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/Dashboard/modal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/DSGVO/user_daten.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Test/Bug/Form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/524b6750-47c1-4ffe-9b81-e12cd271b264.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/524b6750-47c1-4ffe-9b81-e12cd271b264/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/A_P_und_cp.py" beforeDir="false" afterPath="$PROJECT_DIR$/A_P_und_cp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Editprofile.py" beforeDir="false" afterPath="$PROJECT_DIR$/Editprofile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Procfile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurora-chat/node_modules/.bin/acorn.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/aurora-chat/node_modules/.bin/acorn.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurora-chat/node_modules/.bin/eslint.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/aurora-chat/node_modules/.bin/eslint.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurora-chat/node_modules/.bin/js-yaml.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/aurora-chat/node_modules/.bin/js-yaml.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurora-chat/node_modules/.bin/mime.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/aurora-chat/node_modules/.bin/mime.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurora-chat/node_modules/.bin/node-which.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/aurora-chat/node_modules/.bin/node-which.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurora-chat/node_modules/.bin/openai.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/aurora-chat/node_modules/.bin/openai.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurora-chat/node_modules/@types/estree/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/aurora-chat/node_modules/@types/estree/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurora-chat/node_modules/@types/json-schema/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/aurora-chat/node_modules/@types/json-schema/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurora-chat/node_modules/@types/node-fetch/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/aurora-chat/node_modules/@types/node-fetch/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurora-chat/node_modules/@types/node/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/aurora-chat/node_modules/@types/node/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurora-chat/node_modules/color-name/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/aurora-chat/node_modules/color-name/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurora-chat/node_modules/color-name/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/aurora-chat/node_modules/color-name/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurora-chat/node_modules/color-name/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/aurora-chat/node_modules/color-name/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurora-chat/node_modules/color-name/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/aurora-chat/node_modules/color-name/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurora-chat/node_modules/whatwg-url/lib/url-state-machine.js" beforeDir="false" afterPath="$PROJECT_DIR$/aurora-chat/node_modules/whatwg-url/lib/url-state-machine.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurora-chat/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/aurora-chat/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurora-chat/public/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/aurora-chat/public/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurora-chat/public/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/aurora-chat/public/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aurora-chat/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/aurora-chat/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogposts.py" beforeDir="false" afterPath="$PROJECT_DIR$/blogposts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com-p-check.py" beforeDir="false" afterPath="$PROJECT_DIR$/com-p-check.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/form_data/submissions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/form_data/submissions.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/instance/users.db" beforeDir="false" afterPath="$PROJECT_DIR$/instance/users.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/access.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/access.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/account_deletion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/account_deletion.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/activity.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/activity.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/email_change.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/email_change.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/email_change_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/email_change_log.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/failed_login.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/failed_login.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/login.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/login.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/logout.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/logout.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/password_change.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/password_change.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/signup.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/signup.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/password_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/password_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/Anmeldung/backup_code.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/Anmeldung/backup_code.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/Anmeldung/error message für die backup codes.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/Anmeldung/error message für die backup codes.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/Anmeldung/r-p-12-64.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/Anmeldung/r-p-12-64.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/Anmeldung/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/Anmeldung/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Bilder/Bugs/Bugs.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/Bug/Bugs.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/Bug/Bugs.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/Contact/contact.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/Contact/contact.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/DSGVO/Datenschutz.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/DSGVO/Datenschutz.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/Dashboard/K-button.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/Dashboard/K-button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/Dashboard/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/Dashboard/dashboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/Dashboard/edit_profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/Dashboard/edit_profile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/Error/404-animation.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/Error/404-animation.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/FAQ/Hilfe.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/FAQ/Hilfe.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/Impressum/impressum.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/Impressum/impressum.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/KI/Aurora-W-Animations.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/KI/Aurora-W-Animations.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/KI/ai-projekt.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/KI/ai-projekt.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/KI/blogpost1.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/KI/blogpost1.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/KI/blogpost2.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/KI/blogpost2.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/KI/blogpost3.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/KI/blogpost3.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/Meer/meer.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/Meer/meer.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/Nutzungsbedingung/NB.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/Nutzungsbedingung/NB.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/Updates/updates.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/Updates/updates.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/Anmeldung/Cookie Banner accept.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/Anmeldung/Cookie Banner accept.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/Anmeldung/Cookie Banner.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/Anmeldung/Cookie Banner.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/Anmeldung/Effekt-Karten.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/Anmeldung/L-p-g.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/Anmeldung/L-p-g.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/Anmeldung/Password copy.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/Anmeldung/Password copy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/Anmeldung/backup code.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/Anmeldung/backup code.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/Anmeldung/loader.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/Anmeldung/password_checker.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/Anmeldung/password_checker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/Anmeldung/passwort-animation-login.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/Anmeldung/passwort-animation-login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/Anmeldung/passwort-animation-signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/Anmeldung/passwort-animation-signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/Anmeldung/userID.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/Anmeldung/userID.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/Anmeldung/userID.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/Bug/Bugs.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/Bug/Bugs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/DSGVO/Datenschutz.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/DSGVO/Datenschutz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/Dashboard/K-R-PC.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/Dashboard/K-R-PC.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/Dashboard/Karten.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/Dashboard/Karten.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/Dashboard/Konto.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/Dashboard/Konto.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/Dashboard/delete-message.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/Dashboard/delete-message.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/Error/404-animation.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/Error/404-animation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/FAQ/Hilfe.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/FAQ/Hilfe.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/Impressum/impressum.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/Impressum/impressum.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/KI/blogpost1.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/KI/blogpost1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/KI/blogpost2.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/KI/blogpost2.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/KI/blogpost3.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/KI/blogpost3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/KI/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/KI/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/Meer/meer.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/Meer/meer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/Nutzungsbedinung/NB.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/Nutzungsbedinung/NB.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/Updates/updates.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/Updates/updates.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Anmeldung/backup_codes.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Anmeldung/backup_codes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Anmeldung/forgot_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Anmeldung/forgot_password.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Anmeldung/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Anmeldung/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Anmeldung/reset_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Anmeldung/reset_password.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Anmeldung/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Anmeldung/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Anmeldung/verify_code.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Anmeldung/verify_code.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Contact/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Contact/contact.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/DSGVO/Datenschutz.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/DSGVO/Datenschutz.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Dashboard/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Dashboard/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Dashboard/edit_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Dashboard/edit_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/FAQ/Hilfe.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/FAQ/Hilfe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Fehlerseite/400-animation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Fehlerseite/400-animation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Fehlerseite/401-animation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Fehlerseite/401-animation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Fehlerseite/403-animation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Fehlerseite/403-animation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Fehlerseite/404-animation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Fehlerseite/404-animation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Fehlerseite/500-animation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Fehlerseite/500-animation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Fehlerseite/503-animation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Fehlerseite/503-animation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Fehlerseite/fehler.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Fehlerseite/fehler.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Fehlerseite/unknown-animation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Fehlerseite/unknown-animation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Impressum/impressum.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Impressum/impressum.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/KI/ai-projekt.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/KI/ai-projekt.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/KI/blogpost1.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/KI/blogpost1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/KI/blogpost2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/KI/blogpost2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/KI/blogpost3.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/KI/blogpost3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Meer/meer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Meer/meer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Nutzungsbedingung/NB.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Nutzungsbedingung/NB.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Test/Bug/Bugs.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Test/Bug/Bugs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Test/Updates/updates.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Test/Updates/updates.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/email/password_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/email/password_email.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,6 +79,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -149,29 +88,27 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 2
 }</component>
-  <component name="ProjectId" id="2tMGYwRtBsrBqeuTv3LM2rIsWXl" />
+  <component name="ProjectId" id="2u2Ihdd4YQak4PUvcwTtjYzPva8" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;Python.App.executor&quot;: &quot;Run&quot;,
-    &quot;Python.app.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenDatabaseViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/sven9/Downloads/myapp/app.py&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2024.3.2.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -211,16 +148,16 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2d91aebf-e027-4b21-8be0-53007fbfc5f6" name="Changes" comment="" />
-      <created>1740154580612</created>
+      <changelist id="cc6c5307-f6c6-45f6-8cc8-77c0fcc128f8" name="Changes" comment="" />
+      <created>1741440363630</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1740154580612</updated>
-      <workItem from="1740852447179" duration="5784000" />
-      <workItem from="1741002159166" duration="2620000" />
-      <workItem from="1741040969162" duration="3345000" />
-      <workItem from="1741079652442" duration="2332000" />
-      <workItem from="1741174884907" duration="610000" />
+      <updated>1741440363630</updated>
+      <workItem from="1741452966180" duration="3461000" />
+      <workItem from="1741477903781" duration="265000" />
+      <workItem from="1741540385327" duration="857000" />
+      <workItem from="1741801020181" duration="2437000" />
+      <workItem from="1741810430727" duration="603000" />
     </task>
     <servers />
   </component>

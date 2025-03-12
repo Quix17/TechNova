@@ -1,31 +1,33 @@
-// Funktion zum Abrufen eines generierten Passworts mit der gewünschten Länge vom Flask-Endpunkt
-async function generateRandomPassword() {
-    const passwordLength = document.getElementById('password-length').value;  // Holen der Länge des Passworts vom Slider
+document.addEventListener("DOMContentLoaded", () => {
+    const slider = document.getElementById("password-length");
+    const lengthDisplay = document.getElementById("password-length-display");
+    const passwordField = document.getElementById("generated-password");
 
-    try {
-        // Anfrage an Flask-Server mit der Länge als Parameter
-        const response = await fetch(`/password_generator/${passwordLength}`);
-        if (response.ok) {
-            const data = await response.json();  // Antwort als JSON
-            const generatedPassword = data.password;  // Passwort aus der Antwort
-            document.getElementById('generated-password').value = generatedPassword;  // Passwort in das Feld einfügen
-        } else {
-            alert("Fehler beim Abrufen des Passworts.");
+    // Funktion zum Abrufen eines generierten Passworts mit der gewünschten Länge vom Flask-Endpunkt
+    async function generateRandomPassword() {
+        const passwordLength = slider.value;
+
+        try {
+            const response = await fetch(`/password_generator/${passwordLength}`);
+            if (response.ok) {
+                const data = await response.json();
+                passwordField.value = data.password;
+            } else {
+                console.error("Fehler beim Abrufen des Passworts.");
+            }
+        } catch (error) {
+            console.error("Fehler beim Abrufen des Passworts.", error);
         }
-    } catch (error) {
-        alert("Fehler beim Abrufen des Passworts.");
-        console.error(error);
     }
-}
 
-// Funktion zum Aktualisieren der Anzeige der Passwortlänge (live)
-function updatePasswordLength() {
-    const length = document.getElementById('password-length').value;
-    // Anzeige der aktuellen Passwortlänge unter dem Slider
-    document.getElementById('password-length-display').textContent = length;
-    // Passwort neu generieren, wenn der Slider bewegt wird
+    function updatePasswordLengthAndGenerate() {
+        lengthDisplay.textContent = slider.value;
+        generateRandomPassword(); // Generiere ein neues Passwort bei jeder Änderung
+    }
+
+    // Event-Listener: Bei jeder Bewegung des Sliders aktualisieren
+    slider.addEventListener("input", updatePasswordLengthAndGenerate);
+
+    // Erstes Passwort generieren
     generateRandomPassword();
-}
-
-// Initiales Passwort generieren
-generateRandomPassword();
+});

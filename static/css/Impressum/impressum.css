@@ -1,178 +1,98 @@
-/* Basis-Reset */
+/* Allgemeine Stile */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #111;  /* Dunkler Hintergrund */
-    color: #f4f4f4;  /* Helle Schriftfarbe für Kontrast */
+    background: #121212; /* Dunkler, cleaner Look */
+    color: #e0e0e0;
     line-height: 1.6;
-}
-
-h1, h2 {
-    font-family: 'Arial', sans-serif;
-    color: #00bcd4;  /* Blaue Schriftfarbe für Überschriften */
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-header {
-    background-color: #000;  /* Dunkler Header */
-    padding: 20px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-header h1 {
-    color: #fff;
-    font-size: 2rem;
-}
-
-.container {
-    width: 90%;
-    margin: 0 auto;
-}
-
-.content-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
-    gap: 40px;
-    flex-wrap: wrap;  /* Flexbox Wrap hinzugefügt */
-}
-
-.company-info, .legal-info {
-    width: 48%;
-    background-color: #222;  /* Dunkler Hintergrund für die Abschnitte */
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.info-item {
-    margin-bottom: 15px;
+/* Header */
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    animation: fadeInDown 1s ease-in-out;
 }
 
-.info-item strong {
-    color: #00bcd4;  /* Blaue Schrift für die Labels */
-    font-weight: bold;
-}
-
-.info-item a {
+h1 {
+    font-size: 2.5em;
     color: #00bcd4;
+    font-weight: 600;
+}
+
+/* Hauptinhalt */
+.content-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+}
+
+h2 {
+    color: #00bcd4;
+    border-bottom: 2px solid #00bcd4;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+/* Info-Elemente */
+.info-item {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.info-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.info-item p, .info-item a {
+    color: #b0bec5;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
 }
 
 .info-item a:hover {
-    text-decoration: underline;
-    color: #0097a7;  /* Hover-Farbe */
+    color: #00e5ff;
 }
 
-/* Rechts oben die Daten positionieren */
-.company-info {
-    position: relative;
-    top: 0;
-}
-
-.legal-info {
-    position: relative;
-    top: 0;
-}
-
-/* Footer Styling */
+/* Footer */
 footer {
-    background-color: #000; /* Schwarzer Hintergrund */
-    color: #575757; /* Weißer Text */
-    padding: 15px 0; /* Wenig Abstand oben und unten */
-    text-align: center; /* Zentrierter Text */
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
 }
 
-footer .container {
-    width: 100%;
-    max-width: 1200px; /* Maximale Breite des Containers */
-    margin: 0 auto; /* Zentriert den Container */
-    padding: 0 20px; /* Etwas Abstand an den Seiten */
+footer a {
+    color: #00bcd4;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
 }
 
-footer p {
-    margin: 5px 0; /* Kleiner Abstand zwischen den Absätzen */
+footer a:hover {
+    color: #00e5ff;
 }
 
-footer .footer-link {
-    color: #00bcd4; /* Türkis für die Links */
-    text-decoration: none; /* Entfernt die Unterstreichung */
-}
-
-footer .footer-link:hover {
-    text-decoration: underline; /* Unterstreichung bei Hover */
-}
-
-
-/* Hover- und Animationseffekte */
-a:hover {
-    color: #0097a7;
-    transform: translateY(-2px);
-    transition: all 0.3s ease;
-}
-
-/* Responsive Design für kleinere Bildschirme */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.5rem;  /* Kleinere Schriftgröße für mobile Ansicht */
-    }
-
-    .content-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;  /* Weniger Abstand zwischen den Sektionen */
-    }
-
-    .company-info, .legal-info {
-        width: 90%;  /* Breite auf 90% der Seite reduzieren */
-        padding: 15px;
-    }
-
-    footer p {
-        font-size: 0.9rem;  /* Kleinere Schriftgröße im Footer */
-    }
-}
-
-/* Responsives Design für sehr kleine Bildschirme */
-@media (max-width: 480px) {
-    body {
-        font-size: 14px;  /* Kleinere Schriftgröße für kleine Geräte */
-    }
-
-    header h1 {
-        font-size: 1.2rem;  /* Noch kleinere Schriftgröße für den Header */
-    }
-
-    .company-info, .legal-info {
-        width: 100%;  /* Beide Abschnitte nehmen 100% der Breite ein */
-        padding: 10px;
-    }
-
-    footer {
-        font-size: 0.8rem;  /* Kleinere Schrift im Footer */
-    }
-}
-
-/* Standard Scrollbar */
-::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent; /* Track bleibt transparent */
-}
-
-::-webkit-scrollbar-thumb {
-  background: #00bcd4; /* Blaue Daumenfarbe */
-  border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #000; /* Schwarzer Daumen beim Hover */
+/* Animationen */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }

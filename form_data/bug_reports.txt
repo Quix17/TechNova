@@ -1,0 +1,12 @@
+=== Neuer Bug-Report ===
+Titel: afaf
+Schweregrad: critical
+Modul: backend
+Browser: af
+Betriebssystem: af
+Beschreibung: asfafaf
+Screenshot: 
+Name: asf
+E-Mail: afafaf@awsf
+========================
+

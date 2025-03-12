@@ -1,0 +1,103 @@
+/* Hintergrund mit leichtem Blur-Effekt */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65); /* Etwas dunkler für besseren Kontrast */
+    backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Modal Box - Moderner Card-Style mit Schatten */
+.modal-content {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(18px);
+    border-radius: 12px;
+    padding: 25px 35px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    transform: scale(0.95);
+    animation: scaleUp 0.4s ease-out forwards;
+}
+
+/* Wichtige Abschnitte für bessere Lesbarkeit */
+.modal-content p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+    text-align: left;
+}
+
+/* Infoblock für Struktur */
+.modal-info {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+/* Links schöner und deutlicher */
+.modal-link {
+    color: #00c3ff;
+    text-decoration: underline;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.modal-link:hover {
+    color: #007bbf;
+    text-decoration: none;
+}
+
+.modal-center {
+    text-align: center;
+    margin: 0 auto; /* Stellt sicher, dass es wirklich zentriert ist */
+    display: flex;
+    justify-content: center;
+}
+
+/* Nur "deinen Besuch! 🚀" mittig setzen */
+.modal-bottom-center {
+    display: block;
+    text-align: center;
+}
+
+/* OK-Button mit sanftem Hover */
+#modal-ok {
+    margin-top: 15px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #00c3ff, #007bbf);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+#modal-ok:hover {
+    background: linear-gradient(135deg, #007bbf, #00c3ff);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 195, 255, 0.3);
+}
+
+/* Fade-In Effekt */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Sanfte Zoom-Animation */
+@keyframes scaleUp {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

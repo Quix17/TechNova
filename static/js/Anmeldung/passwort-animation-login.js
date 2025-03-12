@@ -1,109 +1,139 @@
-document.addEventListener("DOMContentLoaded", function() {
-    gsap.registerPlugin(ScrambleTextPlugin, MorphSVGPlugin);
-
-    const BLINK_SPEED = 0.075;
-    const TOGGLE_SPEED = 0.125;
-    const ENCRYPT_SPEED = 1;
+document.addEventListener("DOMContentLoaded", function () {
+    const TOGGLE_SPEED = 0.125; // Geschwindigkeit der Animation
+    const ENCRYPT_SPEED = 0.3; // Schnellere Animation für bessere Reaktionsfähigkeit
 
     let busy = false;
 
-    const EYE = document.querySelector('.eye');
     const TOGGLE = document.getElementById("toggle-password");
     const INPUT = document.getElementById("password");
-    const PROXY = document.createElement('div');
+    const PROXY = document.createElement("div");
+    PROXY.style.position = "absolute";
+    PROXY.style.visibility = "hidden";
 
-    const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789`~,.<>?/;":][}{+_)(*&^%$#@!±=-§';
+    const chars =
+        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~,.<>?/;\":][}{+_)(*&^%$#@!±=-§";
 
-    // Blinken des Augen-Elements
-    let blinkTl;
-    const BLINK = () => {
-        const delay = gsap.utils.random(2, 8);
-        const duration = BLINK_SPEED;
-        const repeat = Math.random() > 0.5 ? 3 : 1;
-        blinkTl = gsap.timeline({
-            delay,
-            onComplete: () => BLINK(),
-            repeat,
-            yoyo: true
-        })
-            .to('.lid--upper', { morphSVG: '.lid--lower', duration })
-            .to('#eye-open path', { morphSVG: '#eye-closed path', duration }, 0);
-    };
+    // Funktion zum Scramblen des Texts mit verbesserter Animation
+    function scrambleText(element, originalText, targetText, duration, callback) {
+        const startTime = Date.now();
+        const endTime = startTime + (duration * 1000);
 
-    BLINK(); // Initialisieren des Blinkens
+        // Erstelle eine Kopie des Originalwerts für die Animation
+        let scrambledText = originalText.split("").map(() =>
+            chars[Math.floor(Math.random() * chars.length)]
+        ).join("");
 
+        function update() {
+            const now = Date.now();
+            const progress = Math.min(1, (now - startTime) / (duration * 1000));
 
-    // Event-Listener für Toggle des Passworts
-    TOGGLE.addEventListener('click', () => {
+            if (progress < 1) {
+                // Generiere für jeden Frame neue zufällige Zeichen für nicht enthüllte Zeichen
+                const revealedLength = Math.floor(progress * targetText.length);
+                const currentScrambled = targetText.split("").map((char, i) => {
+                    if (i < revealedLength) {
+                        return targetText[i];
+                    } else {
+                        return chars[Math.floor(Math.random() * chars.length)];
+                    }
+                }).join("");
+
+                element.value = currentScrambled;
+                requestAnimationFrame(update);
+            } else {
+                // Animation abgeschlossen
+                element.value = targetText;
+                if (callback) callback();
+            }
+        }
+
+        // Starte die Animation mit requestAnimationFrame für bessere Performance
+        requestAnimationFrame(update);
+    }
+
+    // Event für das Anzeigen/Verstecken des Passworts
+    TOGGLE.addEventListener("click", () => {
         if (busy) return;
-        const isText = INPUT.matches('[type=password]');
-        const val = INPUT.value;
         busy = true;
-        TOGGLE.setAttribute('aria-pressed', isText);
-        const duration = TOGGLE_SPEED;
 
-        // Symbol wechseln
+        const isPassword = INPUT.type === "password";
+        const val = INPUT.value;
+        TOGGLE.setAttribute("aria-pressed", isPassword);
         const eyeIcon = document.getElementById("eye-icon");
 
-        if (isText) {
+        if (isPassword) {
+            // Wechseln zu Text-Modus (Passwort anzeigen)
+            const tempInput = document.createElement('input');
+            tempInput.type = 'text';
+            tempInput.value = val;
+            tempInput.style.position = 'absolute';
+            tempInput.style.opacity = '0';
+            document.body.appendChild(tempInput);
+
             eyeIcon.classList.remove("fa-eye");
-            eyeIcon.classList.add("fa-eye-slash");  // Zunge oder Augen-Schluss-Symbol
+            eyeIcon.classList.add("fa-eye-slash");
 
-            gsap.timeline({
-                onComplete: () => {
-                    busy = false;
-                }
-            })
-                .to('.lid--upper', { morphSVG: '.lid--lower', duration })
-                .to('#eye-open path', { morphSVG: '#eye-closed path', duration }, 0)
-                .to(PROXY, {
-                    duration: ENCRYPT_SPEED,
-                    onStart: () => {
-                        INPUT.type = 'text';
-                    },
-                    onComplete: () => {
-                        PROXY.innerHTML = '';
-                        INPUT.value = val;
-                    },
-                    scrambleText: {
-                        chars,
-                        text: INPUT.value.charAt(INPUT.value.length - 1) === ' ' ? `${INPUT.value.slice(0, INPUT.value.length - 1)}${chars.charAt(Math.floor(Math.random() * chars.length))}` : INPUT.value
-                    },
-                    onUpdate: () => {
-                        const len = val.length - PROXY.innerText.length;
-                        INPUT.value = `${PROXY.innerText}${new Array(len).fill('•').join('')}`;
-                    }
-                }, 0);
+            // Zuerst Typ ändern, dann animieren
+            INPUT.type = "text";
+
+            // Animation für das Anzeigen des Passworts
+            scrambleText(INPUT, new Array(val.length).fill("•").join(""), val, ENCRYPT_SPEED, () => {
+                busy = false;
+                document.body.removeChild(tempInput);
+            });
         } else {
+            // Wechseln zu Password-Modus (Passwort verstecken)
             eyeIcon.classList.remove("fa-eye-slash");
-            eyeIcon.classList.add("fa-eye");  // Zeige das normale Auge
+            eyeIcon.classList.add("fa-eye");
 
-            gsap.timeline({
-                onComplete: () => {
-                    BLINK();
-                    busy = false;
-                }
-            })
-                .to('.lid--upper', { morphSVG: '.lid--upper', duration })
-                .to('#eye-open path', { morphSVG: '#eye-open path', duration }, 0)
-                .to(PROXY, {
-                    duration: ENCRYPT_SPEED,
-                    onComplete: () => {
-                        INPUT.type = 'password';
-                        INPUT.value = val;
-                        PROXY.innerHTML = '';
-                    },
-                    scrambleText: {
-                        chars,
-                        text: new Array(INPUT.value.length).fill('•').join('')
-                    },
-                    onUpdate: () => {
-                        INPUT.value = `${PROXY.innerText}${val.slice(PROXY.innerText.length)}`;
-                    }
-                }, 0);
+            // Animation für das Verstecken des Passworts
+            scrambleText(INPUT, val, new Array(val.length).fill("•").join(""), ENCRYPT_SPEED, () => {
+                INPUT.type = "password";
+                INPUT.value = val; // Das ursprüngliche Passwort wiederherstellen
+                busy = false;
+            });
         }
     });
 
-        // Verhindern des Formularabsendens
-    const FORM = document.querySelector('form');
+    // Füge Tastatur-Unterstützung hinzu
+    TOGGLE.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            TOGGLE.click();
+        }
     });
+
+    // Event für Input-Feldänderungen, um korrekte Maskierung sicherzustellen
+    INPUT.addEventListener("input", () => {
+        if (INPUT.type === "password") {
+            // Stellen Sie sicher, dass die Punktdarstellung aktualisiert wird
+            const maskedValue = new Array(INPUT.value.length).fill("•").join("");
+            PROXY.textContent = maskedValue;
+        }
+    });
+
+    // Füge CSS für bessere visuelle Rückmeldung hinzu, aber ohne blauen Rand
+    const style = document.createElement('style');
+    style.textContent = `
+        #password {
+            transition: border-color 0.3s ease;
+            outline: none; /* Entfernt den Standard-Fokus-Rand */
+        }
+        #password:focus {
+            outline: none; /* Entfernt den Standard-Fokus-Rand */
+            box-shadow: none; /* Entfernt jeden möglichen Schatten */
+            border-color: inherit; /* Behält die ursprüngliche Rahmenfarbe bei */
+        }
+        #toggle-password {
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+        #toggle-password:hover {
+            opacity: 0.8;
+        }
+        #toggle-password:active {
+            opacity: 0.6;
+        }
+    `;
+    document.head.appendChild(style);
+});

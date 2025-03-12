@@ -3,56 +3,802 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bekannte Bugs - TechNova</title>
+    <title>Bug Tracking System - TechNova</title>
 
-    <!-- Standard Favicon -->
-<link rel="icon" href="/static/Bilder/TechNova/favicon.ico" type="image/x-icon">
+    <!-- Favicon Links -->
+    <link rel="icon" href="/static/Bilder/TechNova/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="/static/Bilder/TechNova/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" href="/static/Bilder/TechNova/favicon-32x32.png">
+    <link rel="icon" sizes="192x192" href="/static/Bilder/TechNova/android-chrome-192x192.png">
+    <link rel="icon" sizes="512x512" href="/static/Bilder/TechNova/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" href="/static/Bilder/TechNova/apple-touch-icon.png">
 
-<!-- Favicon in verschiedenen Größen für den Browser -->
-<link rel="icon" sizes="16x16" href="/static/Bilder/TechNova/favicon-16x16.png">
-<link rel="icon" sizes="32x32" href="/static/Bilder/TechNova/favicon-32x32.png">
+    <!-- Font Awesome für Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<!-- Favicon für Android-Geräte -->
-<link rel="icon" sizes="192x192" href="/static/Bilder/TechNova/android-chrome-192x192.png">
-<link rel="icon" sizes="512x512" href="/static/Bilder/TechNova/android-chrome-512x512.png">
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
 
-<!-- Favicon für Apple-Geräte (Home Screen) -->
-<link rel="apple-touch-icon" href="/static/Bilder/TechNova/apple-touch-icon.png">
-
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/Bug/Bugs.css">
 </head>
 <body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <div class="noise-overlay"></div>
+
+    <nav class="main-nav">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-bug spin"></i>
+                <span>TechNova</span>
+            </div>
+            <div class="nav-links">
+                <a href="{{ url_for('dashboard', user_id=current_user.id) }}" class="nav-link">Dashboard</a>
+                <a href="/updates" class="nav-link">Updates</a>
+                <a href="/Hilfe" class="nav-link">Hilfe</a>
+                <a href="/Form" class="nav-link btn-outline">Neuen Bug melden</a>
+            </div>
+        </div>
+    </nav>
 
     <header>
-        <h1>Bekannte Bugs</h1>
-        <p>Hier sind die derzeit bekannten Bugs, an denen wir arbeiten.</p>
+        <div class="container">
+            <h1 class="glitch" data-text="Bug Tracking System">Bug Tracking System</h1>
+            <p class="subtitle">Entdecke und verfolge bekannte Bugs bei TechNova</p>
+            <div class="stats-overview">
+                <div class="stat-item">
+                    <div class="stat-value">4</div>
+                    <div class="stat-label">Aktive Bugs</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">4</div>
+                    <div class="stat-label">In Bearbeitung</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">17</div>
+                    <div class="stat-label">Behoben</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">2.1d</div>
+                    <div class="stat-label">Ø Behebungszeit</div>
+                </div>
+            </div>
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Nach Bugs suchen..." id="bug-search">
+            </div>
+        </div>
+        <div class="particles-container" id="particles"></div>
     </header>
 
-    <div class="container" style="background-image: url('{{ url_for('static', filename='Bilder/Bugs/Bugs.png') }}'); background-size: cover; background-position: center center; background-repeat: no-repeat; background-attachment: fixed; height: 100vh; width: 100%;">
-    <ul class="bug-list">
-        <li class="bug-item">
-            <span class="bug-text">Aurora gibt einen Fehler/Keine Antwort, Tokens Verbraucht</span>
-        </li>
-        <li class="bug-item">
-            <span class="bug-text">Nach dem ersten erstellen der Backup Codes direkt 48h timeout anstatt von 24h</span>
-        </li>
-        <li class="bug-item">
-            <span class="bug-text">Der Inhalt des Aurora-AI-Projekts kann sich mit anderem Inhalt überlappen, wenn das Browserfenster in der Höhe zu klein ist.</span>
-        </li>
-        <li class="bug-item">
-            <span class="bug-text">Die Fehlermeldung bei der Generierung der Backup-Codes ist leicht verglitcht.</span>
-        </li>
-    </ul>
-</div>
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <label>Status</label>
+                    <div class="filter-options">
+                        <button class="filter-btn active" data-filter="all">Alle</button>
+                        <button class="filter-btn" data-filter="identified">Erkannt</button>
+                        <button class="filter-btn" data-filter="in-progress">In Bearbeitung</button>
+                        <button class="filter-btn" data-filter="fixed">Behoben</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label>Schweregrad</label>
+                    <div class="filter-options">
+                        <button class="filter-btn active" data-filter="all">Alle</button>
+                        <button class="filter-btn" data-filter="critical">Kritisch</button>
+                        <button class="filter-btn" data-filter="medium">Mittel</button>
+                        <button class="filter-btn" data-filter="low">Niedrig</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label>Sortieren</label>
+                    <select id="sort-by" class="sort-select">
+                        <option value="date-desc">Neueste zuerst</option>
+                        <option value="date-asc">Älteste zuerst</option>
+                        <option value="priority-desc">Höchste Priorität</option>
+                        <option value="progress-desc">Fortschritt (absteigend)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <script src="/static/js/Bug/Bugs.js"></script>
+    <section class="bug-timeline">
+        <div class="container">
+            <h2 class="section-title">Bug Fortschritt Timeline</h2>
+            <div class="timeline-container">
+                <div class="timeline-track"></div>
+                <div class="timeline-markers">
+                    <div class="timeline-marker" style="left: 0%;">
+                        <div class="marker-date">01.03</div>
+                    </div>
+                    <div class="timeline-marker" style="left: 25%;">
+                        <div class="marker-date">04.03</div>
+                    </div>
+                    <div class="timeline-marker" style="left: 50%;">
+                        <div class="marker-date">07.03</div>
+                    </div>
+                    <div class="timeline-marker" style="left: 75%;">
+                        <div class="marker-date">10.03</div>
+                    </div>
+                    <div class="timeline-marker active" style="left: 100%;">
+                        <div class="marker-date">Heute</div>
+                    </div>
+                </div>
+                <div class="timeline-events">
+                    <div class="timeline-event" style="left: 0%;" data-bug="BUG-001">
+                        <div class="event-dot"></div>
+                        <div class="event-content">
+                            <div class="event-title">BUG-001 gemeldet</div>
+                        </div>
+                    </div>
+                    <div class="timeline-event" style="left: 10%;" data-bug="BUG-003">
+                        <div class="event-dot"></div>
+                        <div class="event-content">
+                            <div class="event-title">BUG-003 gemeldet</div>
+                        </div>
+                    </div>
+                    <div class="timeline-event" style="left: 25%;" data-bug="BUG-002">
+                        <div class="event-dot"></div>
+                        <div class="event-content">
+                            <div class="event-title">BUG-002 gemeldet</div>
+                        </div>
+                    </div>
+                    <div class="timeline-event" style="left: 30%;" data-bug="BUG-001">
+                        <div class="event-dot"></div>
+                        <div class="event-content">
+                            <div class="event-title">BUG-001 Arbeit begonnen</div>
+                        </div>
+                    </div>
+                    <div class="timeline-event" style="left: 35%;" data-bug="BUG-003">
+                        <div class="event-dot"></div>
+                        <div class="event-content">
+                            <div class="event-title">BUG-003 Arbeit begonnen</div>
+                        </div>
+                    </div>
+                    <div class="timeline-event" style="left: 75%;" data-bug="BUG-004">
+                        <div class="event-dot"></div>
+                        <div class="event-content">
+                            <div class="event-title">BUG-004 gemeldet</div>
+                        </div>
+                    </div>
+                    <div class="timeline-event" style="left: 95%;" data-bug="BUG-003">
+                        <div class="event-dot"></div>
+                        <div class="event-content">
+                            <div class="event-title">BUG-003 fast behoben</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</body>
-</html>
+    <main class="bug-section">
+        <div class="container">
+            <div class="bug-list">
+                <div class="bug-card" data-id="BUG-001" data-status="in-progress" data-severity="critical" data-date="2025-03-01" data-progress="60">
+                    <div class="bug-header">
+                        <div class="bug-info">
+                            <span class="bug-id">BUG-001</span>
+                            <span class="bug-severity severity-critical">Kritisch</span>
+                            <span class="bug-module">Aurora-Modul</span>
+                        </div>
+                        <div class="bug-actions">
+                            <button class="action-btn subscribe-btn" data-tooltip="Abonnieren">
+                                <i class="fas fa-bell"></i>
+                            </button>
+                            <button class="action-btn share-btn" data-tooltip="Teilen">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                            <button class="action-btn expand-btn" data-tooltip="Erweitern">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="bug-title">Aurora gibt einen Fehler/Keine Antwort, Tokens Verbraucht</h3>
+                    <div class="bug-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>01.03.2025</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-code-branch"></i>
+                            <span>Aurora v1.1.2</span>
+                        </div>
+                        <div class="meta-item status-badge in-progress">
+                            <i class="fas fa-sync-alt fa-spin"></i>
+                            <span>In Bearbeitung</span>
+                        </div>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 0%;" data-progress="90"></div>
+                        <div class="progress-info">
+                            <span class="progress-percentage">90%</span>
+                            <span class="progress-label">Fortschritt</span>
+                        </div>
+                    </div>
+                    <div class="bug-content">
+                        <div class="bug-description">
+                            <h4>Beschreibung</h4>
+                            <p>Das Aurora-System gibt in manchen Fällen keine Antwort zurück, und die Token werden dennoch verbraucht. Dies tritt besonders bei komplexen Anfragen auf oder wenn mehrere Nutzer gleichzeitig auf das System zugreifen.</p>
+                        </div>
+                        <div class="bug-details">
+                            <div class="detail-column">
+                                <h4>Reproduzierbarkeit</h4>
+                                <div class="detail-item">
+                                    <span class="detail-label">Häufigkeit:</span>
+                                    <span class="detail-value">100%</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Umgebung:</span>
+                                    <span class="detail-value">Produktionsserver</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Betroffene User:</span>
+                                    <span class="detail-value">Alle</span>
+                                </div>
+                            </div>
+                            <div class="detail-column">
+                                <h4>Behebungsstatus</h4>
+                                <div class="detail-item">
+                                    <span class="detail-label">Zugewiesen:</span>
+                                    <span class="detail-value">Team Aurora</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Geplante Behebung:</span>
+                                    <span class="detail-value">15.03.2025</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Priorität:</span>
+                                    <span class="detail-value">Hoch</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline">
+                            <h4>Aktivitäten</h4>
+                            <div class="timeline-item">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-flag"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>Bug gemeldet</h5>
+                                    <p>Von: Admin_User</p>
+                                    <span class="timeline-date">01.03.2025, 09:14</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>Analyse begonnen</h5>
+                                    <p>Analyseteam untersucht Token-Verbrauch und Aurora-Antwortmechanismen</p>
+                                    <span class="timeline-date">02.03.2025, 11:30</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>Entwicklung gestartet</h5>
+                                    <p>Fix in Entwicklung, voraussichtliche Testphase ab 12.03</p>
+                                    <span class="timeline-date">05.03.2025, 14:22</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comment-section">
+                            <h4>Kommentare</h4>
+                            <div class="comment">
+                                <div class="comment-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="comment-content">
+                                    <div class="comment-header">
+                                        <span class="comment-author">DevOps_Lead</span>
+                                        <span class="comment-date">03.03.2025, 15:47</span>
+                                    </div>
+                                    <p>Wir haben festgestellt, dass das Problem vor allem bei parallelen Anfragen auftritt. Arbeiten an einer besseren Queue-Verwaltung.</p>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="comment-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="comment-content">
+                                    <div class="comment-header">
+                                        <span class="comment-author">System_Admin</span>
+                                        <span class="comment-date">07.03.2025, 10:12</span>
+                                    </div>
+                                    <p>Temporärer Workaround: Wenn keine Antwort kommt, warten Sie 30 Sekunden und versuchen Sie es erneut. Token werden nur einmal abgebucht.</p>
+                                </div>
+                            </div>
+                            <div class="add-comment">
+                                <textarea placeholder="Fügen Sie einen Kommentar hinzu...(Only Admins)"></textarea>
+                                <button class="btn-primary">Kommentar senden</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bug-card" data-id="BUG-002" data-status="identified" data-severity="medium" data-date="2025-03-04" data-progress="25">
+                    <div class="bug-header">
+                        <div class="bug-info">
+                            <span class="bug-id">BUG-002</span>
+                            <span class="bug-severity severity-medium">Mittel</span>
+                            <span class="bug-module">Authentifizierungsmodul</span>
+                        </div>
+                        <div class="bug-actions">
+                            <button class="action-btn subscribe-btn" data-tooltip="Abonnieren">
+                                <i class="fas fa-bell"></i>
+                            </button>
+                            <button class="action-btn share-btn" data-tooltip="Teilen">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                            <button class="action-btn expand-btn" data-tooltip="Erweitern">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="bug-title">Nach dem ersten Erstellen der Backup Codes direkt 48h Timeout anstatt von 24h</h3>
+                    <div class="bug-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>04.03.2025</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-code-branch"></i>
+                            <span>Auth v1.7.2</span>
+                        </div>
+                        <div class="meta-item status-badge identified">
+                            <i class="fas fa-search"></i>
+                            <span>Identifiziert</span>
+                        </div>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 0%;" data-progress="20"></div>
+                        <div class="progress-info">
+                            <span class="progress-percentage">20%</span>
+                            <span class="progress-label">Fortschritt</span>
+                        </div>
+                    </div>
+                    <div class="bug-content">
+                        <div class="bug-description">
+                            <h4>Beschreibung</h4>
+                            <p>Nach dem ersten Erstellen von Backup-Codes tritt eine verlängerte Timeoutphase von 48 Stunden statt der vorgesehenen 24 Stunden auf. Dies führt zu Verwirrung bei Nutzern und längeren Wartezeiten bei der Erneuerung von Sicherheitscodes.</p>
+                        </div>
+                        <div class="bug-details">
+                            <div class="detail-column">
+                                <h4>Reproduzierbarkeit</h4>
+                                <div class="detail-item">
+                                    <span class="detail-label">Häufigkeit:</span>
+                                    <span class="detail-value">100%</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Umgebung:</span>
+                                    <span class="detail-value">Alle Umgebungen</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Betroffene User:</span>
+                                    <span class="detail-value">Alle Neubenutzer</span>
+                                </div>
+                            </div>
+                            <div class="detail-column">
+                                <h4>Behebungsstatus</h4>
+                                <div class="detail-item">
+                                    <span class="detail-label">Zugewiesen:</span>
+                                    <span class="detail-value">Security Team</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Geplante Behebung:</span>
+                                    <span class="detail-value">18.03.2025</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Priorität:</span>
+                                    <span class="detail-value">Mittel</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline">
+                            <h4>Aktivitäten</h4>
+                            <div class="timeline-item">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-flag"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>Bug gemeldet</h5>
+                                    <p>Von: Security_Tester</p>
+                                    <span class="timeline-date">04.03.2025, 13:27</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>Bug bestätigt</h5>
+                                    <p>Timeout-Variable wird falsch gesetzt</p>
+                                    <span class="timeline-date">05.03.2025, 10:05</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comment-section">
+                            <h4>Kommentare</h4>
+                            <div class="comment">
+                                <div class="comment-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="comment-content">
+                                    <div class="comment-header">
+                                        <span class="comment-author">Security_Admin</span>
+                                        <span class="comment-date">06.03.2025, 09:33</span>
+                                    </div>
+                                    <p>Der Fehler wurde im Code gefunden - die Timeout-Variable wird mit 48 anstatt 24 initialisiert.</p>
+                                </div>
+                            </div>
+                            <div class="add-comment">
+                                <textarea placeholder="Fügen Sie einen Kommentar hinzu...(Only Admins)"></textarea>
+                                <button class="btn-primary">Kommentar senden</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bug-card" data-id="BUG-003" data-status="in-progress" data-severity="low" data-date="2025-02-28" data-progress="80">
+                    <div class="bug-header">
+                        <div class="bug-info">
+                            <span class="bug-id">BUG-003</span>
+                            <span class="bug-severity severity-low">Niedrig</span>
+                            <span class="bug-module">Aurora-UI</span>
+                        </div>
+                        <div class="bug-actions">
+                            <button class="action-btn subscribe-btn" data-tooltip="Abonnieren">
+                                <i class="fas fa-bell"></i>
+                            </button>
+                            <button class="action-btn share-btn" data-tooltip="Teilen">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                            <button class="action-btn expand-btn" data-tooltip="Erweitern">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="bug-title">Der Inhalt des Aurora-AI-Projekts kann sich mit anderem Inhalt überlappen</h3>
+                    <div class="bug-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>28.02.2025</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-code-branch"></i>
+                            <span>UI v3.2.0</span>
+                        </div>
+                        <div class="meta-item status-badge in-progress">
+                            <i class="fas fa-sync-alt fa-spin"></i>
+                            <span>In Bearbeitung</span>
+                        </div>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 0%;" data-progress="80"></div>
+                        <div class="progress-info">
+                            <span class="progress-percentage">80%</span>
+                            <span class="progress-label">Fortschritt</span>
+                        </div>
+                    </div>
+                    <div class="bug-content">
+                        <div class="bug-description">
+                            <h4>Beschreibung</h4>
+                            <p>Der Inhalt des Aurora-AI-Projekts kann sich mit anderem Inhalt überlappen, wenn das Browserfenster in der Höhe zu klein ist. Dies führt zu Darstellungsproblemen und schlechter Benutzerfreundlichkeit, besonders bei mobilen Geräten oder kleinen Bildschirmen.</p>
+                        </div>
+                        <div class="bug-details">
+                            <div class="detail-column">
+                                <h4>Reproduzierbarkeit</h4>
+                                <div class="detail-item">
+                                    <span class="detail-label">Häufigkeit:</span>
+                                    <span class="detail-value">100%</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Umgebung:</span>
+                                    <span class="detail-value">Mobile & Desktop</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Betroffene User:</span>
+                                    <span class="detail-value">Alle bei bestimmten Auflösungen</span>
+                                </div>
+                            </div>
+                            <div class="detail-column">
+                                <h4>Behebungsstatus</h4>
+                                <div class="detail-item">
+                                    <span class="detail-label">Zugewiesen:</span>
+                                    <span class="detail-value">Frontend Team</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Geplante Behebung:</span>
+                                    <span class="detail-value">14.03.2025</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Priorität:</span>
+                                    <span class="detail-value">Mittel</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline">
+                            <h4>Aktivitäten</h4>
+                            <div class="timeline-item">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-flag"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>Bug gemeldet</h5>
+                                    <p>Von: UX_Designer</p>
+                                    <span class="timeline-date">28.02.2025, 14:19</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>Fehlerbehebung gestartet</h5>
+                                    <p>Implementierung von responsiven CSS-Regeln</p>
+                                    <span class="timeline-date">03.03.2025, 09:47</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>Testversion implementiert</h5>
+                                    <p>Neue CSS-Grid Struktur implementiert</p>
+                                    <span class="timeline-date">09.03.2025, 11:36</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comment-section">
+                            <h4>Kommentare</h4>
+                            <div class="comment">
+                                <div class="comment-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="comment-content">
+                                    <div class="comment-header">
+                                        <span class="comment-author">Frontend_Dev</span>
+                                        <span class="comment-date">04.03.2025, 11:25</span>
+                                    </div>
+                                    <p>Wir implementieren ein komplett neues Responsive Layout mit Flexbox und CSS Grid, um dieses Problem zu beheben.</p>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="comment-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="comment-content">
+                                    <div class="comment-header">
+                                        <span class="comment-author">QA_Tester</span>
+                                        <span class="comment-date">10.03.2025, 14:08</span>
+                                    </div>
+                                    <p>Habe die neue Version getestet. Das Layout-Problem ist auf allen getesteten Geräten behoben, aber wir sollten noch einige Edge-Cases überprüfen.</p>
+                                </div>
+                            </div>
+                            <div class="add-comment">
+                                <textarea placeholder="Fügen Sie einen Kommentar hinzu...(Only Admins)"></textarea>
+                                <button class="btn-primary">Kommentar senden</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bug-card" data-id="BUG-004" data-status="identified" data-severity="critical" data-date="2025-03-10" data-progress="10">
+                    <div class="bug-header">
+                        <div class="bug-info">
+                            <span class="bug-id">BUG-004</span>
+                            <span class="bug-severity severity-critical">Kritisch</span>
+                            <span class="bug-module">Datenbank-Modul</span>
+                        </div>
+                        <div class="bug-actions">
+                            <button class="action-btn subscribe-btn" data-tooltip="Abonnieren">
+                                <i class="fas fa-bell"></i>
+                            </button>
+                            <button class="action-btn share-btn" data-tooltip="Teilen">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                            <button class="action-btn expand-btn" data-tooltip="Erweitern">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="bug-title">Sporadischer Datenbankausfall bei hoher Nutzerlast</h3>
+                    <div class="bug-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>10.03.2025</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-code-branch"></i>
+                            <span>DB v2.1.4</span>
+                        </div>
+                        <div class="meta-item status-badge identified">
+                            <i class="fas fa-search"></i>
+                            <span>Identifiziert</span>
+                        </div>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 0%;" data-progress="10"></div>
+                        <div class="progress-info">
+                            <span class="progress-percentage">10%</span>
+                            <span class="progress-label">Fortschritt</span>
+                        </div>
+                    </div>
+                    <div class="bug-content">
+                        <div class="bug-description">
+                            <h4>Beschreibung</h4>
+                            <p>Bei hoher gleichzeitiger Nutzerlast kommt es zu sporadischen Ausfällen der Datenbankverbindung. Betroffen sind vor allem Schreiboperationen, die dann ohne Fehlermeldung fehlschlagen können.</p>
+                        </div>
+                        <div class="bug-details">
+                            <div class="detail-column">
+                                <h4>Reproduzierbarkeit</h4>
+                                <div class="detail-item">
+                                    <span class="detail-label">Häufigkeit:</span>
+                                    <span class="detail-value">40%</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Umgebung:</span>
+                                    <span class="detail-value">Produktionsserver</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Betroffene User:</span>
+                                    <span class="detail-value">Unbekannt</span>
+                                </div>
+                            </div>
+                            <div class="detail-column">
+                                <h4>Behebungsstatus</h4>
+                                <div class="detail-item">
+                                    <span class="detail-label">Zugewiesen:</span>
+                                    <span class="detail-value">Backend Team</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Geplante Behebung:</span>
+                                    <span class="detail-value">20.03.2025</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Priorität:</span>
+                                    <span class="detail-value">Hoch</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline">
+                            <h4>Aktivitäten</h4>
+                            <div class="timeline-item">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-flag"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>Bug gemeldet</h5>
+                                    <p>Von: System_Monitor</p>
+                                    <span class="timeline-date">10.03.2025, 17:34</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5>Untersuchung gestartet</h5>
+                                    <p>Protokollanalyse und Last-Test-Simulation gestartet</p>
+                                    <span class="timeline-date">11.03.2025, 08:22</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comment-section">
+                            <h4>Kommentare</h4>
+                            <div class="comment">
+                                <div class="comment-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="comment-content">
+                                    <div class="comment-header">
+                                        <span class="comment-author">DB_Admin</span>
+                                        <span class="comment-date">11.03.2025, 14:03</span>
+                                    </div>
+                                    <p>Vermuten ein Problem mit dem Connection Pooling. Wir analysieren momentan die Verbindungsabbrüche und arbeiten an einer temporären Lösung für höhere Stabilität.</p>
+                                </div>
+                            </div>
+                            <div class="add-comment">
+                                <textarea placeholder="Fügen Sie einen Kommentar hinzu...(Only Admins)"></textarea>
+                                <button class="btn-primary">Kommentar senden</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="subscription-section">
+        <div class="container">
+            <h2 class="section-title">Bleiben Sie informiert</h2>
+            <p class="section-description">Abonnieren Sie Benachrichtigungen zu bestimmten Bugs oder erhalten Sie regelmäßige Updates zu allen Fehlerbehebungen.</p>
+            <div class="subscription-options">
+                <div class="subscription-card">
+                    <div class="card-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>Bug-Benachrichtigungen</h3>
+                    <p>Erhalten Sie Echtzeit-Updates zu bestimmten Bugs, die Sie interessieren.</p>
+                    <button class="btn-primary">Spezifische Bugs abonnieren</button>
+                </div>
+                <div class="subscription-card">
+                    <div class="card-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <h3>Wöchentlicher Digest</h3>
+                    <p>Bekommen Sie eine wöchentliche Zusammenfassung aller Bugfixes und Updates.</p>
+                    <button class="btn-primary">Newsletter abonnieren</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom JS -->
+    <script src="/static/js/Bug/bugs.js"></script>
+    <script>
+        // Initialisiere Animationen und Interaktionen
+        document.addEventListener('DOMContentLoaded', function() {
+            // Progressbars animieren
+            document.querySelectorAll('.progress-bar').forEach(bar => {
+                setTimeout(() => {
+                    bar.style.width = bar.getAttribute('data-progress') + '%';
+                }, 500);
+            });
+
+            // Bug-Karten erweiterbar machen
+            document.querySelectorAll('.expand-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const card = this.closest('.bug-card');
+                    card.classList.toggle('expanded');
+                    this.querySelector('i').classList.toggle('fa-chevron-down');
+                    this.querySelector('i').classList.toggle('fa-chevron-up');
+                });
+            });
+
+            // Filter-Funktionalität
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filterGroup = this.closest('.filter-group');
+                    filterGroup.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    // Hier würde die eigentliche Filterlogik implementiert
+                });
+            });
+
+            // Suchfunktion
+            const searchInput = document.getElementById('bug-search');
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                document.querySelectorAll('.bug-card').forEach(card => {
+                    const title = card.querySelector('.bug-title').textContent.toLowerCase();
+                    const id = card.getAttribute('data-id').toLowerCase();
+                    const visible = title.includes(searchTerm) || id.includes(searchTerm);
+                    card.style.display = visible ? 'block' : 'none';
+                });
+            });
+        });
+    </script>
 <!-- Footer -->
 <footer>
     <div class="container">
-        <p>&copy; 2025 TechNova. Alle Rechte vorbehalten.</p>
-    <p><a href="/impressum" style="color: #00bcd4; text-decoration: none;">Impressum</a> | <a href="/Datenschutz" style="color: #00bcd4; text-decoration: none;">Datenschutz</a> | <a href="{{ url_for('dashboard', user_id=current_user.id) }}" style="color: #00bcd4; text-decoration: none;">Dashboard</a> | <a href="/updates" style="color: #00bcd4; text-decoration: none;">Updates</a> | <a href="/Hilfe" style="color: #00bcd4; text-decoration: none;">Hilfe</a></p>
+        <p>&copy; 2025 TechNova Bug Tracking System. Alle Rechte vorbehalten.</p>
     </div>
 </footer>
+</body>
+</html>

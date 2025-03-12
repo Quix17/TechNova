@@ -141,8 +141,8 @@ def editprofile():
                 app_logger.error(f"Error deleting account for user {current_user.email}: {e}")
                 return redirect(url_for('edit_profile.editprofile'))
 
-        # Rückgabe der Template-Datei nach der Bearbeitung
-        return render_template('Dashboard/dashboard.html', user_id=current_user.id)
+        # Nach erfolgreicher Änderung auf die Bearbeitungsseite zurückkehren
+        return redirect(url_for('edit_profile.editprofile'))
 
     # Wenn der Request ein GET-Request ist, zeige das Edit-Profile-Template an
     return render_template('Dashboard/edit_profile.html', user_id=current_user.id)

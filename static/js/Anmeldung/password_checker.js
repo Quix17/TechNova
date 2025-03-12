@@ -15,8 +15,6 @@ function checkPasswordStrength() {
     const specialChars = /[!@#$%^&*(),.?":{}|<>;:'\[\]\-_+=]/g;  // Erweiterter RegEx für Sonderzeichen
     let specialCharCount = (password.match(specialChars) || []).length;  // Zähle alle Sonderzeichen im Passwort
 
-    console.log("Gefundene Sonderzeichen: ", specialCharCount);  // Debugging-Ausgabe
-
     const isValidLength = lengthCheck.test(password);
     const isValidUppercase = uppercaseCheck.test(password);
     const isValidNumber = numberCheck.test(password);
@@ -81,21 +79,20 @@ function checkIfCommonPassword(password, commonPasswordMessage) {
         },
         body: JSON.stringify({ password: password })
     })
-    .then(response => response.json())
-    .then(data => {
-        if (data.is_common) {
-            commonPasswordMessage.innerHTML = "Passwort ist zu gängig!";
+        .then(response => response.json())
+        .then(data => {
+            if (data.is_common) {
+                commonPasswordMessage.innerHTML = "Passwort ist zu gängig!";
+                commonPasswordMessage.style.color = "red";
+            } else {
+                commonPasswordMessage.innerHTML = "Das Passwort ist sicher.";
+                commonPasswordMessage.style.color = "green";
+            }
+        })
+        .catch(error => {
+            commonPasswordMessage.innerHTML = "Fehler bei der Anfrage!";
             commonPasswordMessage.style.color = "red";
-        } else {
-            commonPasswordMessage.innerHTML = "Das Passwort ist sicher.";
-            commonPasswordMessage.style.color = "green";
-        }
-    })
-    .catch(error => {
-        console.error('Fehler beim Überprüfen des Passworts:', error);
-        commonPasswordMessage.innerHTML = "Fehler bei der Anfrage!";
-        commonPasswordMessage.style.color = "red";
-    });
+        });
 }
 
 // Passwort-Übereinstimmung prüfen
@@ -117,13 +114,10 @@ async function checkIfCommonPassword(password) {
     const commonPasswordMessage = document.getElementById("common-password-message");
 
     if (!commonPasswordMessage) {
-        console.error("Element mit der ID 'common-password-message' nicht gefunden.");
         return;
     }
 
     try {
-        console.log("Sende Passwort zur Überprüfung:", password);  // Debugging: Ausgabe des Passworts
-
         const response = await fetch('/password_checker', {
             method: 'POST',
             headers: {
@@ -138,8 +132,6 @@ async function checkIfCommonPassword(password) {
 
         const data = await response.json();
 
-        console.log(data);  // Debugging: Antwort von der API ausgeben
-
         // Überprüfe die Antwort, um zu sehen, ob das Passwort gängig ist
         if (data.is_common) {
             commonPasswordMessage.innerHTML = "Passwort ist zu gängig!";
@@ -149,7 +141,6 @@ async function checkIfCommonPassword(password) {
             commonPasswordMessage.style.color = "green";
         }
     } catch (error) {
-        console.error("Fehler beim Überprüfen des Passworts:", error);
         commonPasswordMessage.innerHTML = "Fehler bei der Anfrage!";
         commonPasswordMessage.style.color = "red";
     }
